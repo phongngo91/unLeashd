@@ -1,20 +1,24 @@
-# final-proj-first-draft
+# README
 
-DISCLAIMER: DO NOT ROLL OUT YOUR OWN AUTH PATTERN
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-1) To build the final project TDD style with rspec
+Things you may want to cover:
 
-2) As of 1/26/2020, the corriculum is not yet at OAUTH2.0 yet, this project will roll out its own user authentication, for educational purposes.
+* Ruby version
 
-3)
+* System dependencies
 
-## rails integration setup guide
+* Configuration
 
-* ` Create a new rails project using --database=postgresql and --skip-turbolinks
+* Database creation
 
-* `Update your Gemfile with pry-rails, binding_of_caller, better_errors and annotate
+* Database initialization
 
-As of Rails 5.1.2, Rails no longer includes jQuery by default. To allow us to use $.ajax, include the following:
+* How to run the test suite
 
-include gem 'jquery-rails' in your Gemfile
-Include //= require jquery and //= require jquery_ujs in application.js above //= require_tree .
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
