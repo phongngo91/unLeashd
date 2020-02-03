@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: final_proj_draft_development
+  database: un_tappd_clone_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: final_proj_draft
+  #username: un_tappd_clone
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: postgresql
-  database: final_proj_draft_test
+  database: un_tappd_clone_test
   pool: 5
   timeout: 5000
 
@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: final_proj_draft_production
-  username: final_proj_draft
-  password: <%= ENV['FINAL_PROJ_DRAFT_DATABASE_PASSWORD'] %>
+  database: un_tappd_clone_production
+  username: un_tappd_clone
+  password: <%= ENV['un_tappd_clone_DATABASE_PASSWORD'] %>
