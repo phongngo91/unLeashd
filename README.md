@@ -8,8 +8,8 @@ UntappdClone is a dog breed review app inspired by Untappd (untappd.com). It all
 
 ### Backend
 
-*` Ruby 2.5.1
-*` Rails 5.2.3
-*` PostgreSQL
+* Ruby 2.5.1
+* Rails 5.2.3
+* PostgreSQL
 
 ### Frontend
