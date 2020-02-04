@@ -13,3 +13,7 @@ UnLeashd is a dog breed review app inspired by Untappd (untappd.com). It allows 
 * PostgreSQL
 
 ### Frontend
+
+* React
+* Redux
+* JavaScript ES6
