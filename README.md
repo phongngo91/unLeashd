@@ -1,24 +1,15 @@
-# README
+# unLeashd
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+UnLeashd is a dog breed review app inspired by Untappd (untappd.com). It allows users to create, edit, review dog breeds and pet stores and share with friends. Users can also get dog breed and pet store information by searching in the website.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+## Technologies
 
-* System dependencies
+### Backend
 
-* Configuration
+* Ruby 2.5.1
+* Rails 5.2.3
+* PostgreSQL
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Frontend
