@@ -11,7 +11,7 @@ User authentification: User can sign up as a member and login. User profile: Log
 ### Backend
 
 * Ruby 2.5.1
-* Rails 5.2.4
+* Rails 5.2.3
 * PostgreSQL
 
 ### Frontend
