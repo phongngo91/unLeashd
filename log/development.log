@@ -210,3 +210,12 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 24ms (Views: 11.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-03 19:42:48 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/phongngo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/phongngo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/phongngo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 49ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
