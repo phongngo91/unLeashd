@@ -21,3 +21,11 @@
 ## Run npm
 
 * `npm run start`
+
+## TODO
+
+* `add jquery-rails to the gem file`
+
+## Rails Testing Set-up
+
+<https://gist.github.com/phongngo91/bed4ac79ab6725094122bc71b9f2d49a>
