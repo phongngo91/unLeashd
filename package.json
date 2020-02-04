@@ -1,5 +1,40 @@
 {
-  "name": "final_proj_draft",
-  "private": true,
-  "dependencies": {}
+  "name": "unLeashd",
+  "version": "1.0.0",
+  "description": "UnLeashd is a dog breed review app inspired by Untappd (untappd.com). It allows users to create, edit, review dog breeds and pet stores and share with friends. Users can also get dog breed and pet store information by searching in the website.",
+  "main": "frontend/unleashd.jsx",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phongngo91/unleashd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phongngo91/unleashd/issues"
+  },
+  "homepage": "https://github.com/phongngo91/unleashd#readme",
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
 }
