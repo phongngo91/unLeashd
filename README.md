@@ -9,7 +9,7 @@ UnLeashd is a dog breed review app inspired by Untappd (untappd.com). It allows 
 ### Backend
 
 * Ruby 2.5.1
-* Rails 5.2.3
+* Rails 5.2.4
 * PostgreSQL
 
 ### Frontend
