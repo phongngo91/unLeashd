@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'jquery-rails'
 
+gem 'bcrypt'
+
 gem 'rename'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
