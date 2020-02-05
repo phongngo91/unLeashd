@@ -1,6 +1,5 @@
 *.rbc
 capybara-*.html
-.rspec
 
 /public/system
 /coverage/
