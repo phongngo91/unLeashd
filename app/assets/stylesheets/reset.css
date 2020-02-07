@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .splash-container{
     display: flex;
     flex-direction: column;
@@ -8,43 +12,29 @@
     margin: auto;
 }
 
-.login-container {
+.spash-login-container {
     display: inline-block;
     text-align: end;
 }
 
-.login-button {
+.login-button, .signup-button {
+    display: inline-block;
     box-sizing: border-box;
     text-transform: uppercase;
     margin-right: 15px;
-    border-radius: 5px;
+    border-radius: 4px;
     padding: 15px 20px;
     font-size: 1em;
     background-color: transparent;
     border: 2px solid #fff;
     color: #fff;
     text-decoration: none;
+    vertical-align: middle;
+    line-height: 1;
+    text-align: center;
 }
 
-.login-button:hover {
-    background-color: white;
-    color: black;
-}
-
-.signup-button {
-    box-sizing: border-box;
-    text-transform: uppercase;
-    margin-right: 15px;
-    border-radius: 5px;
-    padding: 15px 20px;
-    font-size: 1em;
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-}
-
-.signup-button:hover {
+.login-button:hover, .signup-button:hover {
     background-color: white;
     color: black;
 }
@@ -53,10 +43,50 @@
     color: white;
     text-align: center;
     font-size: 50px;
+    text-transform: uppercase;
 }
 
 .unleashd-description {
     color: white;
     text-align: center;
     font-size: 25px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background-color: black;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+.login-container{
+    display: flex;
+    width: fit-content;
+    background-color: white;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    margin: 30px 30px;
+}
+
+.login-submit-container{
+    border-top: 2px solid gray;
+    margin-top: 5px;
+    text-align: center;
+    width: auto;
+}
+
+.login-submit-button{
+    margin-top: 4px;
+}
+
+.login-submit-button {
+    width: 100%;
+    padding: 1px 7px 2px;
+    border-width: 1px;
+    border-style: solid;
 }

@@ -19,7 +19,7 @@ class Spash extends React.Component {
     render() {
         return (
             <nav className="splash-container">
-                <ul className="login-container">
+                <ul className="splash-login-container">
                     <button 
                         onClick={this.handleLoginClick} 
                         className="login-button">Sign In
