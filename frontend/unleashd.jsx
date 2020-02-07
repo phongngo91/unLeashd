@@ -5,7 +5,28 @@ import configureStore from "./store/store";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  const store = configureStore();
+
+  // Code to keep user logged in, window.currentUser is coming from 
+  // the code on app/views/static_pages/root.html.erb 
+  let store;
+
+  if (window.currentUser){
+    const preloadedState = {
+      entities: {
+        users: {[window.currentUser.id]: window.currentUser }
+      },
+      session: { id: window.currentUser.id }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+
+  // Testing
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  // testing end
 
   reactDOM.render(<Root store={store}/>, root);
 });
