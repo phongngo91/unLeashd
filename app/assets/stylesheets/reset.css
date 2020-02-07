@@ -1,15 +1,16 @@
 .splash-container{
     display: flex;
+    flex-direction: column;
     background-color: black;
     border-radius: 10px;
     align-content: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin: auto;
 }
 
 .login-container {
-    display: flex;
-    align-content: flex-end;
-    justify-content: flex-end;
+    display: inline-block;
+    text-align: end;
 }
 
 .login-button {
@@ -46,4 +47,16 @@
 .signup-button:hover {
     background-color: white;
     color: black;
+}
+
+.unleashd-logo {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+.unleashd-description {
+    color: white;
+    text-align: center;
+    font-size: 25px;
 }

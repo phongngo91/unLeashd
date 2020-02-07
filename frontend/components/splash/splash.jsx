@@ -29,6 +29,8 @@ class Spash extends React.Component {
                         className="signup-button">Create An Account
                     </button>
                 </ul>
+                <h1 className="unleashd-logo">unLeashd</h1>
+                <h4 className="unleashd-description">Pet and share your favorite dogs.</h4>
             </nav>
         )
     }

@@ -422,7 +422,11 @@ function (_React$Component) {
       }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSignupClick,
         className: "signup-button"
-      }, "Create An Account")));
+      }, "Create An Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "unleashd-logo"
+      }, "unLeashd"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "unleashd-description"
+      }, "Pet and share your favorite dogs."));
     }
   }]);
 
