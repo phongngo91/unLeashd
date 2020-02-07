@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-    #CELLL
     helper_method :current_user, :ensure_logged_in?, :logged_in?
   
     def current_user
