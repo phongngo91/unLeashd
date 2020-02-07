@@ -6,13 +6,10 @@ import SplashContainer from './splash/spash_container';
 
 const App = () => {
     return (
-        <div>
-            <header>
-                <h1>Hello World!</h1>
-            </header>
+        <>
             <AuthRoute exact path="/" component={SplashContainer} />
             <ProtectedRoute path="/home" component={HomeContainer} />
-        </div>
+        </>
     );
 };
 

@@ -1,16 +1,39 @@
-.super_nice {
-    font-size: large;
-}
-
 .splash-container{
     display: flex;
-    background-color: beige;
+    background-color: black;
+    border-radius: 10px;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.login-container {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
 }
 
 .login-button {
-    text-transform: capitalize;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    margin-right: 15px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 1em;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
 }
 
 .signup-button {
-    text-transform: capitalize;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    margin-right: 15px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 1em;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
 }
