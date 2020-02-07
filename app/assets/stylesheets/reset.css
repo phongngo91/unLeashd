@@ -1,3 +1,15 @@
 .super_nice {
     font-size: large;
 }
+
+.splash-container{
+
+}
+
+.login-button {
+    text-transform: capitalize;
+}
+
+.signup-button {
+    text-transform: capitalize;
+}

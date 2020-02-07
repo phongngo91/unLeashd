@@ -6,14 +6,13 @@ class Spash extends React.Component {
     }
 
     render() {
-        const currentUser = this.props.currentUser;
-        if (currentUser){
-            return (<h4>YOU ARE LOGGED IN</h4>)
-        } else
         return (
-            <div>
-                LOG IN AND SIGN UP BUTTON GOES HERE
-            </div>
+            <nav className="splash-container">
+                <ul>
+                    <button href="/login" className="login-button">Sign In</button>
+                    <button href="/signup" className="signup-button">Create An Account</button>
+                </ul>
+            </nav>
         )
     }
 }

@@ -101,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
-/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
+/* harmony import */ var _utils_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/session_api_util */ "./frontend/utils/session_api_util.js");
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -129,7 +129,7 @@ var receiveErrors = function receiveErrors(errors) {
 
 var login = function login(user) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_1__["logIn"](user).then(function (userPayload) {
+    return _utils_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logIn"](user).then(function (userPayload) {
       return dispatch(receiveCurrentUser(userPayload));
     }, function (errors) {
       dispatch(receiveErrors(errors.responseJSON));
@@ -138,7 +138,7 @@ var login = function login(user) {
 };
 var logout = function logout() {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_1__["logOut"]().then(function () {
+    return _utils_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logOut"]().then(function () {
       return dispatch(logoutCurrentUser());
     }, function (errors) {
       return dispatch(receiveErrors(errors.responseJSON));
@@ -147,7 +147,7 @@ var logout = function logout() {
 };
 var signup = function signup(user) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_1__["signUp"](user).then(function (userPayload) {
+    return _utils_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signUp"](user).then(function (userPayload) {
       return dispatch(receiveCurrentUser(userPayload));
     }, function (errors) {
       return dispatch(receiveErrors(errors.responseJSON));
@@ -397,11 +397,15 @@ function (_React$Component) {
   _createClass(Spash, [{
     key: "render",
     value: function render() {
-      var currentUser = this.props.currentUser;
-
-      if (currentUser) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "YOU ARE LOGGED IN");
-      } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "LOG IN AND SIGN UP BUTTON GOES HERE");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "splash-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        href: "/login",
+        className: "login-button"
+      }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        href: "/signup",
+        className: "signup-button"
+      }, "Create An Account")));
     }
   }]);
 
@@ -521,7 +525,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 var defaultState = {
   id: null
@@ -533,12 +537,12 @@ var sessionReducer = function sessionReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return Object.assign({}, {
         id: action.currentUser.id
       });
 
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["LOGOUT_CURRENT_USER"]:
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return defaultState;
 
     default:
@@ -674,44 +678,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
-/***/ "./frontend/util/session_api_util.js":
-/*!*******************************************!*\
-  !*** ./frontend/util/session_api_util.js ***!
-  \*******************************************/
-/*! exports provided: signUp, logIn, logOut */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUp", function() { return signUp; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logIn", function() { return logIn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logOut", function() { return logOut; });
-var signUp = function signUp(user) {
-  return $.ajax({
-    url: "/api/users",
-    method: "POST",
-    data: user
-  });
-};
-var logIn = function logIn(user) {
-  return $.ajax({
-    url: "/api/session",
-    method: "POST",
-    data: {
-      username: user.username,
-      password: user.password
-    }
-  });
-};
-var logOut = function logOut() {
-  return $.ajax({
-    url: "/api/session",
-    method: "DELETE"
-  });
-};
-
-/***/ }),
-
 /***/ "./frontend/utils/route_utils.js":
 /*!***************************************!*\
   !*** ./frontend/utils/route_utils.js ***!
@@ -776,6 +742,44 @@ var Protected = function Protected(_ref2) {
 };
 
 var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Protected));
+
+/***/ }),
+
+/***/ "./frontend/utils/session_api_util.js":
+/*!********************************************!*\
+  !*** ./frontend/utils/session_api_util.js ***!
+  \********************************************/
+/*! exports provided: signUp, logIn, logOut */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUp", function() { return signUp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logIn", function() { return logIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logOut", function() { return logOut; });
+var signUp = function signUp(user) {
+  return $.ajax({
+    url: "/api/users",
+    method: "POST",
+    data: user
+  });
+};
+var logIn = function logIn(user) {
+  return $.ajax({
+    url: "/api/session",
+    method: "POST",
+    data: {
+      username: user.username,
+      password: user.password
+    }
+  });
+};
+var logOut = function logOut() {
+  return $.ajax({
+    url: "/api/session",
+    method: "DELETE"
+  });
+};
 
 /***/ }),
 
