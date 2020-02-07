@@ -45,12 +45,23 @@ body {
     text-align: center;
     font-size: 50px;
     text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.unleashd-logo-sub{
+    margin-bottom: 12px;
+    font-size: 17px;
+    color: gray;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
 }
 
 .unleashd-description {
     color: white;
     text-align: center;
     font-size: 25px;
+    padding-bottom: 15px;
 }
 
 .content{
@@ -73,7 +84,7 @@ body {
     box-sizing: border-box;
     align-items: center;
     padding: 15px 40px;
-    margin: 30px 30px;
+    margin: 75px 30px;
 }
 
 .login-submit-container{
