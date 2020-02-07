@@ -25,6 +25,11 @@
     text-decoration: none;
 }
 
+.login-button:hover {
+    background-color: white;
+    color: black;
+}
+
 .signup-button {
     box-sizing: border-box;
     text-transform: uppercase;
@@ -36,4 +41,9 @@
     border: 2px solid #fff;
     color: #fff;
     text-decoration: none;
+}
+
+.signup-button:hover {
+    background-color: white;
+    color: black;
 }
