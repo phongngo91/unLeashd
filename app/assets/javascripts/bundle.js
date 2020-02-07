@@ -373,9 +373,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -389,21 +389,38 @@ function (_React$Component) {
   _inherits(Spash, _React$Component);
 
   function Spash(props) {
+    var _this;
+
     _classCallCheck(this, Spash);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Spash).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Spash).call(this, props));
+    _this.handleLoginClick = _this.handleLoginClick.bind(_assertThisInitialized(_this));
+    _this.handleSignupClick = _this.handleSignupClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Spash, [{
+    key: "handleLoginClick",
+    value: function handleLoginClick() {
+      this.props.history.push("/login");
+    }
+  }, {
+    key: "handleSignupClick",
+    value: function handleSignupClick() {
+      this.props.history.push("/signup");
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "splash-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        href: "/login",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "login-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleLoginClick,
         className: "login-button"
       }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        href: "/signup",
+        onClick: this.handleSignupClick,
         className: "signup-button"
       }, "Create An Account")));
     }

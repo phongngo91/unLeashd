@@ -3,7 +3,8 @@
 }
 
 .splash-container{
-
+    display: flex;
+    background-color: beige;
 }
 
 .login-button {
