@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route } from "react-router-dom";
-import { ProtectedRoute, AuthRoute } from '../utils/route_utils';
-import BannerContainer from './banner_container.js';
+import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
+import HomeContainer from './home/home_container';
+import SplashContainer from './splash/spash_container';
 
 const App = () => {
     return (
@@ -9,7 +10,8 @@ const App = () => {
             <header>
                 <h1>Hello World!</h1>
             </header>
-            <AuthRoute exact path="/" component={BannerContainer} />
+            <AuthRoute exact path="/" component={SplashContainer} />
+            <ProtectedRoute path="/home" component={HomeContainer} />
         </div>
     );
 };
