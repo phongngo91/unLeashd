@@ -435,17 +435,16 @@ function (_React$Component) {
       }, "pet gently"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-error"
       }, errorsEl[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "login-form ",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input",
         onChange: this.update("username"),
         type: "text",
         value: this.state.username,
         placeholder: "Username"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input",
         onChange: this.update("password"),
         type: "password",
         value: this.state.password,
@@ -486,7 +485,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   return {
     errors: state.errors,
-    formType: 'signup'
+    formType: 'Create Account'
   };
 };
 

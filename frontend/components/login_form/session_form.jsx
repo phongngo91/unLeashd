@@ -42,17 +42,19 @@ class sessionForm extends React.Component {
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
           <div className="login-error">{errorsEl[0]}</div>
-          <form onSubmit={this.handleSubmit}>
-            <div className="input">
+          <form className="login-form "onSubmit={this.handleSubmit}>
+            <div>
               <input
+                className="input"
                 onChange={this.update("username")}
                 type="text"
                 value={this.state.username}
                 placeholder="Username"
               />
             </div>
-            <div className="input">
-              <input
+            <div>
+              <input 
+                className="input"
                 onChange={this.update("password")}
                 type="password"
                 value={this.state.password}
