@@ -41,7 +41,7 @@ class sessionForm extends React.Component {
         <div className="login-container">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
-          <div className="login-error">{errorsEl[0]}</div>
+          <div className="login-error">{errorsEl}</div>
           <form className="login-form "onSubmit={this.handleSubmit}>
             <div>
               <input

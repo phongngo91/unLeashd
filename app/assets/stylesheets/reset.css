@@ -1,142 +1,144 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
-.splash-container{
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-    align-content: flex-end;
-    justify-content: flex-start;
-    margin: auto;
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  align-content: flex-end;
+  justify-content: flex-start;
+  margin: auto;
 }
 
-
-.splash-login-container{
-    display: inline-block;
-    align-content: flex-end;
-    text-align: end;
+.splash-login-container {
+  display: inline-block;
+  align-content: flex-end;
+  text-align: end;
 }
 
-.login-button, .signup-button {
-    display: inline-block;
-    box-sizing: border-box;
-    text-transform: uppercase;
-    margin-right: 15px;
-    border-radius: 4px;
-    padding: 15px 20px;
-    font-size: 1em;
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    vertical-align: middle;
-    line-height: 1;
-    text-align: center;
+.login-button,
+.signup-button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  margin-right: 15px;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-size: 1em;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 1;
+  text-align: center;
 }
 
-.login-button:hover, .signup-button:hover {
-    background-color: white;
-    color: black;
+.login-button:hover,
+.signup-button:hover {
+  background-color: white;
+  color: black;
 }
 
-.unleashd-logo, .login-header {
-    color: white;
-    text-align: center;
-    font-size: 50px;
-    text-transform: uppercase;
-    margin-top: 10px;
+.unleashd-logo,
+.login-header {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
-.unleashd-logo-sub{
-    margin-bottom: 12px;
-    font-size: 17px;
-    color: gray;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
+.unleashd-logo-sub {
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: gray;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
 }
 
 .unleashd-description {
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    padding-bottom: 15px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 15px;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    background-color: black;
-    box-sizing: border-box;
-    margin: 0px 0px;
-    padding: 0px 0px;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: black;
+  box-sizing: border-box;
+  margin: 0px 0px;
+  padding: 0px 0px;
 }
 
-.login-container{
-    display: flex;
-    width: fit-content;
-    background-color: white;
-    flex-direction: column;
-    align-content: center;
-    box-sizing: border-box;
-    align-items: center;
-    padding: 15px 40px;
-    margin: 75px 30px;
+.login-container {
+  display: flex;
+  width: fit-content;
+  background-color: white;
+  flex-direction: column;
+  align-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 15px 40px;
+  margin: 75px 30px;
 }
 
-.login-submit-container{
-    border-top: 2px solid gray;
-    margin-top: 5px;
-    text-align: center;
-    width: 100%;
-}
-
-.login-submit-button{
-    margin-top: 4px;
+.login-submit-container {
+  border-top: 2px solid gray;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
 }
 
 .login-submit-button {
-    width: 100%;
-    padding: 1px 7px 2px;
-    border-width: 1px;
-    border-style: solid;
-    color: white;
-    border-radius: 4px;
-    background-color: orange;
-    font-size: 20px;
-    margin: 15px 0;
-    padding: 5px 0;
+  margin-top: 4px;
+}
+
+.login-submit-button {
+  width: 100%;
+  padding: 1px 7px 2px;
+  border-width: 1px;
+  border-style: solid;
+  color: white;
+  border-radius: 4px;
+  background-color: orange;
+  font-size: 20px;
+  margin: 15px 0;
+  padding: 5px 0;
 }
 
 .login-header {
-    color: black;
-    font-size: 40px;
-    padding-bottom: 1px;
-    font-weight: bold;
+  color: black;
+  font-size: 40px;
+  padding-bottom: 1px;
+  font-weight: bold;
 }
 
-.login-subheader{
-    margin-bottom: 12px;
-    font-size: 17px;
-    color: gray;
-    text-transform: uppercase;
+.login-subheader {
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: gray;
+  text-transform: uppercase;
 }
 
 .input {
-    width: 100%;
-    font-weight: 400;
-    font-size: 20px;
-    padding: 3px;
-    margin: 5px 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 3px;
+  margin: 5px 0;
 }
 
-.login-form{
-    width: 100%;
+.login-form {
+  width: 100%;
 }
 
-.login-container-bottom{
-    font-size: 20px;
+.login-container-bottom {
+  font-size: 20px;
 }

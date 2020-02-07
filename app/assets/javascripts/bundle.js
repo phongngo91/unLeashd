@@ -434,7 +434,7 @@ function (_React$Component) {
         className: "login-subheader"
       }, "pet gently"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-error"
-      }, errorsEl[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, errorsEl), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "login-form ",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -738,8 +738,9 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ERRORS"]:
-      var newArr = state.slice();
-      return newArr.concat(action.errors);
+      // const newArr = state.slice();
+      //     return newArr.concat(action.errors);
+      return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];
