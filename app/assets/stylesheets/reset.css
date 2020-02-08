@@ -100,6 +100,10 @@ body {
   margin-top: 4px;
 }
 
+.login-submit-button:hover {
+  background-color: darkgoldenrod;
+}
+
 .login-submit-button {
   width: 100%;
   padding: 1px 7px 2px;
