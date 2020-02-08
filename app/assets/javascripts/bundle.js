@@ -551,7 +551,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "nav-bar-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "/petstores"
+          href: "/#/petstores"
         }, "Pet Stores"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "nav-bar-controls"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
