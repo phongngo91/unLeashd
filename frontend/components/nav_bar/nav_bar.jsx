@@ -7,10 +7,6 @@ class NavBar extends React.Component {
     super(props);
   }
 
-  handleHistory(location) {
-    () => this.props.history.push(location);
-  }
-
   render() {
     const loggedInUser = this.props.loggedInUser;
     if (loggedInUser) {

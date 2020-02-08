@@ -291,7 +291,7 @@ function (_React$Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      var loggedInUser = this.props.loggedInUser;
+      var currentUser = this.props.currentUser;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Home Components Will Go Here"));
     }
   }]);
@@ -319,7 +319,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    loggedInUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -575,15 +575,6 @@ function (_React$Component) {
   }
 
   _createClass(NavBar, [{
-    key: "handleHistory",
-    value: function handleHistory(location) {
-      var _this = this;
-
-      (function () {
-        return _this.props.history.push(location);
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var loggedInUser = this.props.loggedInUser;
@@ -836,15 +827,6 @@ function (_React$Component) {
   }
 
   _createClass(UsersShow, [{
-    key: "handleHistory",
-    value: function handleHistory(location) {
-      var _this = this;
-
-      (function () {
-        return _this.props.history.push(location);
-      });
-    }
-  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchUser(this.props.match.params.userId);
@@ -852,20 +834,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var loggedInUser = this.props.loggedInUser;
       var currentUser = this.props.currentUser;
-      debugger;
+      var showedUser = this.props.showedUser;
 
-      if (loggedInUser && currentUser) {
+      if (currentUser && showedUser) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "nav-bar-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Logged in user is ", loggedInUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Current User's Page is ", currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "/#/petstores"
-        }, "Pet Stores"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "nav-bar-controls"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: this.props.logout
-        }, "Log Out")));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Logged in user is ", currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is ", showedUser.username, "'s show page")));
       } else return null;
     }
   }]);
@@ -897,8 +872,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    loggedInUser: state.entities.users[state.session.id],
-    currentUser: state.entities.users[ownProps.match.params.userId]
+    currentUser: state.entities.users[state.session.id],
+    showedUser: state.entities.users[ownProps.match.params.userId]
   };
 };
 
