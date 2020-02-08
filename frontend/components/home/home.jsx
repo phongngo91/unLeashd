@@ -1,26 +1,18 @@
-import React from 'react';
+import React from "react";
 
-class Banner extends React.Component{
-    constructor(props){
-        super(props);
-    }
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-
-    render(){
-
-        const currentUser = this.props.currentUser;
-        if (currentUser){
-            return (
-                <>
-                    <h3>Welcome!, {currentUser.username}</h3>
-                    <button onClick={this.props.logout}>Log Out</button>
-                </>
-            )
-        } else 
-        return (
-                <h1>Banner</h1>
-        )
-    }
+  render() {
+    const currentUser = this.props.currentUser;
+    return (
+      <>
+        <h3>Home Components Will Go Here</h3>
+      </>
+    );
+  }
 }
 
-export default Banner;
+export default Home;
