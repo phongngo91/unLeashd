@@ -1,8 +1,6 @@
 import React from "react";
 
-// TODO add a link to the PetStoreIndex
-// and a link to he PetBreedIndex inside this NavBar
-class NavBar extends React.Component {
+class UsersShow extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -11,12 +9,20 @@ class NavBar extends React.Component {
     () => this.props.history.push(location);
   }
 
+  componentDidMount(){
+    this.props.fetchUser(this.props.match.params.userId);
+  }
+
   render() {
     const loggedInUser = this.props.loggedInUser;
-    if (loggedInUser) {
+    const currentUser = this.props.currentUser;
+    debugger
+    if (loggedInUser && currentUser) {
       return (
         <nav className="nav-bar-container">
           <ul>
+          <li>Logged in user is {loggedInUser.username}</li>
+          <li>Current User's Page is {currentUser.username}</li>
             <li>
               <a href="/#/petstores">Pet Stores</a>
             </li>
@@ -30,4 +36,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default UsersShow;

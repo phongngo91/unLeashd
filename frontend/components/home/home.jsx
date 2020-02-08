@@ -6,7 +6,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const currentUser = this.props.currentUser;
+    const loggedInUser = this.props.loggedInUser;
     return (
       <>
         <h3>Home Components Will Go Here</h3>
