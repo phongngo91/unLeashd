@@ -676,7 +676,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SignupForm).call(this, props));
     _this.state = {
       username: "",
-      password: ""
+      password: "",
+      email: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -737,6 +738,12 @@ function (_React$Component) {
         type: "text",
         value: this.state.username,
         placeholder: "Username"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input",
+        onChange: this.update("email"),
+        type: "email",
+        value: this.state.email,
+        placeholder: "email"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
         onChange: this.update("password"),
