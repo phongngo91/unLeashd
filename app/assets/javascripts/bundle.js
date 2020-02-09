@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, RECEIVE_ERRORS, LOGOUT_CURRENT_USER, login, logout, signup */
+/*! exports provided: RECEIVE_CURRENT_USER, RECEIVE_ERRORS, LOGOUT_CURRENT_USER, receiveErrors, login, logout, signup */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,6 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_USER", function() { return RECEIVE_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ERRORS", function() { return RECEIVE_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
@@ -126,7 +127,6 @@ var receiveErrors = function receiveErrors(errors) {
     errors: errors
   };
 };
-
 var login = function login(user) {
   return function (dispatch) {
     return _utils_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logIn"](user).then(function (userPayload) {
@@ -582,9 +582,7 @@ function (_React$Component) {
       if (loggedInUser) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "nav-bar-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "/#/petstores"
-        }, "Pet Stores"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pet Stores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "nav-bar-controls"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.props.logout
@@ -767,13 +765,22 @@ function (_React$Component) {
       }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSignupClick,
         className: "signup-button"
-      }, "Create An Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Create An Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "masthead-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "unleashd-logo"
       }, "unLeashd"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "unleashd-logo-sub"
       }, "Pet Gently"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "unleashd-description"
-      }, "Discover and share your favorite dogs."));
+      }, "Discover and share your favorite dogs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/assets/dogs_selfie.jpg",
+        alt: "dogs-taking-selfie"
+      }))));
     }
   }]);
 

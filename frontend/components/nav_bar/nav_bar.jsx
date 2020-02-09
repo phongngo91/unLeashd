@@ -14,7 +14,8 @@ class NavBar extends React.Component {
         <nav className="nav-bar-container">
           <ul>
             <li>
-              <a href="/#/petstores">Pet Stores</a>
+              {/* <a href="/#/petstores">Pet Stores</a> */}
+              Pet Stores
             </li>
           </ul>
           <ul className="nav-bar-controls">
