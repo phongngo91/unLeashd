@@ -37,13 +37,13 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <div className="content">
+      <div className="login-content">
         <div className="login-container">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
           <div className="login-error">{errorsEl}</div>
           <form className="login-form "onSubmit={this.handleSubmit}>
-            <div>
+            <div className="input-container">
               <input
                 className="input"
                 onChange={this.update("username")}
@@ -52,7 +52,7 @@ class LoginForm extends React.Component {
                 placeholder="Username"
               />
             </div>
-            <div>
+            <div className="input-container">
               <input 
                 className="input"
                 onChange={this.update("password")}
@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
                 value={this.state.password}
                 placeholder="Password"
               />
-            </div>
+            </div >
             <div className="login-submit-container">
             <button className="login-submit-button">{this.props.formType}</button>
             </div>

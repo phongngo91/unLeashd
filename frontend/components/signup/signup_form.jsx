@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
     }
 
     return (
-      <div className="content">
+      <div className="signup-content">
         <div className="login-container">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>

@@ -85,7 +85,20 @@ li {
   width: 300px;
 }
 
-.content {
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: black;
+  box-sizing: border-box;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+  url("dogs_running.jpg");
+}
+
+.signup-content {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -121,6 +134,7 @@ li {
 
 .login-submit-button:hover {
   background-color: darkgoldenrod;
+  cursor: pointer;
 }
 
 .login-submit-button {
@@ -156,6 +170,7 @@ li {
   font-size: 20px;
   padding: 3px;
   margin: 5px 0;
+  border-radius: 4px;
 }
 
 .login-form {
