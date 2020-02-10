@@ -38,12 +38,18 @@ class SignupForm extends React.Component {
     }
 
     return (
-      <div className="signup-content">
-        <div className="login-container">
-          <div className="login-header">unleashd</div>
-          <div className="login-subheader">pet gently</div>
-          <div className="login-error">{errorsEl}</div>
-          <form className="login-form "onSubmit={this.handleSubmit}>
+      <div className="signup-content" 
+      style={{ 
+        backgroundImage: 
+        `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url(${window.dogsRunning2URL})`
+        }}
+        >
+        <div className="signup-container">
+          <div className="signup-header">unleashd</div>
+          <div className="signup-subheader">pet gently</div>
+          <div className="signup-error">{errorsEl}</div>
+          <form className="signup-form "onSubmit={this.handleSubmit}>
             <div>
               <input
                 className="input"
