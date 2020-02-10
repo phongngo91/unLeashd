@@ -82,6 +82,7 @@ li {
   font-size: 25px;
   padding-bottom: 15px;
   width: 300px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .login-content {
@@ -185,7 +186,15 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   margin-top: 5px;
+}
+
+.description-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 img {
@@ -195,9 +204,10 @@ img {
 
 .description-image {
   display: flex;
-  width: 200px;
+  width: 400px;
   border-radius: 5px;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-top: 15px;
 }
 
 .description-image img {
@@ -211,4 +221,9 @@ img {
   border-right: 5px solid transparent;
   
   border-bottom: 5px solid black;
+}
+
+.dog-paw{
+  width: 200px;
+  background: transparent;
 }

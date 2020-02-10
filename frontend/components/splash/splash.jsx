@@ -35,6 +35,7 @@ class Spash extends React.Component {
         </ul>
         <ul className="masthead-content">
           <div className="description-content">
+            <img className="dog-paw" src={window.dogPawURL} alt="dog-paw"/>
             <div className="unleashd-logo">unLeashd</div>
             <div className="unleashd-logo-sub">Pet Gently</div>
             <h4 className="unleashd-description">
