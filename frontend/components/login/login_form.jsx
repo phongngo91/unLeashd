@@ -37,7 +37,13 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <div className="login-content">
+      <div className="login-content"
+      style={{ 
+        backgroundImage: 
+        `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url(${window.dogsRunningURL})`
+        }}
+      >
         <div className="login-container">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
