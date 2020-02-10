@@ -63,3 +63,7 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+
+# ignore bundle.js
+app/assets/javascripts/bundle.js
+app/assets/javascripts/bundle.js.map
