@@ -18,8 +18,9 @@ class Spash extends React.Component {
 
   render() {
     return (
-      <nav className="splash-container">
-        <img src={window.dogParkURL}></img>
+      <nav 
+      className="splash-container"
+      styles={{ backgroundImage:`url(${window.dogParkURL})` }}>
         <ul className="splash-login-container">
           <button onClick={this.handleLoginClick} className="login-button">
             Sign In
@@ -37,7 +38,7 @@ class Spash extends React.Component {
             </h4>
           </div>
           <div className="description-image">
-            <img src="/assets/dogs_selfie.jpg" alt="dogs-taking-selfie"/>
+            <img src={window.dogsSelfieURL} alt="dogs-taking-selfie"/>
           </div>
         </ul>
       </nav>
