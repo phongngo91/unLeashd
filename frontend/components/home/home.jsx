@@ -10,6 +10,7 @@ class Home extends React.Component {
     return (
       <>
         <h3>Home Components Will Go Here</h3>
+        <h1>current user is {currentUser.username}</h1>
       </>
     );
   }

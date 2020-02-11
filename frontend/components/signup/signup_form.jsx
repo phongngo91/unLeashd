@@ -15,6 +15,10 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidUpdate(){
+    this.props.clearErrors();
+  }
+
   update(property) {
     return e =>
       this.setState({

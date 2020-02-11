@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
     this.loginDemo = this.loginDemo.bind(this);
   }
 
+  componentDidUpdate(){
+    this.props.clearErrors();
+  }
+
   loginDemo(e){
     e.preventDefault();
     const demoUser = {
@@ -47,7 +51,7 @@ class LoginForm extends React.Component {
         url(${window.dogsRunningURL})`
         }}
       >
-        <div className="login-container">
+        <div className="login-container phong">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
           <div className="login-error">{errorsEl}</div>

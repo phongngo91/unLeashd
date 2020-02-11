@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_204315) do
+ActiveRecord::Schema.define(version: 2020_02_11_142644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pet_shops", force: :cascade do |t|
+    t.string "pet_shop_name", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "image_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_shop_name"], name: "index_pet_shops_on_pet_shop_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
