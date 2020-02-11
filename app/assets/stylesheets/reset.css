@@ -22,7 +22,7 @@ li {
   align-content: flex-end;
   justify-content: flex-start;
   margin: auto;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(url_asset("dog_park.png")); */
 }
 
 .splash-login-container {
@@ -229,7 +229,7 @@ li {
 .masthead-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
   align-items: center;
   margin-top: 5px;
@@ -248,7 +248,7 @@ img {
 
 .description-image {
   display: flex;
-  width: 400px;
+  width: 450px;
   border-radius: 5px;
   margin-left: 40px;
   margin-top: 15px;
