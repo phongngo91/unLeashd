@@ -395,6 +395,9 @@ img {
   margin: 5px 0;
   border: none;
 }
+.name-input:focus {
+  outline: none;
+}
 
 .signup-input {
   position: relative;
@@ -406,6 +409,10 @@ img {
   margin: 5px 0;
   left: 40px;
   border: none;
+}
+
+.signup-input:focus{
+  outline: none;
 }
 
 .field-instructions-form, .field-instructions-password{
