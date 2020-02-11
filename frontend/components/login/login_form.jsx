@@ -40,8 +40,15 @@ class LoginForm extends React.Component {
 
   render() {
     const errorsEl = this.props.errors.session.map((error, idx) => {
-      return <li key={idx}>{error}</li>;
+      return (<li className="error" key={idx}>{error}</li>)
     });
+
+    let errorsContainer = null;
+    if (errorsEl.length > 0){
+      errorsContainer = (
+        <div className="login-error">{errorsEl}</div>
+      )
+    }
 
     return (
       <div
@@ -54,7 +61,7 @@ class LoginForm extends React.Component {
         <div className="login-container phong">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
-          <div className="login-error">{errorsEl}</div>
+          {errorsContainer}
           <div className="demo-user-container">
             <button onClick={this.loginDemo} className="demo-user-btn">Login with GUEST</button>
           </div>

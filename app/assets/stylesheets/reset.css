@@ -84,6 +84,7 @@ li {
   text-transform: uppercase;
   text-align: center;
   color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .unleashd-description {
@@ -101,6 +102,9 @@ li {
   align-content: center;
   align-items: center;
   background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   box-sizing: border-box;
   margin: 0px 0px;
   padding: 0px 0px;
@@ -115,9 +119,9 @@ li {
   align-items: center;
   background-color: black;
   box-sizing: border-box;
-  /* background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%; */
+  background-position: 50% 50%;
   margin: 0px 0px;
   padding: 0px 0px;
 }
@@ -155,6 +159,7 @@ li {
 
 .login-submit-button, .signup-submit-button {
   margin-top: 4px;
+  border: none;
 }
 
 .login-submit-button:hover, .signup-submit-button:hover {
@@ -172,7 +177,7 @@ li {
   background-color: orange;
   font-size: 20px;
   margin: 15px 0;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .signup-submit-button {
@@ -185,7 +190,7 @@ li {
   background-color: orange;
   font-size: 20px;
   margin: 15px 0;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .login-header, .signup-header {
@@ -208,7 +213,8 @@ li {
   background-size: 35px 25px;
   background-position: center left;
   background-repeat: no-repeat;
-  border: 2px gray solid;
+  border: 1px lightgrey solid;
+  opacity: 0.7;
   border-radius: 4px;
   margin-bottom: 5px;
 }
@@ -222,6 +228,10 @@ li {
   margin: 5px 0;
   left: 40px;
   border: none;
+}
+
+.input:focus{
+  outline: none;
 }
 
 .login-form, .signup-form {
@@ -285,9 +295,18 @@ img {
 }
 
 .login-error, .signup-error{
-
+  background-color: #e25858;
+  color: white;
+  border: 5px 0px;
+  padding: 10px 10px;
+  border-radius: 2px;
+  padding: 16px;
 }
 
+.error {
+  color: #fff;
+  font-weight: 600;
+}
 .demo-user-container{
   margin-bottom: 2px;
   margin-top: 0px;
@@ -297,7 +316,6 @@ img {
 
 .demo-user-btn{
   width: 100%;
-  padding: 1px 7px 2px;
   border-width: 1px;
   border-style: solid;
   color: white;
@@ -305,7 +323,8 @@ img {
   background-color: #3b5998;
   font-size: 20px;
   margin-top: 5px;
-  padding: 5px 0;
+  padding: 10px 0;
+  border: none;
 }
 
 .demo-user-btn:hover{
@@ -337,9 +356,10 @@ img {
   position: relative;
   width: 250px;
   padding-left: 10px;
-  border: 2px gray solid;
+  border: 1px lightgrey solid;
   border-radius: 4px;
   margin: 8px;
+  opacity: 0.7;
 }
 
 .signup-input-container{
@@ -349,9 +369,10 @@ img {
   background-size: 35px 25px;
   background-position: center left;
   background-repeat: no-repeat;
-  border: 2px gray solid;
+  border: 1px lightgrey solid;
   border-radius: 4px;
   margin: 8px;
+  opacity: 0.7;
 }
 
 .name-input{
@@ -395,4 +416,9 @@ img {
   height: 4px;
   margin: 10px 0;
   width: 50px;
+}
+
+.home-icon{
+  color: white;
+  font-size: 30px;
 }

@@ -18,13 +18,13 @@ class Spash extends React.Component {
 
   render() {
     return (
-      <nav 
-      className="splash-container"
-      style={{ 
-        backgroundImage: 
-        `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      <nav
+        className="splash-container"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
         url(${window.dogParkURL})`
-        }}>
+        }}
+      >
         <ul className="splash-login-container">
           <button onClick={this.handleLoginClick} className="login-button">
             Sign In
@@ -35,16 +35,31 @@ class Spash extends React.Component {
         </ul>
         <ul className="masthead-content">
           <div className="description-content">
-            <img className="dog-paw" src={window.dogPawURL} alt="dog-paw"/>
+            <img className="dog-paw" src={window.dogPawURL} alt="dog-paw" />
             <div className="unleashd-logo">unLeashd</div>
             <div className="unleashd-logo-sub">Pet Gently</div>
             <div className="short-rule"></div>
             <h4 className="unleashd-description">
               Discover and share your favorite dogs.
             </h4>
+            <div>
+              <span>
+                <a href="https://github.com/phongngo91">
+                  <i></i>
+                </a>
+              </span>
+              <span>
+                <a
+                  title="GitHub"
+                  href="https://www.linkedin.com/in/phongngo91/"
+                >
+                  <i></i>
+                </a>
+              </span>
+            </div>
           </div>
           <div className="description-image">
-            <img src={window.dogsSelfieURL} alt="dogs-taking-selfie"/>
+            <img src={window.dogsSelfieURL} alt="dogs-taking-selfie" />
           </div>
         </ul>
       </nav>

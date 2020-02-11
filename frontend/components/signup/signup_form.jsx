@@ -41,6 +41,13 @@ class SignupForm extends React.Component {
       return <li key={idx}>{error}</li>;
     });
 
+    let errorsContainer = null;
+    if (errorsEl.length > 0){
+      errorsContainer = (
+        <div className="login-error">{errorsEl}</div>
+      )
+    }
+
     return (
       <div
         className="signup-content"
@@ -52,7 +59,7 @@ class SignupForm extends React.Component {
         <div className="signup-container">
           <div className="signup-header">unleashd</div>
           <div className="signup-subheader">pet gently</div>
-          <div className="signup-error">{errorsEl}</div>
+          {errorsContainer}
           <form className="signup-form " onSubmit={this.handleSubmit}>
             <div className="field-instructions-form">
               All fields below are required unless specified.
