@@ -167,6 +167,11 @@ li {
   cursor: pointer;
 }
 
+.login-submit-button:active, .signup-submit-button:active,
+.login-submit-button:focus, .signup-submit-button:focus {
+  outline: none;
+}
+
 .login-submit-button {
   width: 100%;
   padding: 1px 7px 2px;
@@ -330,6 +335,11 @@ img {
 .demo-user-btn:hover{
   cursor: pointer;
 }
+
+.demo-user-btn:active, .demo-user-btn:focus{
+  outline: none;
+}
+
 
 .or{
   margin: 10px auto;
