@@ -345,7 +345,7 @@ img {
 
 .name-input{
   position: relative;
-  width: 80%;
+  width: 90%;
   font-weight: 400;
   font-size: 20px;
   padding: 3px;
@@ -355,7 +355,7 @@ img {
 
 .signup-input {
   position: relative;
-  width: 80%;
+  width: 75%;
   padding-left: 3px;
   font-weight: 400;
   font-size: 20px;
