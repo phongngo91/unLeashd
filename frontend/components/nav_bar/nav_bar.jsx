@@ -9,6 +9,7 @@ class NavBar extends React.Component {
 
   render() {
     const loggedInUser = this.props.loggedInUser;
+    // debugger
     if (loggedInUser) {
       return (
         <nav className="nav-bar-container">
@@ -23,7 +24,15 @@ class NavBar extends React.Component {
           </ul>
         </nav>
       );
-    } else return null;
+    } else if (this.props.match.path === "/"){
+      // we hide the nav bar if we are on the splash page
+      // debugger
+      return null;
+    } else {
+      // when the user is not logged in, we still want to show the nav bar,
+      // but it will be the nav bar with the login button on it
+      return (<div>Place holder for nav bar, with no signed in user</div>);
+    }
   }
 }
 
