@@ -1,9 +1,9 @@
 import React from "react";
+import PetShopItem from './pet_shops_index_item';
 
 class PetShopsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.petShops;
   }
 
   componentDidMount() {
@@ -12,14 +12,10 @@ class PetShopsIndex extends React.Component {
 
   render() {
     const petShopEls = this.props.petShops.map((petShop, idx) => {
-      return (
-        <div className="pet-shop-logo">
-          <img src={petShop.image_url} alt="pet-shop" />
-        </div>
-      );
+      return (<PetShopItem key={idx} petShop={petShop}/>)
     });
 
-    return <div>{petShopEls}</div>;
+    return <div className="pet-shop-container" >{petShopEls}</div>;
   }
 }
 

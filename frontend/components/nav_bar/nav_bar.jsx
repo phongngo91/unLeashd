@@ -15,8 +15,7 @@ class NavBar extends React.Component {
         <nav className="nav-bar-container">
           <ul>
             <li>
-              {/* <a href="/#/petstores">Pet Stores</a> */}
-              Pet Stores
+              <a href="/#/petshops">Pet Shops</a>
             </li>
           </ul>
           <ul className="nav-bar-controls">
@@ -24,9 +23,7 @@ class NavBar extends React.Component {
           </ul>
         </nav>
       );
-    } else if (this.props.match.path === "/"){
-      // we hide the nav bar if we are on the splash page
-      // debugger
+    } else if (this.props.location.pathname === "/"){
       return null;
     } else {
       // when the user is not logged in, we still want to show the nav bar,
