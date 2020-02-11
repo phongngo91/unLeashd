@@ -26,6 +26,7 @@ li {
   justify-content: flex-start;
   margin: auto;
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(url_asset("dog_park.png")); */
+  /* background-image: url('dog_park.jpg'); */
   height: 100vh;
 }
 

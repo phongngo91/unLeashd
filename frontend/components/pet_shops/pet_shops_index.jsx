@@ -15,7 +15,10 @@ class PetShopsIndex extends React.Component {
       return (<PetShopItem key={idx} petShop={petShop}/>)
     });
 
-    return <div className="pet-shop-container" >{petShopEls}</div>;
+    return (<div className="pet-shop-content">
+        <div className="pet-shop-container">{petShopEls}</div>
+    </div>
+    );
   }
 }
 

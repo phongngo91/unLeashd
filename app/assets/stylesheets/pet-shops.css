@@ -1,3 +1,21 @@
+.pet-shop-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 25px;
+  background-color: gray;
+}
+
+.pet-shop-container {
+  display: flex;
+  width: 900px;
+  flex-wrap: wrap;
+  margin: 25px auto;
+  background-color: white;
+  justify-content: center;
+  padding: 40px 0px;
+}
+
 .pet-shop-item {
   width: 180px;
   display: flex;
@@ -31,10 +49,6 @@ div {
   border-radius: 6px;
 }
 
-.pet-shop-container {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .pet-shop-description {
   display: block;
