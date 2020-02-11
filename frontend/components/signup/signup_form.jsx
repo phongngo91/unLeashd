@@ -7,7 +7,10 @@ class SignupForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      email: ""
+      first_name: "",
+      last_name: "",
+      email: "",
+      password_check: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,7 +25,11 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push("/home"));
+    if (this.state.password_check !== this.state.password){
+      this.props.receiveErrors(["Passwords does not match"]);
+    } else{
+      this.props.processForm(user).then(() => this.props.history.push("/home"));
+    }
   }
 
   render() {
@@ -30,59 +37,113 @@ class SignupForm extends React.Component {
       return <li key={idx}>{error}</li>;
     });
 
-    let bottomEl = null;
-    if (this.props.formType === "Sign In"){
-        bottomEl = <>
-                    New around here? <Link to="/signup">Sign up!</Link>
-                </>
-    }
-
     return (
-      <div className="signup-content" 
-      style={{ 
-        backgroundImage: 
-        `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      <div
+        className="signup-content"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
         url(${window.dogsRunning2URL})`
         }}
-        >
+      >
         <div className="signup-container">
           <div className="signup-header">unleashd</div>
           <div className="signup-subheader">pet gently</div>
           <div className="signup-error">{errorsEl}</div>
-          <form className="signup-form "onSubmit={this.handleSubmit}>
-            <div>
-              <input
-                className="input"
-                onChange={this.update("username")}
-                type="text"
-                value={this.state.username}
-                placeholder="Username"
-              />
+          <form className="signup-form " onSubmit={this.handleSubmit}>
+            <div className="field-instructions-form">
+              All fields below are required unless specified.
             </div>
-            <div>
-              <input 
-                className="input"
-                onChange={this.update("email")}
-                type="email"
-                value={this.state.email}
-                placeholder="email"
-              />
+            <div className="signup-row">
+              <div
+                className="signup-input-container"
+                style={{
+                  backgroundImage: `url(${window.userIconURL})`
+                }}
+              >
+                <input
+                  className="signup-input"
+                  onChange={this.update("username")}
+                  type="text"
+                  value={this.state.username}
+                  placeholder="Username"
+                />
+              </div>
+              <div
+                className="signup-input-container"
+                style={{
+                  backgroundImage: `url(${window.emailIconURL})`
+                }}
+              >
+                <input
+                  className="signup-input"
+                  onChange={this.update("email")}
+                  type="email"
+                  value={this.state.email}
+                  placeholder="Email Address"
+                />
+              </div>
             </div>
-            <div>
-              <input 
-                className="input"
-                onChange={this.update("password")}
-                type="password"
-                value={this.state.password}
-                placeholder="Password"
-              />
+            <div className="field-instructions-password">
+              Avoid using common words and include a mix of letters and numbers.
             </div>
-            <div className="login-submit-container">
-            <button className="login-submit-button">{this.props.formType}</button>
+            <div className="signup-row">
+              <div
+                className="signup-input-container"
+                style={{
+                  backgroundImage: `url(${window.passwordIconURL})`
+                }}
+              >
+                <input
+                  className="signup-input"
+                  onChange={this.update("password")}
+                  type="password"
+                  value={this.state.password}
+                  placeholder="Password"
+                />
+              </div>
+              <div
+                className="signup-input-container"
+                style={{
+                  backgroundImage: `url(${window.passwordIconURL})`
+                }}
+              >
+                <input
+                  className="signup-input"
+                  type="password"
+                  onChange={this.update("password_check")}
+                  value={this.state.password_check}
+                  placeholder="Repeat Password"
+                />
+              </div>
+            </div>
+            <div className="signup-row">
+              <div className="name-container">
+                <input
+                  className="name-input"
+                  onChange={this.update("first_name")}
+                  type="text"
+                  value={this.state.first_name}
+                  placeholder="First Name"
+                />
+              </div>
+              <div className="name-container">
+                <input
+                  className="name-input"
+                  onChange={this.update("last_name")}
+                  type="text"
+                  value={this.state.last_name}
+                  placeholder="Last Name"
+                />
+              </div>
+            </div>
+            <div className="signup-submit-container">
+              <button className="signup-submit-button">
+                {this.props.formType}
+              </button>
             </div>
           </form>
-          <div className="login-container-bottom">
-            {bottomEl}
+          <div className="signup-container-bottom">
+            Already have an account? <Link to="/login">Log in!</Link>
           </div>
         </div>
       </div>
@@ -91,5 +152,3 @@ class SignupForm extends React.Component {
 }
 
 export default SignupForm;
-
-

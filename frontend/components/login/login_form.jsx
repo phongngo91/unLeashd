@@ -39,15 +39,6 @@ class LoginForm extends React.Component {
       return <li key={idx}>{error}</li>;
     });
 
-    let bottomEl = null;
-    if (this.props.formType === "Sign In") {
-      bottomEl = (
-        <>
-          New around here? <Link to="/signup">Sign up!</Link>
-        </>
-      );
-    }
-
     return (
       <div
         className="login-content"
@@ -61,7 +52,7 @@ class LoginForm extends React.Component {
           <div className="login-subheader">pet gently</div>
           <div className="login-error">{errorsEl}</div>
           <div className="demo-user-container">
-            <button onClick={this.loginDemo} className="demo-user-btn">Login with Demo User</button>
+            <button onClick={this.loginDemo} className="demo-user-btn">Login with GUEST</button>
           </div>
           <div className="or">Or</div>
           <form className="login-form " onSubmit={this.handleSubmit}>
@@ -99,7 +90,9 @@ class LoginForm extends React.Component {
               </button>
             </div>
           </form>
-          <div className="login-container-bottom">{bottomEl}</div>
+          <div className="login-container-bottom">
+            New around here? <Link to="/signup">Sign up!</Link>
+          </div>
         </div>
       </div>
     );

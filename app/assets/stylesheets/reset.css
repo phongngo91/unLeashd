@@ -124,7 +124,7 @@ li {
 
 .signup-container {
   display: flex;
-  width: 500px;
+  width: 600px;
   background-color: white;
   flex-direction: column;
   align-content: center;
@@ -134,24 +134,37 @@ li {
   margin: 75px 30px;
 }
 
-.login-submit-container {
+.login-submit-container, .signup-submit-container {
   margin-bottom: 2px;
   margin-top: 5px;
   text-align: center;
   width: 100%;
 }
 
-.login-submit-button {
+.login-submit-button, .signup-submit-button {
   margin-top: 4px;
 }
 
-.login-submit-button:hover {
+.login-submit-button:hover, .signup-submit-button:hover {
   background-color: darkgoldenrod;
   cursor: pointer;
 }
 
 .login-submit-button {
   width: 100%;
+  padding: 1px 7px 2px;
+  border-width: 1px;
+  border-style: solid;
+  color: white;
+  border-radius: 4px;
+  background-color: orange;
+  font-size: 20px;
+  margin: 15px 0;
+  padding: 5px 0;
+}
+
+.signup-submit-button {
+  width: 250px;
   padding: 1px 7px 2px;
   border-width: 1px;
   border-style: solid;
@@ -199,7 +212,7 @@ li {
   border: none;
 }
 
-.login-form {
+.login-form, .signup-form {
   width: 100%;
   border-bottom: 2px solid darkgrey;
 }
@@ -208,7 +221,7 @@ li {
   width: 100%;
 }
 
-.login-container-bottom {
+.login-container-bottom, .signup-container-bottom {
   font-size: 20px;
   margin-top: 10px;
 }
@@ -300,4 +313,68 @@ img {
     font-size: 0.8em;
     color: #ddd;
     border: 3px solid #ddd;
+}
+
+.signup-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.name-container{
+  box-sizing: border-box;
+  position: relative;
+  width: 250px;
+  padding-left: 10px;
+  border: 2px gray solid;
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.signup-input-container{
+  box-sizing: border-box;
+  position: relative;
+  width: 250px;
+  background-size: 35px 25px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  border: 2px gray solid;
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.name-input{
+  position: relative;
+  width: 80%;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 3px;
+  margin: 5px 0;
+  border: none;
+}
+
+.signup-input {
+  position: relative;
+  width: 80%;
+  padding-left: 3px;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 3px;
+  margin: 5px 0;
+  left: 40px;
+  border: none;
+}
+
+.field-instructions-form, .field-instructions-password{
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.field-instructions-password{
+  color: black;
+  margin-bottom: 0px;
 }
