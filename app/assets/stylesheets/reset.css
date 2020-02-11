@@ -19,6 +19,9 @@ li {
   display: flex;
   flex-direction: column;
   background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   align-content: flex-end;
   justify-content: flex-start;
   margin: auto;
@@ -47,6 +50,7 @@ li {
   vertical-align: middle;
   line-height: 1;
   text-align: center;
+  transition: background-color .25s ease-out,color .25s ease-out;
 }
 
 .login-button:hover,
@@ -54,6 +58,11 @@ li {
   background-color: white;
   color: black;
   cursor: pointer;
+}
+
+.login-button:active,
+.signup-button:active {
+  outline: none
 }
 
 .unleashd-logo,
@@ -106,6 +115,9 @@ li {
   align-items: center;
   background-color: black;
   box-sizing: border-box;
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%; */
   margin: 0px 0px;
   padding: 0px 0px;
 }
@@ -249,14 +261,13 @@ img {
 .description-image {
   display: flex;
   width: 450px;
-  border-radius: 5px;
   margin-left: 40px;
   margin-top: 15px;
   margin-bottom: 20px;
 }
 
 .description-image img {
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .arrow-up {
@@ -377,4 +388,11 @@ img {
 .field-instructions-password{
   color: black;
   margin-bottom: 0px;
+}
+
+.short-rule{
+  background: #ffc000;
+  height: 4px;
+  margin: 10px 0;
+  width: 50px;
 }

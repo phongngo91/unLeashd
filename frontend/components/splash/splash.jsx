@@ -38,6 +38,7 @@ class Spash extends React.Component {
             <img className="dog-paw" src={window.dogPawURL} alt="dog-paw"/>
             <div className="unleashd-logo">unLeashd</div>
             <div className="unleashd-logo-sub">Pet Gently</div>
+            <div className="short-rule"></div>
             <h4 className="unleashd-description">
               Discover and share your favorite dogs.
             </h4>
