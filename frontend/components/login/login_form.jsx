@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
     this.loginDemo = this.loginDemo.bind(this);
   }
 
-  componentDidUpdate(){
+  componentWillUnmount(){
     this.props.clearErrors();
   }
 
