@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
         url(${window.dogsRunningURL})`
         }}
       >
-        <div className="login-container phong">
+        <div className="login-container">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
           {errorsContainer}
