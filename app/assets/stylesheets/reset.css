@@ -451,21 +451,3 @@ img {
 ::placeholder{
   font-size: 15px;
 }
-
-.pet-shop-item{
-  width: 200px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  padding: 15px 15px;
-}
-
-.pet-shop-logo{
-  width: 150px;
-  height: 150px;
-}
-
-.pet-shop-container {
-  display: flex;
-  flex-wrap: wrap;
-}

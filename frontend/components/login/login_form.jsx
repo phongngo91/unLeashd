@@ -25,6 +25,13 @@ class LoginForm extends React.Component {
     this.props.processForm(demoUser).then(() => this.props.history.push("/home"));
   }
 
+  componentDidMount(){
+    // if user was redirected, push into errors
+    if (this.props.history.action === "REPLACE"){
+      this.props.receiveErrors(["you must log in to continue."]);
+    }
+  }
+
   update(property) {
     return e =>
       this.setState({

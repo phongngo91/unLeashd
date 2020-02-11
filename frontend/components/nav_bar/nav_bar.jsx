@@ -23,12 +23,16 @@ class NavBar extends React.Component {
           </ul>
         </nav>
       );
-    } else if (this.props.location.pathname === "/"){
+    } else if (
+      this.props.location.pathname === "/" ||
+      this.props.location.pathname === "/login" ||
+      this.props.location.pathname === "/signup"
+    ) {
       return null;
     } else {
       // when the user is not logged in, we still want to show the nav bar,
       // but it will be the nav bar with the login button on it
-      return (<div>Place holder for nav bar, with no signed in user</div>);
+      return <div>Place holder for nav bar, with no signed in user</div>;
     }
   }
 }

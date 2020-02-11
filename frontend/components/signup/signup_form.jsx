@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     if (this.state.password_check !== this.state.password){
-      this.props.receiveErrors(["Passwords does not match"]);
+      this.props.receiveErrors(["Passwords do not match"]);
     } else{
       this.props.processForm(user).then(() => this.props.history.push("/home"));
     }

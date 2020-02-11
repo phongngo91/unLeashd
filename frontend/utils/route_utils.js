@@ -30,8 +30,7 @@ const Protected = ({loggedIn, path, component: Component }) => (
         path={path}
         render={
             props => {
-            // debugger
-             return   loggedIn ? <Component {...props} /> : <Redirect to="/"/>
+             return   loggedIn ? <Component {...props} /> : <Redirect to="/login"/>
             }
         }
     />
