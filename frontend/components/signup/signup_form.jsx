@@ -38,7 +38,7 @@ class SignupForm extends React.Component {
 
   render() {
     const errorsEl = this.props.errors.session.map((error, idx) => {
-      return <li key={idx}>{error}</li>;
+      return <li className="error" key={idx}>{error}</li>;
     });
 
     let errorsContainer = null;
