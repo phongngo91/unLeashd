@@ -9,11 +9,24 @@ class UsersShow extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
   render() {
+    const errorsEl = this.props.errors.session.map((error, idx) => {
+      return (
+        <li className="error" key={idx}>
+          {error}
+        </li>
+      );
+    });
+
+    let errorsContainer = null;
+    if (errorsEl.length > 0) {
+      errorsContainer = <div className="login-error">{errorsEl}</div>;
+    }
+
     const currentUser = this.props.currentUser;
     const showedUser = this.props.showedUser;
 
@@ -21,12 +34,13 @@ class UsersShow extends React.Component {
       return (
         <nav className="nav-bar-container">
           <ul>
-          <li>Logged in user is {currentUser.username}</li>
-          <li>This is {showedUser.username}'s show page</li>
+            <li>Logged in user is {currentUser.username}</li>
+            <li>This is {showedUser.username}'s show page</li>
+            {/* <img src={this.props.showedUser.image_url} /> */}
           </ul>
         </nav>
       );
-    } else return null;
+    } else return <div>{errorsContainer}</div>
   }
 }
 

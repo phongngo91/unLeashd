@@ -13,7 +13,8 @@ const usersReducer = (state = defaultState, action) => {
             const newCurrentUser = {
                 [action.currentUser.id]: {
                     id: action.currentUser.id,
-                    username: action.currentUser.username
+                    username: action.currentUser.username,
+                    image_url: action.CurrentUser.image_url
                 }
             };
             return Object.assign({}, state, newCurrentUser);
@@ -21,7 +22,8 @@ const usersReducer = (state = defaultState, action) => {
         const newSingleUser = {
             [action.singleUser.id]: {
                 id: action.singleUser.id,
-                username: action.singleUser.username
+                username: action.singleUser.username,
+                image_url: action.singleUser.image_url
             }
         };
         return Object.assign({}, state, newSingleUser);
