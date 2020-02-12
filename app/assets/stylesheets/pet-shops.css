@@ -1,3 +1,7 @@
+body {
+  background-color: bisque;
+}
+
 .pet-shop-content {
   display: flex;
   width: 100%;
@@ -56,4 +60,9 @@ div {
   padding: 12px;
   height: 80px;
   overflow: hidden;
+}
+
+.petshop-show-container {
+  width: 500px;
+  height: 250px;
 }
