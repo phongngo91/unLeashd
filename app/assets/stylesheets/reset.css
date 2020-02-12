@@ -66,8 +66,7 @@ li {
 .login-button:active,
 .signup-button:active,
 .signup-nav-btn:active,
-.login-nav-btn:active,
-.logout-nav-btn:active {
+.login-nav-btn:active{
   outline: none;
 }
 
@@ -303,14 +302,6 @@ img {
   border-radius: 30px;
 }
 
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-
-  border-bottom: 5px solid black;
-}
 
 .dog-paw {
   width: 200px;

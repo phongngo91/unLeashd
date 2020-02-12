@@ -16,6 +16,7 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
   }
 
+
   loginDemo(e){
     e.preventDefault();
     const demoUser = {

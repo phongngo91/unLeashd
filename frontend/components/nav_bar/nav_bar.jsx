@@ -24,21 +24,29 @@ class NavBar extends React.Component {
         <nav className="nav-bar-container">
           <div className="nav-left-content">
             <Link to="/">
-            <div className="nav-logo">
-              <div className="unleashd-nav">
-                unLeashd
+              <div className="nav-logo">
+                <div className="unleashd-nav">unLeashd</div>
+                <div className="unleashd-desc">pet gently</div>
               </div>
-              <div className="unleashd-desc">
-                pet gently
-              </div>
-            </div>
             </Link>
             <div className="petshop-link">
               <a href="/#/petshops">Pet Shops</a>
             </div>
           </div>
-          <ul className="user-controls">
-            <button className="logout-nav-btn remove-blue" onClick={this.props.logout}>Log Out</button>
+          <ul
+            className="user-controls"
+            style={{
+              backgroundImage: `url(${window.defaultAva})`
+            }}
+          >
+            <div className="arrow-up"></div>
+            <div className="nav-user-desktop">
+              <ul className="control-list">
+                <li className="logout-nav" onClick={this.props.logout}>
+                  Logout
+                </li>
+              </ul>
+            </div>
           </ul>
         </nav>
       );
@@ -53,24 +61,26 @@ class NavBar extends React.Component {
         <nav className="nav-bar-container">
           <div className="nav-left-content">
             <Link to="/">
-            <div className="nav-logo">
-              <div className="unleashd-nav">
-                unLeashd
+              <div className="nav-logo">
+                <div className="unleashd-nav">unLeashd</div>
+                <div className="unleashd-desc">pet gently</div>
               </div>
-              <div className="unleashd-desc">
-                pet gently
-              </div>
-            </div>
             </Link>
             <div className="petshop-link">
               <a href="/#/petshops">Pet Shops</a>
             </div>
           </div>
           <ul className="nav-bar-controls">
-            <button onClick={this.handleLoginClick} className="login-nav-btn remove-blue">
+            <button
+              onClick={this.handleLoginClick}
+              className="login-nav-btn remove-blue"
+            >
               Sign In
             </button>
-            <button onClick={this.handleSignupClick} className="signup-nav-btn remove-blue">
+            <button
+              onClick={this.handleSignupClick}
+              className="signup-nav-btn remove-blue"
+            >
               Join Now
             </button>
           </ul>

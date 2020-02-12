@@ -38,7 +38,7 @@
   border: none;
 }
 
-.login-nav-btn, .logout-nav-btn {
+.login-nav-btn{
   padding: 8px;
   margin: 10px 10px;
   background-color: transparent;
@@ -51,8 +51,7 @@
 }
 
 .signup-nav-btn:hover, 
-.login-nav-btn:hover,
-.logout-nav-btn:hover{
+.login-nav-btn:hover{
   cursor: pointer;
 }
 
@@ -64,6 +63,62 @@
   margin: 0;
 }
 
+.constrol-list,
+.arrow-up{
+  display: none;
+}
+
 .user-controls {
+  position: relative;
   margin: 0;
+  width: 50px;
+  height: 50px;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+
+.nav-user-desktop{
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 150px;
+  top: 50px;
+  z-index: 2;
+  left: 0px;
+}
+
+
+.arrow-up {
+  top: 46px;
+  z-index: 2;
+  right: 15px;
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+}
+
+.logout-nav {
+  color: white;
+  padding: 5px;
+}
+
+.logout-nav:hover {
+  cursor: pointer;
+}
+
+.user-controls:hover .arrow-up, 
+.user-controls:hover .nav-user-desktop{
+  display: block;
+}
+ul {
+  padding: 0;
+}
+.control-list {
+  justify-items: start;
+  padding: 5px;
 }
