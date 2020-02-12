@@ -22,13 +22,23 @@ class NavBar extends React.Component {
     if (loggedInUser) {
       return (
         <nav className="nav-bar-container">
-          <ul>
-            <li>
+          <div className="nav-left-content">
+            <Link to="/">
+            <div className="nav-logo">
+              <div className="unleashd-nav">
+                unLeashd
+              </div>
+              <div className="unleashd-desc">
+                pet gently
+              </div>
+            </div>
+            </Link>
+            <div className="petshop-link">
               <a href="/#/petshops">Pet Shops</a>
-            </li>
-          </ul>
-          <ul className="nav-bar-controls">
-            <button onClick={this.props.logout}>Log Out</button>
+            </div>
+          </div>
+          <ul className="user-controls">
+            <button className="logout-nav-btn" onClick={this.props.logout}>Log Out</button>
           </ul>
         </nav>
       );
