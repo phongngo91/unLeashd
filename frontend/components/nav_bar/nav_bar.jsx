@@ -38,7 +38,7 @@ class NavBar extends React.Component {
             </div>
           </div>
           <ul className="user-controls">
-            <button className="logout-nav-btn" onClick={this.props.logout}>Log Out</button>
+            <button className="logout-nav-btn remove-blue" onClick={this.props.logout}>Log Out</button>
           </ul>
         </nav>
       );
@@ -67,10 +67,10 @@ class NavBar extends React.Component {
             </div>
           </div>
           <ul className="nav-bar-controls">
-            <button onClick={this.handleLoginClick} className="login-nav-btn">
+            <button onClick={this.handleLoginClick} className="login-nav-btn remove-blue">
               Sign In
             </button>
-            <button onClick={this.handleSignupClick} className="signup-nav-btn">
+            <button onClick={this.handleSignupClick} className="signup-nav-btn remove-blue">
               Join Now
             </button>
           </ul>
