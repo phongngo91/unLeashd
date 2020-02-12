@@ -11,16 +11,20 @@ class PetShopShow extends React.Component {
   }
 
   render() {
-    if (this.props.petShop){
-    const { image_url } = this.props.petShop;
-    return (<div className="petshop-show-container">
-      <div>
-        <img src={image_url} alt=""/>
-      </div>
-      <div>
-        
-      </div>
-    </div>)
+    if (this.props.petShop) {
+      const { pet_shop_name, image_url, city, state } = this.props.petShop;
+      return (
+        <div className="petshop-show-container">
+          <div>
+            <img className="petshop-logo" src={image_url} alt="petshop-logo" />
+          </div>
+          <div className="petshop-show-description">
+            <div>{pet_shop_name}</div>
+            <div>{city}</div>
+            <div>{state}</div>
+          </div>
+        </div>
+      );
     } else {
       return <div>Page Not Found</div>;
     }
