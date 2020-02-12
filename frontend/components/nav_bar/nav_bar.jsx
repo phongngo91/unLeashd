@@ -42,7 +42,9 @@ class NavBar extends React.Component {
             <div className="arrow-up"></div>
             <div className="nav-user-desktop">
               <ul className="control-list">
-                <li className="logout-nav" onClick={this.props.logout}>
+                <li className="logout-nav" onClick={() => this.props.logout().then(
+                  () => this.props.history.push("/")
+                )}>
                   Logout
                 </li>
               </ul>
