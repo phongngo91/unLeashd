@@ -70,6 +70,7 @@
 
 .user-controls {
   position: relative;
+  align-self: center;
   margin: 0;
   width: 50px;
   height: 50px;
@@ -84,7 +85,7 @@
   position: absolute;
   background-color: black;
   width: 150px;
-  top: 50px;
+  top: 54px;
   z-index: 2;
   left: 0px;
 }
@@ -93,13 +94,13 @@
 .arrow-up {
   top: 46px;
   z-index: 2;
-  right: 15px;
+  right: 11px;
   position: absolute;
   width: 0; 
   height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid black;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid black;
 }
 
 .logout-nav {

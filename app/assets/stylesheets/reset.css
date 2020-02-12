@@ -12,6 +12,7 @@ li {
 
 .nav-bar-container {
   display: flex;
+  height: 59px;
   justify-content: space-around;
   background-color: #ffcc00;
 }
