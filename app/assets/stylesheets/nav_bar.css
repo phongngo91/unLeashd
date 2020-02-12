@@ -1,0 +1,63 @@
+.nav-left-content{
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.petshop-link a{
+  color: #fff;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin: 5px 30px 5px 10px;
+  font-weight: 800;
+}
+
+.unleashd-nav{
+  font-size: 25px;
+}
+
+.unleashd-desc{
+  font-weight: 400;
+  font-size: 8px;
+}
+
+.signup-nav-btn{
+  padding: 8px;
+  margin: 10px 10px;
+  background-color: #1e91ea;
+  display: inline-block;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  border: none;
+}
+
+.login-nav-btn {
+  padding: 8px;
+  margin: 10px 10px;
+  background-color: transparent;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px white solid;
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.signup-nav-btn:hover, .login-nav-btn:hover{
+  cursor: pointer;
+}
+
+.nav-bar-container{
+  padding: 0;
+}
+
+.nav-bar-controls{
+  margin: 0;
+}

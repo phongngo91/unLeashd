@@ -1,15 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-// TODO add a link to the PetStoreIndex
-// and a link to he PetBreedIndex inside this NavBar
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleSignupClick = this.handleSignupClick.bind(this);
+  }
+
+  handleLoginClick() {
+    this.props.history.push("/login");
+  }
+
+  handleSignupClick() {
+    this.props.history.push("/signup");
   }
 
   render() {
     const loggedInUser = this.props.loggedInUser;
-    // debugger
     if (loggedInUser) {
       return (
         <nav className="nav-bar-container">
@@ -30,9 +39,33 @@ class NavBar extends React.Component {
     ) {
       return null;
     } else {
-      // when the user is not logged in, we still want to show the nav bar,
-      // but it will be the nav bar with the login button on it
-      return <div>Place holder for nav bar, with no signed in user</div>;
+      return (
+        <nav className="nav-bar-container">
+          <div className="nav-left-content">
+            <Link to="/">
+            <div className="nav-logo">
+              <div className="unleashd-nav">
+                unLeashd
+              </div>
+              <div className="unleashd-desc">
+                pet gently
+              </div>
+            </div>
+            </Link>
+            <div className="petshop-link">
+              <a href="/#/petshops">Pet Shops</a>
+            </div>
+          </div>
+          <ul className="nav-bar-controls">
+            <button onClick={this.handleLoginClick} className="login-nav-btn">
+              Sign In
+            </button>
+            <button onClick={this.handleSignupClick} className="signup-nav-btn">
+              Join Now
+            </button>
+          </ul>
+        </nav>
+      );
     }
   }
 }

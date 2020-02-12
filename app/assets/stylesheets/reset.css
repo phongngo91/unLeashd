@@ -12,7 +12,8 @@ li {
 
 .nav-bar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: #ffcc00;
 }
 
 .splash-container {
@@ -63,7 +64,9 @@ li {
 }
 
 .login-button:active,
-.signup-button:active {
+.signup-button:active,
+.signup-nav-btn:active,
+.login-nav-btn:active {
   outline: none
 }
 
