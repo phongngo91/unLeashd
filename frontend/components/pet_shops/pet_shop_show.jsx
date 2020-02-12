@@ -19,9 +19,8 @@ class PetShopShow extends React.Component {
             <img className="petshop-logo" src={image_url} alt="petshop-logo" />
           </div>
           <div className="petshop-show-description">
-            <div>{pet_shop_name}</div>
-            <div>{city}</div>
-            <div>{state}</div>
+            <div className="petshop-name" >{pet_shop_name}</div>
+            <span className="petshop-loc">{city}, {state}</span>
           </div>
         </div>
       );

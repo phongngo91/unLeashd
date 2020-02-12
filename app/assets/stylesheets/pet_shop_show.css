@@ -1,3 +1,24 @@
-.petshop-show-container{
-  
+.petshop-show-container {
+  display: flex;
+  margin-top: 20px;
+  width: 600px;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.petshop-logo{
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.petshop-name{
+  font-size: 45px;
+  padding-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.petshop-loc{
+  font-size: 25px;
+  padding-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
