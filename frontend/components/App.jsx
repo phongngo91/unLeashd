@@ -9,6 +9,7 @@ import SplashContainer from "./splash/spash_container";
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import PetShopsIndexContainer from './pet_shops/pet_shops_index_container';
 import PetShopShowContainer from './pet_shops/pet_shop_show_container';
+import TestImageContainer from './test_image/test_image_container';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route exact path="/petshops" component={PetShopsIndexContainer} />
         <Route path="/petshops/:petShopId" component={PetShopShowContainer} />
         <ProtectedRoute path="/home" component={HomeContainer} />
+        <Route path="/testimage" component={TestImageContainer} />
       </Switch>
     </>
   );
