@@ -473,3 +473,9 @@ img {
 .remove-blue:active {
   outline: none;
 }
+
+.home-icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}

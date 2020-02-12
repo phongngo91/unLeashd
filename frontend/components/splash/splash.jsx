@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 class Spash extends React.Component {
   constructor(props) {
@@ -42,18 +44,18 @@ class Spash extends React.Component {
             <h4 className="unleashd-description">
               Discover and share your favorite dogs.
             </h4>
-            <div>
+            <div className="home-icons">
               <span>
-                <a href="https://github.com/phongngo91">
-                  <i></i>
+                <a title="GitHub" href="https://github.com/phongngo91">
+                  <FontAwesomeIcon icon={faGithub} size="5x" color="white" />
                 </a>
               </span>
               <span>
                 <a
-                  title="GitHub"
+                  title="LinkedIn"
                   href="https://www.linkedin.com/in/phongngo91/"
                 >
-                  <i></i>
+                  <FontAwesomeIcon icon={faLinkedin} size="5x" color="white" />
                 </a>
               </span>
             </div>
