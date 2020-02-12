@@ -17,6 +17,15 @@ ActiveRecord::Base.transaction do
         {pet_shop_name: "Petland Village of East Side", city: "Pittsburgh", state: "PA", image_url: "7"},
         {pet_shop_name: "Pet Valu", city: "Pittsburgh", state: "PA", image_url: "8"}
     ])
+
+    DogBreed.create!({
+        breed_name: "Chiwawa",
+        description: "A fluffy doge",
+        fluff_by_vol: 5,
+        int_cute_unit: 5,
+        pet_shop_id: (PetShop.first.id),
+        author_id: (User.first.id)
+    })
     
 end
 

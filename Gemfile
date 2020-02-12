@@ -9,6 +9,8 @@ gem 'bcrypt'
 
 gem 'rename'
 
+gem 'aws-sdk-s3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
