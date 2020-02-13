@@ -1,4 +1,5 @@
 import React from "react";
+import DogsIndexItem from "./dogs_index_item";
 
 class DogsIndex extends React.Component {
   constructor(props) {
@@ -10,14 +11,11 @@ class DogsIndex extends React.Component {
   }
 
   render() {
-    debugger
     const dogsEl = this.props.dogs.map((dog, idx) => {
       return (
-        <>
-          <img className="dog-avatar" src={dog.image_url} alt="dog-pic" />
-          <div>{dog.breed_name}</div>
-          <div>{dog.description}</div>
-        </>
+        <li key={idx}>
+          <DogsIndexItem dog={dog} />
+        </li>
       );
     });
     return <div>{dogsEl}</div>;

@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  session_token   :string           not null
+#  password_digest :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  email           :string           not null
+#  first_name      :string           not null
+#  last_name       :string           not null
+#
+
 class User < ApplicationRecord
     validates :password_digest, :session_token, :first_name, :last_name, presence: true
     validates :email, :username, uniqueness: true, presence: true
@@ -6,6 +21,12 @@ class User < ApplicationRecord
     attr_reader :password
 
     has_one_attached :photo
+
+    has_many :authored_dogs,
+      class_name: :DogBreed,
+      foreign_key: :author_id,
+      primary_key: :id,
+      dependent: :destroy
   
     after_initialize :ensure_session_token
   

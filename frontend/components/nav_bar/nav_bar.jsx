@@ -51,7 +51,9 @@ class NavBar extends React.Component {
               <ul className="control-list">
                 <li
                   className="new-pet-nav drop-down-el"
-                  onClick={() => this.props.history.push("/dogs/new")}
+                  onClick={() => {
+                    this.props.history.push("/dogs/new")
+                  }}
                 >
                   New Dog
                 </li>
