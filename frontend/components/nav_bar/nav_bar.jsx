@@ -29,8 +29,15 @@ class NavBar extends React.Component {
                 <div className="unleashd-desc">pet gently</div>
               </div>
             </Link>
-            <div className="petshop-link">
-              <a href="/#/petshops">Pet Shops</a>
+            <div>
+              <a className="nav-link" href="/#/petshops">
+                Pet Shops
+              </a>
+            </div>
+            <div>
+              <a className="nav-link" href="/#/dogs">
+                Dogs
+              </a>
             </div>
           </div>
           <ul
@@ -42,9 +49,18 @@ class NavBar extends React.Component {
             <div className="arrow-up"></div>
             <div className="nav-user-desktop">
               <ul className="control-list">
-                <li className="logout-nav" onClick={() => this.props.logout().then(
-                  () => this.props.history.push("/")
-                )}>
+                <li
+                  className="new-pet-nav drop-down-el"
+                  onClick={() => this.props.history.push("/dogs/new")}
+                >
+                  New Dog
+                </li>
+                <li
+                  className="logout-nav drop-down-el"
+                  onClick={() =>
+                    this.props.logout().then(() => this.props.history.push("/"))
+                  }
+                >
                   Logout
                 </li>
               </ul>

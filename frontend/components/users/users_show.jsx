@@ -32,7 +32,7 @@ class UsersShow extends React.Component {
 
     if (currentUser && showedUser) {
       return (
-        <nav className="nav-bar-container">
+        <nav className="user-home-container">
           <ul>
             <li>Logged in user is {currentUser.username}</li>
             <li>This is {showedUser.username}'s show page</li>

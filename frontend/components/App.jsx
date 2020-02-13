@@ -10,6 +10,8 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import PetShopsIndexContainer from './pet_shops/pet_shops_index_container';
 import PetShopShowContainer from './pet_shops/pet_shop_show_container';
 import TestImageContainer from './test_image/test_image_container';
+import CreateDogContainer from './dogs/create_dog_container';
+import DogsIndexContainer from './dogs/dogs_index_container';
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <Route path="/petshops/:petShopId" component={PetShopShowContainer} />
         <ProtectedRoute path="/home" component={HomeContainer} />
         <Route path="/testimage" component={TestImageContainer} />
+        <Route exact path="/dogs/new" component={CreateDogContainer} />
+        <Route exact path="/dogs" component={DogsIndexContainer} />
       </Switch>
     </>
   );

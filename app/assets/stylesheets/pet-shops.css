@@ -37,8 +37,13 @@ div, a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.pet-shop-link:hover {
+.nav-link:hover {
   cursor: pointer;
+}
+
+.nav-link{
+  margin: 0px 15px;
+  color: white;
 }
 
 .pet-shop-item p {
