@@ -1,3 +1,5 @@
+require 'open-uri'
+
 ActiveRecord::Base.transaction do
     User.destroy_all 
     
@@ -19,13 +21,18 @@ ActiveRecord::Base.transaction do
     ])
 
     DogBreed.create!({
-        breed_name: "Chiwawa",
-        description: "A fluffy doge",
-        fluff_by_vol: 5,
-        int_cute_unit: 5,
+        breed_name: "Chihuahua",
+        description: "The Chihuahua is the smallest breed of dog, and is named after the Mexican state of Chihuahua.",
+        fluff_by_vol: 15,
+        int_cute_unit: 33,
         pet_shop_id: (PetShop.first.id),
         author_id: (User.first.id)
     })
+
+    demo_dog = DogBreed.first
+
+    file = open('https://unleashd-dev.s3.amazonaws.com/chihuahua-1356758_960_720.jpg')
+    demo_dog.photo.attach(io: file, filename: 'chihuahua.jpg')
     
 end
 
