@@ -22,23 +22,23 @@ ActiveRecord::Base.transaction do
         {pet_shop_name: "Pet Valu", city: "Pittsburgh", state: "PA", image_url: "8"}
     ])
 
-    DogBreed.create!({
-        breed_name: "Chihuahua",
-        description: "The Chihuahua is the smallest breed of dog, and is named after the Mexican state of Chihuahua.",
-        fluff_by_vol: 15,
-        int_cute_unit: 33,
-        pet_shop_id: (PetShop.first.id),
-        author_id: (User.first.id)
-    })
+    # DogBreed.create!({
+    #     breed_name: "Chihuahua",
+    #     description: "The Chihuahua is the smallest breed of dog, and is named after the Mexican state of Chihuahua.",
+    #     fluff_by_vol: 15,
+    #     int_cute_unit: 33,
+    #     pet_shop_id: (PetShop.first.id),
+    #     author_id: (User.first.id)
+    # })
 
-    DogBreed.create!({
-        breed_name: "Dachshund",
-        description: "The dachshund, also known as the wiener dog or sausage dog is a short-legged, long-bodied, hound-type dog breed. They may be smooth-haired, wire-haired, or long-haired.",
-        fluff_by_vol: 25,
-        int_cute_unit: 55,
-        pet_shop_id: (PetShop.first.id),
-        author_id: (User.second.id)
-    })
+    # DogBreed.create!({
+    #     breed_name: "Dachshund",
+    #     description: "The dachshund, also known as the wiener dog or sausage dog is a short-legged, long-bodied, hound-type dog breed. They may be smooth-haired, wire-haired, or long-haired.",
+    #     fluff_by_vol: 25,
+    #     int_cute_unit: 55,
+    #     pet_shop_id: (PetShop.first.id),
+    #     author_id: (User.second.id)
+    # })
 
 
 
