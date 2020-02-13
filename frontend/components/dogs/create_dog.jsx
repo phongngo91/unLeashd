@@ -19,11 +19,23 @@ class CreateDog extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchPetShops();
+  }
+
   update(type) {
     return e =>
       this.setState({
         [type]: e.target.value
       });
+  }
+
+  updatePetShopId() {
+    return e => {
+      return this.setState({
+        pet_shop_id: e.currentTarget.selectedOptions[0].value
+      });
+    };
   }
 
   handlePicture(e) {
@@ -64,10 +76,29 @@ class CreateDog extends React.Component {
   }
 
   render() {
+    let petShopIds = null;
+    if (this.props.petShops) {
+      petShopIds = this.props.petShops.map(petShop => {
+        return <option value={petShop.id}>{petShop.pet_shop_name}</option>;
+      });
+    }
+    const wrappedPetShops = (
+      <select
+        value={this.state.pet_shop_id}
+        onChange={this.updatePetShopId()}
+      >
+        {petShopIds}
+      </select>
+    );
+
     return (
       <div className="submit-dog-container">
         <input type="file" onChange={this.handlePicture} />
-        <img src={this.state.imageUrl} alt="previewImage" className="small-pic"/>
+        <img
+          src={this.state.imageUrl}
+          alt="previewImage"
+          className="small-pic"
+        />
         <label>
           Breed Name
           <input
@@ -102,12 +133,13 @@ class CreateDog extends React.Component {
           />
         </label>
         <label>
-          Pet Shop Id
-          <input
+          Pet Shop
+          {/* <input
             onChange={this.update("pet_shop_id")}
             type="number"
             value={this.state.pet_shop_id}
-          />
+          /> */}
+          {wrappedPetShops}
         </label>
         <button onClick={this.handleSubmit}>Create Dog</button>
       </div>
