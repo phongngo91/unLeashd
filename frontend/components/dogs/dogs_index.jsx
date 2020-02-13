@@ -5,8 +5,22 @@ class DogsIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchDogs();
+  }
+
   render() {
-    return null;
+    debugger
+    const dogsEl = this.props.dogs.map((dog, idx) => {
+      return (
+        <>
+          <img className="dog-avatar" src={dog.image_url} alt="dog-pic" />
+          <div>{dog.breed_name}</div>
+          <div>{dog.description}</div>
+        </>
+      );
+    });
+    return <div>{dogsEl}</div>;
   }
 }
 
