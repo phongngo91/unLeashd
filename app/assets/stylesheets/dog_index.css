@@ -1,13 +1,37 @@
-.dog-container{
-  display: flex;
-  width: 600px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: white;
-}
-
 .dog-avatar {
   width: 100px;
   height: 100px;
+}
+
+.dog-index-one{
+  margin: auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.dog-container{
+  display: flex;
+  background-color: white;
+  padding: 10px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.dog-card{
+  width: 700px;
+  box-sizing: border-box;
+  height: fit-content;
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: white;
+}
+
+.list-title{
+  width: 820px;
+  margin: 0 auto;
+}
+
+.dog-info-box{
+  padding: 10px;
 }

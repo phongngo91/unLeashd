@@ -79,7 +79,7 @@ div, a {
   height: 250px;
   display: flex;
   background-color: white;
-  border: 2px solid gray;
+  border: none;
   margin: auto;
 }
 

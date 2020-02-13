@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/petshops/:petShopId" component={PetShopShowContainer} />
         <ProtectedRoute path="/home" component={HomeContainer} />
         <Route path="/testimage" component={TestImageContainer} />
-        <Route exact path="/dogs/new" component={CreateDogContainer} />
+        <ProtectedRoute exact path="/dogs/new" component={CreateDogContainer} />
         <Route exact path="/dogs" component={DogsIndexContainer} />
       </Switch>
     </>

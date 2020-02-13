@@ -1,13 +1,12 @@
 .petshop-show-container {
   display: flex;
   margin-top: 20px;
-  width: 600px;
-  padding: 15px;
-  border-radius: 6px;
+  width: 700px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .petshop-logo{
-  border: 1px solid black;
   border-radius: 6px;
 }
 
@@ -15,6 +14,14 @@
   font-size: 45px;
   padding-left: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dog-list{
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 0px;
+  background-color: white;
 }
 
 .petshop-loc{

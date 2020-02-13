@@ -18,7 +18,14 @@ class DogsIndex extends React.Component {
         </li>
       );
     });
-    return <div>{dogsEl}</div>;
+    return (
+      <div>
+        <div className="dog-index-one">
+          <div className="dog-list list-title">All Dogs</div>
+          {dogsEl}
+        </div>
+      </div>
+    );
   }
 }
 

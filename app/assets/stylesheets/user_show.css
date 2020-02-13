@@ -5,11 +5,23 @@
 }
 
 .user-dogs-card{
-  width: 400px;
+  width: 700px;
+  box-sizing: border-box;
   height: fit-content;
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: white;
 }
 
 .user-dogs-icon{
   width: 100px;
   height: 100px;
+}
+
+.dog-card-desc {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
 }

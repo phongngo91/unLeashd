@@ -6,7 +6,7 @@ class CreateDog extends React.Component {
   }
 
   render() {
-    return null;
+    return <h1>Hi</h1>;
   }
 }
 

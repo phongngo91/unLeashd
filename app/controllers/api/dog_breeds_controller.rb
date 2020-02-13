@@ -5,9 +5,24 @@ class Api::DogBreedsController < ApplicationController
     render :index
   end
 
+  def create
+    @dog = DogBreed.new(dog_params)
+    if @dog.save
+      render :show
+    else
+      render json: @dog.errors.full_messages, status: 422
+    end
+  end
+
   def show
     @dog = DogBreed.find(params[:id])
     render json: @dog
+  end
+
+  private
+
+  def dog_params
+    params.require(:dog).permit(:breed_name, :description, :fluff_by_vol, :int_cute_unit, :pet_shop_id, :author_id)
   end
 
 end

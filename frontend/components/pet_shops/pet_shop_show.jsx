@@ -17,8 +17,10 @@ class PetShopShow extends React.Component {
         return (
           <div key={idx} className="user-dogs-card">
             <img src={dog.image_url} alt="dog-pic" className="user-dogs-icon" />
-            <div>{dog.breed_name}</div>
-            <div>{dog.description}</div>
+            <div className="dog-card-desc">
+              <div>{dog.breed_name}</div>
+              <div>{dog.description}</div>
+            </div>
           </div>
         );
       });
@@ -43,7 +45,10 @@ class PetShopShow extends React.Component {
               </span>
             </div>
           </div>
-          {dogsEl}
+          <div className="petshop-dog-show">
+            <div className="dog-list">Dog List</div>
+            {dogsEl}
+          </div>
         </div>
       );
     } else {

@@ -1,5 +1,6 @@
 import * as APIUtil from "../utils/dog_api_util";
 
+export const RECEIVE_DOG = "RECEIVE_DOG";
 export const RECEIVE_DOGS = "RECEIVE_DOGS";
 
 const receiveDogs = dogs => {
@@ -8,6 +9,19 @@ const receiveDogs = dogs => {
     dogs
   };
 };
+
+const receiveDog = dog => {
+  return {
+    type: RECEIVE_DOG,
+    dog
+  };
+};
+
+export const createDog = dog => dispatch => (
+  APIUtil.createDog(dog).then(
+    dog => dispatch(receiveDog(dog))
+  )
+);
 
 export const fetchDogs = () => dispatch => (
   APIUtil.fetchDogs().then(
