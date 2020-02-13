@@ -52,7 +52,7 @@ class NavBar extends React.Component {
                 <li
                   className="new-pet-nav drop-down-el"
                   onClick={() => {
-                    this.props.history.push("/dogs/new")
+                    this.props.history.push("/dogs/new");
                   }}
                 >
                   New Dog
@@ -88,6 +88,11 @@ class NavBar extends React.Component {
             </Link>
             <div className="petshop-link">
               <a href="/#/petshops">Pet Shops</a>
+            </div>
+            <div>
+              <a className="nav-link" href="/#/dogs">
+                Dogs
+              </a>
             </div>
           </div>
           <ul className="nav-bar-controls">
