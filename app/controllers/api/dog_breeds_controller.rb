@@ -22,7 +22,7 @@ class Api::DogBreedsController < ApplicationController
   private
 
   def dog_params
-    params.require(:dog).permit(:breed_name, :description, :fluff_by_vol, :int_cute_unit, :pet_shop_id, :author_id)
+    params.require(:dog).permit(:breed_name, :description, :fluff_by_vol, :int_cute_unit, :pet_shop_id, :author_id, :photo)
   end
 
 end

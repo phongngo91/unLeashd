@@ -471,3 +471,16 @@ img {
   width: 100%;
   justify-content: space-evenly;
 }
+
+.submit-dog-container{
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: 30px auto;
+  background-color: white;
+}
+
+.small-pic{
+  width: 250px;
+  height: 250px;
+}
