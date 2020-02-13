@@ -5,7 +5,7 @@ class Api::PetShopsController < ApplicationController
   end
 
   def show
-    @petShop = PetShop.find_by(id: params[:id])
+    @petShop = PetShop.includes(:dog_breeds).find_by(id: params[:id])
     if @petShop
       render :show
     else
