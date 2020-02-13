@@ -19,10 +19,15 @@ const usersReducer = (state = defaultState, action) => {
             };
             return Object.assign({}, state, newCurrentUser);
         case RECEIVE_SINGLE_USER: 
+        // debugger
+        const dogIds = action.singleUser.authored_dog_breeds.map((dog) => {
+            return dog.id;
+        });
         const newSingleUser = {
             [action.singleUser.id]: {
                 id: action.singleUser.id,
-                username: action.singleUser.username
+                username: action.singleUser.username,
+                authored_dogs: dogIds
                 // image_url: action.singleUser.image_url
             }
         };
