@@ -8,7 +8,7 @@ class Api::DogBreedsController < ApplicationController
   def create
     @dog = DogBreed.new(dog_params)
     if @dog.save
-      render @dog
+      render :show
     else
       render json: @dog.errors.full_messages, status: 422
     end

@@ -1,8 +1,10 @@
-export const createDog = (dog) => {
+export const createDog = (formData) => {
   return $.ajax({
     url: '/api/dog_breeds/',
     method: "POST",
-    data: { dog }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

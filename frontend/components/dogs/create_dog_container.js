@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
  
 const mapDispatchToProps = dispatch => ({
-  createDog: (dog) => dispatch(createDog(dog)),
+  createDog: (formData) => dispatch(createDog(formData)),
   fetchPetShops: () => dispatch(fetchPetShops())
 });
 

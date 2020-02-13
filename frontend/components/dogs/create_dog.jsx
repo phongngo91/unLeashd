@@ -66,20 +66,23 @@ class CreateDog extends React.Component {
     if (this.state.photoFile) {
       formData.append("dog[photo]", this.state.photoFile);
     }
-    $.ajax({
-      url: "/api/dog_breeds/",
-      method: "POST",
-      data: formData,
-      contentType: false,
-      processData: false
-    });
+    // $.ajax({
+    //   url: "/api/dog_breeds/",
+    //   method: "POST",
+    //   data: formData,
+    //   contentType: false,
+    //   processData: false
+    // });
+    this.props.createDog(formData).then(
+      this.props.history.push(`/petshops/${this.state.pet_shop_id}`)
+    );
   }
 
   render() {
     let petShopIds = null;
     if (this.props.petShops) {
-      petShopIds = this.props.petShops.map(petShop => {
-        return <option value={petShop.id}>{petShop.pet_shop_name}</option>;
+      petShopIds = this.props.petShops.map((petShop, idx) => {
+        return <option value={petShop.id} key={idx}>{petShop.pet_shop_name}</option>;
       });
     }
     const wrappedPetShops = (

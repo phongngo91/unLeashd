@@ -17,8 +17,8 @@ const receiveDog = dog => {
   };
 };
 
-export const createDog = dog => dispatch => (
-  APIUtil.createDog(dog).then(
+export const createDog = formData => dispatch => (
+  APIUtil.createDog(formData).then(
     dog => dispatch(receiveDog(dog))
   )
 );
