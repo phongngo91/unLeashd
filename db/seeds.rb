@@ -43,11 +43,11 @@ ActiveRecord::Base.transaction do
 
 
     demo_dog1 = DogBreed.first
-    file1 = open('https://unleashd-dev.s3.amazonaws.com/chihuahua-1356758_960_720.jpg')
+    file1 = open('https://unleashd-pro.s3.amazonaws.com/84193110_477077912968192_6156515128356372480_n.jpg')
     demo_dog1.photo.attach(io: file1, filename: 'chihuahua.jpg')
 
     demo_dog2 = DogBreed.second
-    file2 = open('https://unleashd-dev.s3.amazonaws.com/84193110_477077912968192_6156515128356372480_n.jpg')
+    file2 = open('https://unleashd-pro.s3.amazonaws.com/86275943_190618488848511_8318908248518295552_n.jpg')
     demo_dog2.photo.attach(io: file2, filename: 'dachshund.jpg')
     
 end
