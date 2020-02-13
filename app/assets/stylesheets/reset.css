@@ -478,9 +478,57 @@ img {
   width: 700px;
   margin: 30px auto;
   background-color: white;
+  padding: 20px;
 }
 
 .small-pic{
   width: 250px;
   height: 250px;
+  background-color: bisque;
+}
+
+.new-dog-pic{
+  display: flex;
+  flex-direction: column;
+}
+
+.new-dog-info{
+  display:flex;
+  flex-direction: column;
+  padding: 10px 10px 0 10px;
+  width: 100%;
+}
+
+.new-dog-tophalf{
+  display:flex;
+}
+
+.select-pet-shop{
+  font-size: 1.1em;
+}
+
+.add-dog-btn{
+  width: 100%;
+  padding: 1px 7px 2px;
+  border-width: 1px;
+  border-style: solid;
+  color: white;
+  border-radius: 4px;
+  background-color: #ffcc00;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 10px 0;
+}
+
+.add-dog-btn:hover{
+  background-color: #f4b800;
+  cursor: pointer;
+}
+
+#petshop-list{
+  height: 90px;
+}
+
+#dog-description{
+  height: 100%;
 }

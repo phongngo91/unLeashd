@@ -13,7 +13,8 @@ class PetShopShow extends React.Component {
   render() {
     let dogsEl = null;
     if (this.props.authored_dogs) {
-      dogsEl = this.props.authored_dogs.map((dog, idx) => {
+      // Reverse to show the most recent dogs first
+      dogsEl = this.props.authored_dogs.reverse().map((dog, idx) => {
         return (
           <div key={idx} className="user-dogs-card">
             <img src={dog.image_url} alt="dog-pic" className="user-dogs-icon" />

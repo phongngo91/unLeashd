@@ -11,7 +11,7 @@ class DogsIndex extends React.Component {
   }
 
   render() {
-    const dogsEl = this.props.dogs.map((dog, idx) => {
+    const dogsEl = this.props.dogs.reverse().map((dog, idx) => {
       return (
         <li key={idx}>
           <DogsIndexItem dog={dog} />

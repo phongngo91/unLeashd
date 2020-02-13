@@ -9,9 +9,9 @@ class CreateDog extends React.Component {
       photoFile: null,
       breed_name: "",
       description: "",
-      fluff_by_vol: 0,
-      int_cute_unit: 0,
-      pet_shop_id: 0,
+      fluff_by_vol: null,
+      int_cute_unit: null,
+      pet_shop_id: null,
       author_id: this.props.currentUser.id
     };
 
@@ -20,7 +20,11 @@ class CreateDog extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPetShops();
+    this.props.fetchPetShops().then(shops => {
+      return this.setState({
+        pet_shop_id: Object.values(shops.petShops)[0].id
+      });
+    });
   }
 
   update(type) {
@@ -66,27 +70,26 @@ class CreateDog extends React.Component {
     if (this.state.photoFile) {
       formData.append("dog[photo]", this.state.photoFile);
     }
-    // $.ajax({
-    //   url: "/api/dog_breeds/",
-    //   method: "POST",
-    //   data: formData,
-    //   contentType: false,
-    //   processData: false
-    // });
-    this.props.createDog(formData).then(
-      this.props.history.push(`/petshops/${this.state.pet_shop_id}`)
-    );
+    this.props
+      .createDog(formData)
+      .then(this.props.history.push(`/petshops/${this.state.pet_shop_id}`));
   }
 
   render() {
     let petShopIds = null;
     if (this.props.petShops) {
       petShopIds = this.props.petShops.map((petShop, idx) => {
-        return <option value={petShop.id} key={idx}>{petShop.pet_shop_name}</option>;
+        return (
+          <option value={petShop.id} key={idx}>
+            {petShop.pet_shop_name}
+          </option>
+        );
       });
     }
     const wrappedPetShops = (
       <select
+        id="petshop-list"
+        className="select-pet-shop"
         value={this.state.pet_shop_id}
         onChange={this.updatePetShopId()}
       >
@@ -96,55 +99,50 @@ class CreateDog extends React.Component {
 
     return (
       <div className="submit-dog-container">
-        <input type="file" onChange={this.handlePicture} />
-        <img
-          src={this.state.imageUrl}
-          alt="previewImage"
-          className="small-pic"
-        />
-        <label>
-          Breed Name
-          <input
-            type="text"
-            onChange={this.update("breed_name")}
-            value={this.state.breed_name}
-          />
-        </label>
-        <label>
-          Description
-          <input
-            type="text"
-            onChange={this.update("description")}
-            value={this.state.description}
-          />
-        </label>
-        <label>
-          {" "}
-          Fluffyness
-          <input
-            type="number"
-            onChange={this.update("fluff_by_vol")}
-            value={this.state.fluff_by_vol}
-          />
-        </label>
-        <label>
-          International Cuteness Unit
-          <input
-            onChange={this.update("int_cute_unit")}
-            type="number"
-            value={this.state.int_cute_unit}
-          />
-        </label>
-        <label>
-          Pet Shop
-          {/* <input
-            onChange={this.update("pet_shop_id")}
-            type="number"
-            value={this.state.pet_shop_id}
-          /> */}
-          {wrappedPetShops}
-        </label>
-        <button onClick={this.handleSubmit}>Create Dog</button>
+        <div className="new-dog-tophalf">
+          <div className="new-dog-pic">
+            <input type="file" onChange={this.handlePicture} />
+            <img
+              src={this.state.imageUrl}
+              alt="Submit Dog Pic"
+              className="small-pic"
+            />
+          </div>
+          <div className="new-dog-info">
+            <label for="petshop-list">Pet Shop</label>
+            {wrappedPetShops}
+            <label for="breed-name">Breed Name</label>
+            <input
+              id="breed-name"
+              type="text"
+              onChange={this.update("breed_name")}
+              value={this.state.breed_name}
+            />
+            <label for="fluffy">Fluffiness By Volume</label>
+            <input
+              id="fluffy"
+              type="text"
+              onChange={this.update("fluff_by_vol")}
+              value={this.state.fluff_by_vol}
+            />
+            <label for="cute-unit">International Cuteness Unit</label>
+            <input
+              id="cute-unit"
+              onChange={this.update("int_cute_unit")}
+              type="text"
+              value={this.state.int_cute_unit}
+            />
+            <label for="dog-description">Description</label>
+            <textarea
+              id="dog-description"
+              onChange={this.update("description")}
+              value={this.state.description}
+            />
+          </div>
+        </div>
+        <button className="add-dog-btn" onClick={this.handleSubmit}>
+          Create Dog
+        </button>
       </div>
     );
   }
