@@ -29,6 +29,18 @@ class UsersShow extends React.Component {
 
     const currentUser = this.props.currentUser;
     const showedUser = this.props.showedUser;
+    let dogsEl = null;
+    if (this.props.authored_dogs) {
+      dogsEl = this.props.authored_dogs.map((dog, idx) => {
+        return (
+          <div key={idx} className="user-dogs-card">
+            <img src={dog.image_url} alt="dog-pic" className="user-dogs-icon"/>
+            <div>{dog.breed_name}</div>
+            <div>{dog.description}</div>
+          </div>
+        );
+      });
+    }
 
     if (currentUser && showedUser) {
       return (
@@ -37,10 +49,21 @@ class UsersShow extends React.Component {
             <li>Logged in user is {currentUser.username}</li>
             <li>This is {showedUser.username}'s show page</li>
             {/* <img src={this.props.showedUser.image_url} /> */}
+            {dogsEl}
           </ul>
         </nav>
       );
-    } else return <div>{errorsContainer}</div>
+    } else if (showedUser) {
+      return (
+        <nav className="user-home-container">
+          <ul>
+            <li>This is {showedUser.username}'s show page</li>
+            {/* <img src={this.props.showedUser.image_url} /> */}
+            {dogsEl}
+          </ul>
+        </nav>
+      );
+    } else return <div>{errorsContainer}</div>;
   }
 }
 
