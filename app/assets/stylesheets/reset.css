@@ -532,3 +532,7 @@ li {
   width: 200px;
   height: 200px;
 }
+
+.inherit-width{
+  width: 100%;
+}
