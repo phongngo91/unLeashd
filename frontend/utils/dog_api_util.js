@@ -21,3 +21,11 @@ export const fetchDog = (dogId) => {
     method: "GET"
   });
 };
+
+export const editDog = dog => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/dog_breeds/${dog.id}`,
+    dog
+  });
+};

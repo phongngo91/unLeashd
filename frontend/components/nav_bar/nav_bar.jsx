@@ -21,7 +21,7 @@ class NavBar extends React.Component {
     const loggedInUser = this.props.loggedInUser;
     if (loggedInUser) {
       return (
-        <nav className="nav-bar-container">
+        <nav className="nav-bar-container sticky">
           <div className="nav-left-content">
             <Link to="/">
               <div className="nav-logo">
@@ -78,7 +78,7 @@ class NavBar extends React.Component {
       return null;
     } else {
       return (
-        <nav className="nav-bar-container">
+        <nav className="nav-bar-container sticky">
           <div className="nav-left-content">
             <Link to="/">
               <div className="nav-logo">

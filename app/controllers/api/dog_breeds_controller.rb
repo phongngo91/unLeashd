@@ -23,6 +23,15 @@ class Api::DogBreedsController < ApplicationController
     end
   end
 
+  def update
+    @dog = DogBreed.find_by(id: params[:dog][:id])
+    if @dog.update(dog_params)
+      render :show
+    else
+      render json: @dog.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def dog_params
