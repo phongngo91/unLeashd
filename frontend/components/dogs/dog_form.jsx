@@ -22,6 +22,10 @@ class DogForm extends React.Component {
     // }
   }
 
+  componentWillUnmount(){
+    this.props.clearDogErrors();
+  }
+
   update(type) {
     return e =>
       this.setState({
@@ -62,9 +66,7 @@ class DogForm extends React.Component {
     formData.append("dog[int_cute_unit]", this.state.int_cute_unit);
     formData.append("dog[pet_shop_id]", this.state.pet_shop_id);
     formData.append("dog[author_id]", this.state.author_id);
-    // if (this.props.formType === 'Save Edit'){
     formData.append("dog[id]", this.state.id);
-    // }
     if (this.state.photoFile) {
       formData.append("dog[photo]", this.state.photoFile);
     }

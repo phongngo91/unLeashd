@@ -3,6 +3,7 @@ import * as APIUtil from "../utils/dog_api_util";
 export const RECEIVE_DOG = "RECEIVE_DOG";
 export const RECEIVE_DOGS = "RECEIVE_DOGS";
 export const RECEIVE_DOG_ERRORS = "RECEIVE_DOG_ERRORS";
+export const CLEAR_DOG_ERRORS = "CLEAR_DOG_ERRORS";
 
 const receiveDogs = dogs => {
   return {
@@ -25,7 +26,11 @@ const receiveDogErrors = errors => {
   };
 };
 
-// TODO export const clearDogErrors ;
+export const clearDogErrors = () => {
+  return {
+    type: CLEAR_DOG_ERRORS
+  };
+};
 
 export const createDog = formData => dispatch => {
   return APIUtil.createDog(formData).then(

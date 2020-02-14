@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DogForm from './dog_form';
-import { createDog } from '../../actions/dog_actions';
+import { createDog, clearDogErrors } from '../../actions/dog_actions';
 import { fetchPetShops } from '../../actions/pet_shops_actions';
 
 const mapStateToProps = state => ({
@@ -22,7 +22,9 @@ const mapStateToProps = state => ({
  
 const mapDispatchToProps = dispatch => ({
   action: (formData) => dispatch(createDog(formData)),
-  fetchPetShops: () => dispatch(fetchPetShops())
+  fetchPetShops: () => dispatch(fetchPetShops()),
+  clearDogErrors: () => dispatch(clearDogErrors())
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogForm);
