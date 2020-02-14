@@ -31,7 +31,7 @@ const App = () => {
         <ProtectedRoute exact path="/dogs/new" component={CreateDogContainer} />
         <Route exact path="/dogs" component={DogsIndexContainer} />
         <Route exact path="/dogs/:dogId" component={DogShowContainer} />
-        <Route exact path="/dogs/:dogId/edit" component={EditDogContainer}/>
+        <ProtectedRoute exact path="/dogs/:dogId/edit" component={EditDogContainer}/>
       </Switch>
     </>
   );

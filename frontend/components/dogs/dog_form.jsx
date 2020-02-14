@@ -5,7 +5,9 @@ class DogForm extends React.Component {
     super(props);
 
     this.state = this.props.dog;
-    this.state.imageUrl = this.props.dog.image_url;
+    if (this.props.dog){
+      this.state.imageUrl = this.props.dog.image_url;
+    }
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,9 +19,9 @@ class DogForm extends React.Component {
       });
     });
 
-    // if (this.props.formType === 'Save Edit'){
-    //   this.props.fetchDog(this.props.match.params.dogId);
-    // }
+    if (this.props.dog === undefined){
+      this.props.fetchDog(this.props.match.params.dogId);
+    }
   }
 
   componentWillUnmount(){
@@ -101,6 +103,7 @@ class DogForm extends React.Component {
         );
       });
     }
+    
     const wrappedPetShops = (
       <select
         id="petshop-list"
