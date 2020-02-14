@@ -1,7 +1,7 @@
 class Api::DogBreedsController < ApplicationController
 
   def index
-    @dogs = DogBreed.all
+    @dogs = DogBreed.with_attached_photo.all
     render :index
   end
 
