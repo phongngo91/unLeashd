@@ -115,6 +115,7 @@ class CreateDog extends React.Component {
             <input
               id="breed-name"
               type="text"
+              placeholder="Shiba Inu"
               onChange={this.update("breed_name")}
               value={this.state.breed_name}
             />
@@ -122,12 +123,14 @@ class CreateDog extends React.Component {
             <input
               id="fluffy"
               type="text"
+              placeholder="0"
               onChange={this.update("fluff_by_vol")}
               value={this.state.fluff_by_vol}
             />
             <label for="cute-unit">International Cuteness Unit</label>
             <input
               id="cute-unit"
+              placeholder="0"
               onChange={this.update("int_cute_unit")}
               type="text"
               value={this.state.int_cute_unit}
@@ -135,6 +138,7 @@ class CreateDog extends React.Component {
             <label for="dog-description">Description</label>
             <textarea
               id="dog-description"
+              placeholder="A very rowdy boye"
               onChange={this.update("description")}
               value={this.state.description}
             />
