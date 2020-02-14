@@ -76,6 +76,18 @@ class CreateDog extends React.Component {
   }
 
   render() {
+    const errorsEl = this.props.errors.map((error, idx) => {
+      return (<li className="error" key={idx}>{error}</li>)
+    });
+
+    let errorsContainer = null;
+    if (errorsEl.length > 0){
+      errorsContainer = (
+        <div className="login-error">{errorsEl}</div>
+      )
+    }
+
+
     let petShopIds = null;
     if (this.props.petShops) {
       petShopIds = this.props.petShops.map((petShop, idx) => {
@@ -99,6 +111,7 @@ class CreateDog extends React.Component {
 
     return (
       <div className="submit-dog-container">
+        {errorsContainer}
         <div className="new-dog-tophalf">
           <div className="new-dog-pic">
             <input type="file" onChange={this.handlePicture} />

@@ -312,6 +312,7 @@ li {
   padding: 10px 10px;
   border-radius: 2px;
   padding: 16px;
+  text-align: center;
 }
 
 .error {

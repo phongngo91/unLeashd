@@ -25,6 +25,8 @@ const receiveDogErrors = errors => {
   };
 };
 
+// export const clearDogErrors ;
+
 export const createDog = formData => dispatch => {
   return APIUtil.createDog(formData).then(
     dog => dispatch(receiveDog(dog)),

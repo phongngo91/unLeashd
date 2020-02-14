@@ -4,6 +4,7 @@ import { createDog } from '../../actions/dog_actions';
 import { fetchPetShops } from '../../actions/pet_shops_actions';
 //
 const mapStateToProps = state => ({
+  errors: state.errors.dog,
   currentUser: state.entities.users[state.session.id],
   petShops: Object.values(state.entities.pet_shops)
 });
