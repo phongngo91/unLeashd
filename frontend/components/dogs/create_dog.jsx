@@ -144,7 +144,7 @@ class CreateDog extends React.Component {
             />
           </div>
         </div>
-        <button className="add-dog-btn" onClick={this.handleSubmit}>
+        <button className="add-dog-btn remove-blue" onClick={this.handleSubmit}>
           Create Dog
         </button>
       </div>
