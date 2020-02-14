@@ -155,7 +155,7 @@ li {
   box-sizing: border-box;
   align-items: center;
   padding: 15px 40px;
-  margin: 75px 30px;
+  margin: 50px auto;
 }
 
 .login-submit-container,
