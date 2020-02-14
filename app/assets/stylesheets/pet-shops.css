@@ -25,6 +25,7 @@ body {
   background-color: white;
   justify-content: center;
   padding: 40px 0px;
+  margin-top: 60px;
 }
 
 .pet-shop-item {
@@ -86,4 +87,8 @@ div, a {
 .petshop-logo{
   width: 150px;
   height: 150px;
+}
+
+.dog-index-container{
+  margin-top: 60px;
 }
