@@ -109,7 +109,7 @@ class CreateDog extends React.Component {
             />
           </div>
           <div className="new-dog-info">
-            <label for="petshop-list">Pet Shop</label>
+            <label htmlFor="petshop-list">Pet Shop</label>
             {wrappedPetShops}
             <label for="breed-name">Breed Name</label>
             <input

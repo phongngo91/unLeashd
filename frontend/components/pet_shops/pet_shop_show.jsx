@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 class PetShopShow extends React.Component {
   constructor(props) {
@@ -17,7 +18,14 @@ class PetShopShow extends React.Component {
       dogsEl = this.props.authored_dogs.reverse().map((dog, idx) => {
         return (
           <div key={idx} className="user-dogs-card">
-            <img src={dog.image_url} alt="dog-pic" className="user-dogs-icon" />
+            <Link to={`/dogs/${dog.id}`}>
+              <img
+                src={dog.image_url}
+                alt="dog-pic"
+                className="user-dogs-icon"
+              />
+            </Link>
+
             <div className="dog-card-desc">
               <div>{dog.breed_name}</div>
               <div>{dog.description}</div>
