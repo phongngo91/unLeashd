@@ -4,6 +4,12 @@ class DogForm extends React.Component {
   constructor(props) {
     super(props);
 
+    // If the user got to this form in a way unintended
+    // Push them to the dog's index page
+    if (this.props.dog === undefined){
+      this.props.history.push("/dogs");
+    }
+
     this.state = this.props.dog;
     if (this.props.dog){
       this.state.imageUrl = this.props.dog.image_url;
@@ -80,6 +86,15 @@ class DogForm extends React.Component {
   }
 
   render() {
+    if (this.props.dog === undefined){
+      this.props.history.push("/dogs");
+    }
+
+    if (this.props.dog){
+      if (this.props.dog.author_id !== this.props.currentUser.id && this.props.formType === 'Save Edit'){
+        this.props.history.push(`/dogs/${this.props.dog.id}`);
+      }
+    }
     const errorsEl = this.props.errors.map((error, idx) => {
       return (
         <li className="error" key={idx}>
@@ -103,7 +118,7 @@ class DogForm extends React.Component {
         );
       });
     }
-    
+
     const wrappedPetShops = (
       <select
         id="petshop-list"
