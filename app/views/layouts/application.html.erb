@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <script>
       window.dogParkURL = "<%= image_url('dog_park.jpg') %>";
       window.dogsRunningURL = "<%= image_url('dogs_running.jpg') %>";
@@ -17,9 +18,7 @@
       window.passwordIconURL = "<%= image_url('password-icon.png') %>";
       window.emailIconURL = "<%= image_url('email-icon.png') %>";
       window.defaultAva = "<%= image_url('default_avatar.png') %>";
-
     </script>
-    <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
   <body>
