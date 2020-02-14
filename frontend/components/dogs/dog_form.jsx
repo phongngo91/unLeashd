@@ -5,7 +5,7 @@ class DogForm extends React.Component {
     super(props);
 
     this.state = this.props.dog;
-
+    this.state.imageUrl = this.props.dog.image_url;
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
