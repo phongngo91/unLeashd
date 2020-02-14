@@ -26,6 +26,8 @@ export const editDog = dog => {
   return $.ajax({
     method: "PATCH",
     url: `/api/dog_breeds/${dog.id}`,
-    dog
+    data: dog,
+    contentType: false,
+    processData: false
   });
 };

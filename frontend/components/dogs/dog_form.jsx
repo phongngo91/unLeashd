@@ -1,19 +1,10 @@
 import React from "react";
 
-class CreateDog extends React.Component {
+class DogForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      imageUrl: "",
-      photoFile: null,
-      breed_name: "",
-      description: "",
-      fluff_by_vol: 0,
-      int_cute_unit: 0,
-      pet_shop_id: 0,
-      author_id: this.props.currentUser.id
-    };
+    this.state = this.props.dog;
 
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +16,10 @@ class CreateDog extends React.Component {
         pet_shop_id: Object.values(shops.petShops)[0].id
       });
     });
+
+    // if (this.props.formType === 'Save Edit'){
+    //   this.props.fetchDog(this.props.match.params.dogId);
+    // }
   }
 
   update(type) {
@@ -67,26 +62,32 @@ class CreateDog extends React.Component {
     formData.append("dog[int_cute_unit]", this.state.int_cute_unit);
     formData.append("dog[pet_shop_id]", this.state.pet_shop_id);
     formData.append("dog[author_id]", this.state.author_id);
+    // if (this.props.formType === 'Save Edit'){
+    formData.append("dog[id]", this.state.id);
+    // }
     if (this.state.photoFile) {
       formData.append("dog[photo]", this.state.photoFile);
     }
     this.props
-      .createDog(formData)
-      .then(() => this.props.history.push(`/petshops/${this.state.pet_shop_id}`));
+      .action(formData)
+      .then(() =>
+        this.props.history.push(`/petshops/${this.state.pet_shop_id}`)
+      );
   }
 
   render() {
     const errorsEl = this.props.errors.map((error, idx) => {
-      return (<li className="error" key={idx}>{error}</li>)
+      return (
+        <li className="error" key={idx}>
+          {error}
+        </li>
+      );
     });
 
     let errorsContainer = null;
-    if (errorsEl.length > 0){
-      errorsContainer = (
-        <div className="login-error">{errorsEl}</div>
-      )
+    if (errorsEl.length > 0) {
+      errorsContainer = <div className="login-error">{errorsEl}</div>;
     }
-
 
     let petShopIds = null;
     if (this.props.petShops) {
@@ -158,11 +159,11 @@ class CreateDog extends React.Component {
           </div>
         </div>
         <button className="add-dog-btn remove-blue" onClick={this.handleSubmit}>
-          Create Dog
+          {this.props.formType}
         </button>
       </div>
     );
   }
 }
 
-export default CreateDog;
+export default DogForm;

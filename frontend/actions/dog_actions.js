@@ -25,7 +25,7 @@ const receiveDogErrors = errors => {
   };
 };
 
-// export const clearDogErrors ;
+// TODO export const clearDogErrors ;
 
 export const createDog = formData => dispatch => {
   return APIUtil.createDog(formData).then(
@@ -43,6 +43,13 @@ export const fetchDogs = () => dispatch => {
 
 export const fetchDog = dogId => dispatch => {
   return APIUtil.fetchDog(dogId).then(
+    dog => dispatch(receiveDog(dog)),
+    errors => dispatch(receiveDogErrors(errors.responseJSON))
+  );
+};
+
+export const editDog = dog => dispatch =>{
+  return APIUtil.editDog(dog).then(
     dog => dispatch(receiveDog(dog)),
     errors => dispatch(receiveDogErrors(errors.responseJSON))
   );

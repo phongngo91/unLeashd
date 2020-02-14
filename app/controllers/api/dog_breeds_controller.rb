@@ -24,7 +24,7 @@ class Api::DogBreedsController < ApplicationController
   end
 
   def update
-    @dog = DogBreed.find_by(id: params[:dog][:id])
+    @dog = DogBreed.find(params[:dog][:id])
     if @dog.update(dog_params)
       render :show
     else

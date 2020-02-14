@@ -13,6 +13,7 @@ import TestImageContainer from './test_image/test_image_container';
 import CreateDogContainer from './dogs/create_dog_container';
 import DogsIndexContainer from './dogs/dogs_index_container';
 import DogShowContainer from './dogs/dog_show_container';
+import EditDogContainer from './dogs/edit_dog_container';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <ProtectedRoute exact path="/dogs/new" component={CreateDogContainer} />
         <Route exact path="/dogs" component={DogsIndexContainer} />
         <Route exact path="/dogs/:dogId" component={DogShowContainer} />
+        <Route exact path="/dogs/:dogId/edit" component={EditDogContainer}/>
       </Switch>
     </>
   );
