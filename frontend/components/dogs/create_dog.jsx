@@ -9,9 +9,9 @@ class CreateDog extends React.Component {
       photoFile: null,
       breed_name: "",
       description: "",
-      fluff_by_vol: null,
-      int_cute_unit: null,
-      pet_shop_id: null,
+      fluff_by_vol: 0,
+      int_cute_unit: 0,
+      pet_shop_id: 0,
       author_id: this.props.currentUser.id
     };
 
@@ -72,7 +72,7 @@ class CreateDog extends React.Component {
     }
     this.props
       .createDog(formData)
-      .then(this.props.history.push(`/petshops/${this.state.pet_shop_id}`));
+      .then(() => this.props.history.push(`/petshops/${this.state.pet_shop_id}`));
   }
 
   render() {
@@ -111,7 +111,7 @@ class CreateDog extends React.Component {
           <div className="new-dog-info">
             <label htmlFor="petshop-list">Pet Shop</label>
             {wrappedPetShops}
-            <label for="breed-name">Breed Name</label>
+            <label htmlFor="breed-name">Breed Name</label>
             <input
               id="breed-name"
               type="text"
@@ -119,7 +119,7 @@ class CreateDog extends React.Component {
               onChange={this.update("breed_name")}
               value={this.state.breed_name}
             />
-            <label for="fluffy">Fluffiness By Volume</label>
+            <label htmlFor="fluffy">Fluffiness By Volume</label>
             <input
               id="fluffy"
               type="text"
@@ -127,7 +127,7 @@ class CreateDog extends React.Component {
               onChange={this.update("fluff_by_vol")}
               value={this.state.fluff_by_vol}
             />
-            <label for="cute-unit">International Cuteness Unit</label>
+            <label htmlFor="cute-unit">International Cuteness Unit</label>
             <input
               id="cute-unit"
               placeholder="0"
@@ -135,7 +135,7 @@ class CreateDog extends React.Component {
               type="text"
               value={this.state.int_cute_unit}
             />
-            <label for="dog-description">Description</label>
+            <label htmlFor="dog-description">Description</label>
             <textarea
               id="dog-description"
               placeholder="A very rowdy boye"
