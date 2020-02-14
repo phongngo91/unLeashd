@@ -1,17 +1,17 @@
 import React from "react";
 
-class DogForm extends React.Component {
+class EditDogForm extends React.Component {
   constructor(props) {
     super(props);
 
     // If the user got to this form in a way unintended
     // Push them to the dog's index page
-    if (this.props.dog === undefined){
+    if (this.props.dog === undefined) {
       this.props.history.push("/dogs");
     }
 
     this.state = this.props.dog;
-    if (this.props.dog){
+    if (this.props.dog) {
       this.state.imageUrl = this.props.dog.image_url;
     }
     this.handlePicture = this.handlePicture.bind(this);
@@ -25,12 +25,12 @@ class DogForm extends React.Component {
       });
     });
 
-    if (this.props.dog === undefined){
+    if(this.props.dog === undefined){
       this.props.fetchDog(this.props.match.params.dogId);
     }
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.clearDogErrors();
   }
 
@@ -86,12 +86,15 @@ class DogForm extends React.Component {
   }
 
   render() {
-    if (this.props.dog === undefined){
+    if (this.props.dog === undefined) {
       this.props.history.push("/dogs");
     }
 
-    if (this.props.dog){
-      if (this.props.dog.author_id !== this.props.currentUser.id && this.props.formType === 'Save Edit'){
+    if (this.props.dog) {
+      if (
+        this.props.dog.author_id !== this.props.currentUser.id &&
+        this.props.formType === "Save Edit"
+      ) {
         this.props.history.push(`/dogs/${this.props.dog.id}`);
       }
     }
@@ -109,6 +112,8 @@ class DogForm extends React.Component {
     }
 
     let petShopIds = null;
+
+    
     if (this.props.petShops) {
       petShopIds = this.props.petShops.map((petShop, idx) => {
         return (
@@ -117,73 +122,77 @@ class DogForm extends React.Component {
           </option>
         );
       });
-    }
 
-    const wrappedPetShops = (
-      <select
-        id="petshop-list"
-        className="select-pet-shop"
-        value={this.state.pet_shop_id}
-        onChange={this.updatePetShopId()}
-      >
-        {petShopIds}
-      </select>
-    );
+      const wrappedPetShops = (
+        <select
+          id="petshop-list"
+          className="select-pet-shop"
+          value={this.state.pet_shop_id}
+          onChange={this.updatePetShopId()}
+        >
+          {petShopIds}
+        </select>
+      );
 
-    return (
-      <div className="submit-dog-container">
-        {errorsContainer}
-        <div className="new-dog-tophalf">
-          <div className="new-dog-pic">
-            <input type="file" onChange={this.handlePicture} />
-            <img
-              src={this.state.imageUrl}
-              alt="Submit Dog Pic"
-              className="small-pic"
-            />
+      return (
+        <div className="submit-dog-container">
+          {errorsContainer}
+          <div className="new-dog-tophalf">
+            <div className="new-dog-pic">
+              <input type="file" onChange={this.handlePicture} />
+              <img
+                src={this.state.imageUrl}
+                alt="Submit Dog Pic"
+                className="small-pic"
+              />
+            </div>
+            <div className="new-dog-info">
+              <label htmlFor="petshop-list">Pet Shop</label>
+              {wrappedPetShops}
+              <label htmlFor="breed-name">Breed Name</label>
+              <input
+                id="breed-name"
+                type="text"
+                placeholder="Shiba Inu"
+                onChange={this.update("breed_name")}
+                value={this.state.breed_name}
+              />
+              <label htmlFor="fluffy">Fluffiness By Volume</label>
+              <input
+                id="fluffy"
+                type="text"
+                placeholder="0"
+                onChange={this.update("fluff_by_vol")}
+                value={this.state.fluff_by_vol}
+              />
+              <label htmlFor="cute-unit">International Cuteness Unit</label>
+              <input
+                id="cute-unit"
+                placeholder="0"
+                onChange={this.update("int_cute_unit")}
+                type="text"
+                value={this.state.int_cute_unit}
+              />
+              <label htmlFor="dog-description">Description</label>
+              <textarea
+                id="dog-description"
+                placeholder="A very rowdy boye"
+                onChange={this.update("description")}
+                value={this.state.description}
+              />
+            </div>
           </div>
-          <div className="new-dog-info">
-            <label htmlFor="petshop-list">Pet Shop</label>
-            {wrappedPetShops}
-            <label htmlFor="breed-name">Breed Name</label>
-            <input
-              id="breed-name"
-              type="text"
-              placeholder="Shiba Inu"
-              onChange={this.update("breed_name")}
-              value={this.state.breed_name}
-            />
-            <label htmlFor="fluffy">Fluffiness By Volume</label>
-            <input
-              id="fluffy"
-              type="text"
-              placeholder="0"
-              onChange={this.update("fluff_by_vol")}
-              value={this.state.fluff_by_vol}
-            />
-            <label htmlFor="cute-unit">International Cuteness Unit</label>
-            <input
-              id="cute-unit"
-              placeholder="0"
-              onChange={this.update("int_cute_unit")}
-              type="text"
-              value={this.state.int_cute_unit}
-            />
-            <label htmlFor="dog-description">Description</label>
-            <textarea
-              id="dog-description"
-              placeholder="A very rowdy boye"
-              onChange={this.update("description")}
-              value={this.state.description}
-            />
-          </div>
+          <button
+            className="add-dog-btn remove-blue"
+            onClick={this.handleSubmit}
+          >
+            {this.props.formType}
+          </button>
         </div>
-        <button className="add-dog-btn remove-blue" onClick={this.handleSubmit}>
-          {this.props.formType}
-        </button>
-      </div>
-    );
+      );
+    } else
+    return null;
   }
 }
 
-export default DogForm;
+export default EditDogForm;

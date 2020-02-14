@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DogForm from './dog_form';
+import EditDogForm from './edit_dog_form';
 import { editDog, clearDogErrors } from '../../actions/dog_actions';
 import { fetchPetShops } from '../../actions/pet_shops_actions';
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   clearDogErrors: () => dispatch(clearDogErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DogForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditDogForm);
