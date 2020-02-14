@@ -28,3 +28,9 @@ export const fetchDogs = () => dispatch => (
     (dogs)=> dispatch(receiveDogs(dogs))
   )
 );
+
+export const fetchDog = (dogId) => dispatch =>{
+  return APIUtil.fetchDog(dogId).then(
+    dog => dispatch(receiveDog(dog))
+  );
+};

@@ -12,6 +12,7 @@ import PetShopShowContainer from './pet_shops/pet_shop_show_container';
 import TestImageContainer from './test_image/test_image_container';
 import CreateDogContainer from './dogs/create_dog_container';
 import DogsIndexContainer from './dogs/dogs_index_container';
+import DogShowContainer from './dogs/dog_show_container';
 
 const App = () => {
   return (
@@ -21,13 +22,14 @@ const App = () => {
         <AuthRoute exact path="/" component={SplashContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute path="/users/:userId" component={UsersShowContainer} />
+        <ProtectedRoute path="/home" component={HomeContainer} />
+        <Route path="/users/:userId" component={UsersShowContainer} />
         <Route exact path="/petshops" component={PetShopsIndexContainer} />
         <Route path="/petshops/:petShopId" component={PetShopShowContainer} />
-        <ProtectedRoute path="/home" component={HomeContainer} />
         <Route path="/testimage" component={TestImageContainer} />
         <ProtectedRoute exact path="/dogs/new" component={CreateDogContainer} />
         <Route exact path="/dogs" component={DogsIndexContainer} />
+        <Route exact path="/dogs/:dogId" component={DogShowContainer} />
       </Switch>
     </>
   );

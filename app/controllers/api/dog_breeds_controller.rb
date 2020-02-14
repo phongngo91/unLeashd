@@ -15,8 +15,12 @@ class Api::DogBreedsController < ApplicationController
   end
 
   def show
-    @dog = DogBreed.find(params[:id])
-    render json: @dog
+    @dog = DogBreed.find_by(id: params[:id])
+    if @dog
+      render :show
+    else
+      render json: ["Dog not found"], status: 422
+    end
   end
 
   private

@@ -14,3 +14,10 @@ export const fetchDogs = () => {
     method: "GET"
   });
 };
+
+export const fetchDog = (dogId) => {
+  return $.ajax({
+    url: `/api/dog_breeds/${dogId}`,
+    method: "GET"
+  });
+};

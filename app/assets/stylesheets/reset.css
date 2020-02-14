@@ -286,11 +286,6 @@ li {
   align-items: center;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .description-image {
   display: flex;
   width: 450px;
@@ -531,4 +526,9 @@ img {
 
 #dog-description{
   height: 100%;
+}
+
+.dog-show-pic{
+  width: 200px;
+  height: 200px;
 }

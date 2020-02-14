@@ -3,10 +3,6 @@ import React from "react";
 class UsersShow extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      current_user_username: this.props.currentUser.username
-    };
   }
 
   componentDidMount() {
