@@ -1,0 +1,44 @@
+.home-container {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  margin-top: 59px;
+  align-items: center;
+}
+
+.user-home-content{
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 1000px;
+  height: 600px;
+}
+
+.user-left-feed{
+  box-sizing: border-box;
+  background-color: green;
+  width: 550px;
+  padding: 20px;
+}
+
+.user-right-feed{
+  box-sizing: border-box;
+  background-color: red;
+  width: 300px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.user-profile{
+  background-color: white;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sample-global-checkins{
+  height: 400px;
+  width: 100%;
+  background-color: white;
+}

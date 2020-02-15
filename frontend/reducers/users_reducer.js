@@ -10,10 +10,17 @@ const usersReducer = (state = defaultState, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
+            const CurrentdogIds = action.currentUser.authored_dog_breeds.map((dog) => {
+                return dog.id;
+            });
+
             const newCurrentUser = {
                 [action.currentUser.id]: {
                     id: action.currentUser.id,
-                    username: action.currentUser.username
+                    username: action.currentUser.username,
+                    first_name: action.currentUser.first_name,
+                    last_name: action.currentUser.last_name,
+                    authored_dogs: CurrentdogIds
                     // image_url: action.CurrentUser.image_url
                 }
             };
