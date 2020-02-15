@@ -4,11 +4,10 @@ class EditDogForm extends React.Component {
   constructor(props) {
     super(props);
 
-    // If the user got to this form in a way unintended
-    // Push them to the dog's index page
-    if (this.props.dog === undefined) {
-      this.props.history.push("/dogs");
-    }
+    // if (this.props.dog === undefined) {
+    //   // this.props.history.push("/dogs");
+    //   this.props.fetchDog();
+    // }
 
     this.state = this.props.dog;
     if (this.props.dog) {
@@ -19,19 +18,40 @@ class EditDogForm extends React.Component {
   }
 
   componentDidMount() {
+    if (this.props.dog === undefined) {
+      // this.props.history.push("/dogs");
+      this.props.fetchDog(this.props.match.params.dogId).then(
+        dog => {
+          // debugger
+          return this.setState({
+            imageUrl: Object.values(dog.dog)[0].image_url,
+            breed_name: Object.values(dog.dog)[0].breed_name,
+            description: Object.values(dog.dog)[0].description,
+            id: Object.values(dog.dog)[0].id,
+            pet_shop_id: Object.values(dog.dog)[0].pet_shop_id,
+            fluff_by_vol: Object.values(dog.dog)[0].fluff_by_vol,
+            int_cute_unit: Object.values(dog.dog)[0].int_cute_unit,
+            author_id: Object.values(dog.dog)[0].author_id
+          });
+        },
+        () => this.props.history.push("/dogs")
+      );
+    }
+
+    // WARNING
+    // THIS CALLBACK CAN HAPPEN AFTER THE COMPONENT UNMOUNTS, WHICH IS
+    // NOT GOOD, CONSIDER CHANGING
     this.props.fetchPetShops().then(shops => {
       return this.setState({
         pet_shop_id: Object.values(shops.petShops)[0].id
       });
     });
-
-    if(this.props.dog === undefined){
-      this.props.fetchDog(this.props.match.params.dogId);
-    }
   }
 
   componentWillUnmount() {
-    this.props.clearDogErrors();
+    if (this.props.errors.length > 0) {
+      this.props.clearDogErrors();
+    }
   }
 
   update(type) {
@@ -87,7 +107,8 @@ class EditDogForm extends React.Component {
 
   render() {
     if (this.props.dog === undefined) {
-      this.props.history.push("/dogs");
+      // this.props.history.push("/dogs");
+      return null;
     }
 
     if (this.props.dog) {
@@ -113,7 +134,6 @@ class EditDogForm extends React.Component {
 
     let petShopIds = null;
 
-    
     if (this.props.petShops) {
       petShopIds = this.props.petShops.map((petShop, idx) => {
         return (
@@ -190,8 +210,7 @@ class EditDogForm extends React.Component {
           </button>
         </div>
       );
-    } else
-    return null;
+    } else return null;
   }
 }
 

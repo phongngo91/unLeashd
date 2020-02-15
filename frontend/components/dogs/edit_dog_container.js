@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EditDogForm from './edit_dog_form';
-import { editDog, clearDogErrors } from '../../actions/dog_actions';
+import { editDog, clearDogErrors, fetchDog } from '../../actions/dog_actions';
 import { fetchPetShops } from '../../actions/pet_shops_actions';
 
 const mapStateToProps = (state,ownProps) => ({
