@@ -43,3 +43,7 @@
 .dog-name:hover{
   color: #f93;
 }
+
+.move-right{
+  padding-left: 10px;
+}
