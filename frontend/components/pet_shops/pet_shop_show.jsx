@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class PetShopShow extends React.Component {
   constructor(props) {
@@ -27,7 +27,9 @@ class PetShopShow extends React.Component {
             </Link>
 
             <div className="dog-card-desc">
-              <div>{dog.breed_name}</div>
+              <Link to={`/dogs/${dog.id}`}>
+                <div className="dog-name">{dog.breed_name}</div>
+              </Link>
               <div>{dog.description}</div>
             </div>
           </div>

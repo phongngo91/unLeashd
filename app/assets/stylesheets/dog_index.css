@@ -33,5 +33,13 @@
 }
 
 .dog-info-box{
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
+}
+
+.dog-name {
+  color: #c60;
+}
+
+.dog-name:hover{
+  color: #f93;
 }
