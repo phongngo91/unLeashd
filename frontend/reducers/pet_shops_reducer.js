@@ -2,6 +2,7 @@ import {
   RECEIVE_PET_SHOPS,
   RECEIVE_PET_SHOP
 } from "../actions/pet_shops_actions";
+import { RECEIVE_DOG } from "../actions/dog_actions";
 
 const defaultState = {};
 
@@ -22,6 +23,9 @@ const petShopsReducer = (state = defaultState, action) => {
       // });
       // newPetShop[dog_breeds] = dogIds;
       return Object.assign({}, newState, action.petShop);
+    case RECEIVE_DOG:
+      const pet_shop = Object.values(action.dog)[0].pet_shop;
+      return Object.assign({}, newState, { [pet_shop.id]: pet_shop });
     default:
       return state;
   }

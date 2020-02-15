@@ -2,6 +2,9 @@ import {
     RECEIVE_CURRENT_USER
 } from "../actions/session_actions";
 
+import { RECEIVE_DOG } from "../actions/dog_actions";
+
+
 import { RECEIVE_SINGLE_USER } from "../actions/users_actions";
 
 const defaultState = {};
@@ -39,6 +42,18 @@ const usersReducer = (state = defaultState, action) => {
             }
         };
         return Object.assign({}, state, newSingleUser);
+        case RECEIVE_DOG:
+            const author = Object.values(action.dog)[0].author;
+            const newDogOwner = {
+                [author.id]:{
+                    id: author.id,
+                    username: author.username,
+                    first_name: author.first_name,
+                    last_name: author.last_name
+                }
+            };
+        return Object.assign({}, state, newDogOwner);
+
         default:
             return state;
     }

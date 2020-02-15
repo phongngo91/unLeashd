@@ -22,7 +22,29 @@ const dogsReducer = (state = defaultState, action) => {
     case RECEIVE_CURRENT_USER:
       return action.currentUser.authored_dog_breeds;
     case RECEIVE_DOG:
-      return Object.assign({}, newState, action.dog);
+      const {
+        id,
+        breed_name,
+        description,
+        fluff_by_vol,
+        int_cute_unit,
+        pet_shop_id,
+        author_id,
+        image_url
+      } = Object.values(action.dog)[0];
+      const newDog = {
+        [id]: {
+          id,
+          breed_name,
+          description,
+          fluff_by_vol,
+          int_cute_unit,
+          pet_shop_id,
+          author_id,
+          image_url
+        }
+      };
+      return Object.assign({}, newState, newDog);
     default:
       return state;
   }
