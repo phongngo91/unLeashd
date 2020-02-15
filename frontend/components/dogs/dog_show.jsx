@@ -19,7 +19,16 @@ class DogShow extends React.Component {
     }
 
     if (this.props.dog) {
-      const { id, breed_name, image_url, description } = this.props.dog;
+      const {
+        id,
+        breed_name,
+        image_url,
+        description,
+        author_id,
+        pet_shop_id
+      } = this.props.dog;
+      const dog_author = this.props.users[author_id];
+      const dog_pet_shop = this.props.pet_shops[pet_shop_id];
       return (
         <div className="petshop-show-container">
           <div>
@@ -27,7 +36,17 @@ class DogShow extends React.Component {
             <div>{editBtn}</div>
           </div>
           <div className="petshop-show-description">
-            <div className="petshop-name">{breed_name}</div>
+            <div className="dog-assotiations">
+              <div className="petshop-name">{breed_name}</div>
+              <Link to={`/petshops/${dog_pet_shop.id}`}>
+                <div>{dog_pet_shop.pet_shop_name}</div>
+              </Link>
+              <Link to={`/users/${dog_author.id}`}>
+                <span>
+                  {dog_author.first_name} {dog_author.last_name}
+                </span>
+              </Link>
+            </div>
             <div className="petshop-loc">{description}</div>
           </div>
         </div>
