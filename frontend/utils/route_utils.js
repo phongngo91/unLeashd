@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
-    // debugger
     return{
         //if our state has an id, under the sessions slice, then we are logged in!
     loggedIn: Boolean(state.session.id)

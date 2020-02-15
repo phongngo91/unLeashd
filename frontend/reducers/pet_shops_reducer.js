@@ -17,7 +17,6 @@ const petShopsReducer = (state = defaultState, action) => {
       // const newPetShop = {
       //   [action.petShop.id]: action.petShop
       // };
-      // debugger
       // const dogIds = action.petShop.dog_breeds.map(dog => {
       //   return dog.id;
       // });

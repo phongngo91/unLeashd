@@ -15,7 +15,6 @@ const dogsReducer = (state = defaultState, action) => {
       // to track all dog breeds
       // return Object.assign({}, newState, action.singleUser.authored_dog_breeds);
       // to track just dog breeds of a single user
-      // debugger
       return action.singleUser.authored_dog_breeds;
     case RECEIVE_PET_SHOP:
       return Object.values(action.petShop)[0].dog_breeds;
