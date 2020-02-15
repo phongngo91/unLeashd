@@ -11,6 +11,7 @@ class DogShow extends React.Component {
   }
 
   render() {
+
     let editBtn = null;
     if (this.props.loggedInUser && this.props.dog) {
       if (this.props.loggedInUser.id === this.props.dog.author_id) {
@@ -29,6 +30,11 @@ class DogShow extends React.Component {
       } = this.props.dog;
       const dog_author = this.props.users[author_id];
       const dog_pet_shop = this.props.pet_shops[pet_shop_id];
+
+      if (dog_author === undefined || dog_pet_shop === undefined){
+        return null;
+      }
+
       return (
         <div className="petshop-show-container">
           <div>
