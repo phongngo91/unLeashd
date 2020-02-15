@@ -15,7 +15,7 @@ class Api::DogBreedsController < ApplicationController
   end
 
   def show
-    @dog = DogBreed.find_by(id: params[:id])
+    @dog = DogBreed.includes(:author, :pet_shop).find_by(id: params[:id])
     if @dog
       render :show
     else

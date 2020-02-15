@@ -23,9 +23,9 @@ class DogBreed < ApplicationRecord
     foreign_key: :author_id,
     primary_key: :id
 
-    belongs_to :pet_shop,
-      class_name: :PetShop,
-      foreign_key: :pet_shop_id,
-      primary_key: :id
+  belongs_to :pet_shop,
+    class_name: :PetShop,
+    foreign_key: :pet_shop_id,
+    primary_key: :id
   
 end
