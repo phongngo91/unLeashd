@@ -41,11 +41,13 @@ class EditDogForm extends React.Component {
     // WARNING
     // THIS CALLBACK CAN HAPPEN AFTER THE COMPONENT UNMOUNTS, WHICH IS
     // NOT GOOD, CONSIDER CHANGING
-    this.props.fetchPetShops().then(shops => {
-      return this.setState({
-        pet_shop_id: Object.values(shops.petShops)[0].id
-      });
-    });
+    // this.props.fetchPetShops().then(shops => {
+    //   return this.setState({
+    //     pet_shop_id: Object.values(shops.petShops)[0].id
+    //   });
+    // });
+
+    this.props.fetchPetShops().then();
   }
 
   componentWillUnmount() {
