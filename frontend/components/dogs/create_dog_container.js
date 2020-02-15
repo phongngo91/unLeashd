@@ -13,8 +13,8 @@ const mapStateToProps = state => ({
     photoFile: null,
     breed_name: "",
     description: "",
-    fluff_by_vol: 0,
-    int_cute_unit: 0,
+    fluff_by_vol: null,
+    int_cute_unit: null,
     pet_shop_id: 0,
     author_id: state.session.id
   }
