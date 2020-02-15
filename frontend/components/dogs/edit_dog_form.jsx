@@ -4,25 +4,19 @@ class EditDogForm extends React.Component {
   constructor(props) {
     super(props);
 
-    // if (this.props.dog === undefined) {
-    //   // this.props.history.push("/dogs");
-    //   this.props.fetchDog();
-    // }
-
     this.state = this.props.dog;
     if (this.props.dog) {
       this.state.imageUrl = this.props.dog.image_url;
     }
+
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     if (this.props.dog === undefined) {
-      // this.props.history.push("/dogs");
       this.props.fetchDog(this.props.match.params.dogId).then(
         dog => {
-          // debugger
           return this.setState({
             imageUrl: Object.values(dog.dog)[0].image_url,
             breed_name: Object.values(dog.dog)[0].breed_name,
@@ -37,15 +31,6 @@ class EditDogForm extends React.Component {
         () => this.props.history.push("/dogs")
       );
     }
-
-    // WARNING
-    // THIS CALLBACK CAN HAPPEN AFTER THE COMPONENT UNMOUNTS, WHICH IS
-    // NOT GOOD, CONSIDER CHANGING
-    // this.props.fetchPetShops().then(shops => {
-    //   return this.setState({
-    //     pet_shop_id: Object.values(shops.petShops)[0].id
-    //   });
-    // });
 
     this.props.fetchPetShops().then();
   }
@@ -108,19 +93,15 @@ class EditDogForm extends React.Component {
   }
 
   render() {
-    if (this.props.dog === undefined) {
-      // this.props.history.push("/dogs");
+    // return null if there is no dog to edit
+    if (this.props.dog === undefined || this.props.petShops === undefined) {
       return null;
     }
-
-    if (this.props.dog) {
-      if (
-        this.props.dog.author_id !== this.props.currentUser.id &&
-        this.props.formType === "Save Edit"
-      ) {
-        this.props.history.push(`/dogs/${this.props.dog.id}`);
-      }
+    // redirect to the dog's show page if the current user is not the dog's author
+    if (this.props.dog.author_id !== this.props.currentUser.id) {
+      this.props.history.push(`/dogs/${this.props.dog.id}`);
     }
+    // creates the array of errors
     const errorsEl = this.props.errors.map((error, idx) => {
       return (
         <li className="error" key={idx}>
@@ -128,7 +109,7 @@ class EditDogForm extends React.Component {
         </li>
       );
     });
-
+    //wraps the errors in a container, if there are any
     let errorsContainer = null;
     if (errorsEl.length > 0) {
       errorsContainer = <div className="login-error">{errorsEl}</div>;
@@ -136,7 +117,7 @@ class EditDogForm extends React.Component {
 
     let petShopIds = null;
 
-    if (this.props.petShops) {
+    if (this.props.petShops.length > 0) {
       petShopIds = this.props.petShops.map((petShop, idx) => {
         return (
           <option value={petShop.id} key={idx}>
@@ -183,14 +164,12 @@ class EditDogForm extends React.Component {
               <input
                 id="fluffy"
                 type="text"
-                placeholder="0"
                 onChange={this.update("fluff_by_vol")}
                 value={this.state.fluff_by_vol}
               />
               <label htmlFor="cute-unit">International Cuteness Unit</label>
               <input
                 id="cute-unit"
-                placeholder="0"
                 onChange={this.update("int_cute_unit")}
                 type="text"
                 value={this.state.int_cute_unit}
@@ -208,7 +187,7 @@ class EditDogForm extends React.Component {
             className="add-dog-btn remove-blue"
             onClick={this.handleSubmit}
           >
-            {this.props.formType}
+            Save Edit
           </button>
         </div>
       );

@@ -4,7 +4,6 @@ import { editDog, clearDogErrors, fetchDog } from '../../actions/dog_actions';
 import { fetchPetShops } from '../../actions/pet_shops_actions';
 
 const mapStateToProps = (state,ownProps) => ({
-  formType: 'Save Edit',
   errors: state.errors.dog,
   currentUser: state.entities.users[state.session.id],
   petShops: Object.values(state.entities.pet_shops),
