@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.user-home-content{
+.user-home-content {
   display: flex;
   box-sizing: border-box;
   justify-content: center;
@@ -14,31 +14,42 @@
   height: 600px;
 }
 
-.user-left-feed{
+.user-left-feed {
   box-sizing: border-box;
-  background-color: green;
   width: 550px;
   padding: 20px;
 }
 
-.user-right-feed{
+.user-right-feed {
   box-sizing: border-box;
-  background-color: red;
   width: 300px;
   padding: 20px;
   margin-left: 20px;
 }
 
-.user-profile{
+.user-profile {
   background-color: white;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   width: 250px;
   height: 250px;
   display: flex;
+  padding: 16px;
   flex-direction: column;
 }
 
-.sample-global-checkins{
+.sample-global-checkins {
+  padding: 16px;
   height: 400px;
   width: 100%;
   background-color: white;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+  font-size: 1.1em;
+  line-height: 1.125em;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
