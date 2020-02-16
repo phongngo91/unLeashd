@@ -8,7 +8,9 @@ class CreateCheckinForm extends React.Component{
   }
 
   render(){
-    return (<h1>CHECKIN FORM</h1>)
+    return (
+      <div className="checkin-container"></div>
+      )
   }
 }
 
