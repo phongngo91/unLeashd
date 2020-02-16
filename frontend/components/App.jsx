@@ -14,10 +14,12 @@ import CreateDogContainer from './dogs/create_dog_container';
 import DogsIndexContainer from './dogs/dogs_index_container';
 import DogShowContainer from './dogs/dog_show_container';
 import EditDogContainer from './dogs/edit_dog_container';
+import Modal from './modal/modal';
 
 const App = () => {
   return (
     <>
+      <Modal />
       <Route path="/" component={NavBarContainer} />
       <Switch>
         <AuthRoute exact path="/" component={SplashContainer} />

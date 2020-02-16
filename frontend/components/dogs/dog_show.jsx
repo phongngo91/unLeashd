@@ -4,10 +4,16 @@ import { Link } from "react-router-dom";
 class DogShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.openCheckinModal = this.openCheckinModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchDog(this.props.match.params.dogId);
+  }
+
+  openCheckinModal(){
+    this.props.openCheckinModal();
   }
 
   render() {
@@ -57,6 +63,7 @@ class DogShow extends React.Component {
                 </Link>
               </div>
               <div
+                onClick={this.openCheckinModal}
                 className="checkin-button"
                 style={{
                   backgroundImage: `url(${window.checkmark})`

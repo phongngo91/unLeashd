@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import DogShow from "./dog_show";
 import { fetchDog } from "../../actions/dog_actions";
+import { openModal } from '../../actions/modal_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchDog: dogId => dispatch(fetchDog(dogId))
+  fetchDog: dogId => dispatch(fetchDog(dogId)),
+  openCheckinModal: () => dispatch(openModal('checkin'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogShow);
