@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class UsersShow extends React.Component {
   constructor(props) {
@@ -30,9 +31,19 @@ class UsersShow extends React.Component {
       dogsEl = this.props.authored_dogs.map((dog, idx) => {
         return (
           <div key={idx} className="user-dogs-card">
-            <img src={dog.image_url} alt="dog-pic" className="user-dogs-icon"/>
-            <div>{dog.breed_name}</div>
-            <div>{dog.description}</div>
+            <Link to={`/dogs/${dog.id}`}>
+              <img
+                src={dog.image_url}
+                alt="dog-pic"
+                className="user-dogs-icon"
+              />
+            </Link>
+            <div>
+              <Link to={`/dogs/${dog.id}`}>
+                <div className="dog-name">{dog.breed_name}</div>
+              </Link>
+              <div className="dog-description">{dog.description}</div>
+            </div>
           </div>
         );
       });
