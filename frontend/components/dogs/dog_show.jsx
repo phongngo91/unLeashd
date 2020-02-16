@@ -61,7 +61,8 @@ class DogShow extends React.Component {
                 style={{
                   backgroundImage: `url(${window.checkmark})`
                 }}
-              ></div>
+              >
+              </div>
             </div>
             <div className="petshop-loc">{description}</div>
           </div>

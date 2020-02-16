@@ -64,4 +64,9 @@
 
 .checkin-button:hover {
   background-color: #f4b800;
+  cursor: pointer;
+}
+
+.petshop-show-description{
+  width: 100%;
 }
