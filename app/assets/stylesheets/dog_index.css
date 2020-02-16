@@ -3,13 +3,13 @@
   height: 100px;
 }
 
-.dog-index-one{
+.dog-index-one {
   margin: auto;
   box-sizing: border-box;
   padding: 10px;
 }
 
-.dog-container{
+.dog-container {
   display: flex;
   background-color: white;
   padding: 10px;
@@ -17,7 +17,7 @@
   margin: 0 auto;
 }
 
-.dog-card{
+.dog-card {
   width: 700px;
   box-sizing: border-box;
   height: fit-content;
@@ -27,12 +27,12 @@
   background-color: white;
 }
 
-.list-title{
+.list-title {
   width: 820px;
   margin: 0 auto;
 }
 
-.dog-info-box{
+.dog-info-box {
   padding: 0px 10px 10px 10px;
 }
 
@@ -40,10 +40,28 @@
   color: #c60;
 }
 
-.dog-name:hover{
+.dog-name:hover {
   color: #f93;
 }
 
-.move-right{
+.move-right {
   padding-left: 10px;
+}
+
+.dog-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkin-button {
+  height: 52px;
+  width: 52px;
+  background-color: #ffcc00;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.checkin-button:hover {
+  background-color: #f4b800;
 }

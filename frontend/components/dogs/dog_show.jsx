@@ -11,7 +11,6 @@ class DogShow extends React.Component {
   }
 
   render() {
-
     let editBtn = null;
     if (this.props.loggedInUser && this.props.dog) {
       if (this.props.loggedInUser.id === this.props.dog.author_id) {
@@ -31,7 +30,7 @@ class DogShow extends React.Component {
       const dog_author = this.props.users[author_id];
       const dog_pet_shop = this.props.pet_shops[pet_shop_id];
 
-      if (dog_author === undefined || dog_pet_shop === undefined){
+      if (dog_author === undefined || dog_pet_shop === undefined) {
         return null;
       }
 
@@ -42,17 +41,27 @@ class DogShow extends React.Component {
             <div>{editBtn}</div>
           </div>
           <div className="petshop-show-description">
-            <div className="dog-assotiations">
-              <div className="petshop-name">{breed_name}</div>
-              <Link to={`/petshops/${dog_pet_shop.id}`}>
-                <span className="move-right">{dog_pet_shop.pet_shop_name}</span>
-              </Link>
-              <br />
-              <Link to={`/users/${dog_author.id}`}>
-                <span className="move-right">
-                  {dog_author.first_name} {dog_author.last_name}
-                </span>
-              </Link>
+            <div className="dog-links">
+              <div className="dog-assotiations">
+                <div className="petshop-name">{breed_name}</div>
+                <Link to={`/petshops/${dog_pet_shop.id}`}>
+                  <span className="move-right">
+                    {dog_pet_shop.pet_shop_name}
+                  </span>
+                </Link>
+                <br />
+                <Link to={`/users/${dog_author.id}`}>
+                  <span className="move-right">
+                    {dog_author.first_name} {dog_author.last_name}
+                  </span>
+                </Link>
+              </div>
+              <div
+                className="checkin-button"
+                style={{
+                  backgroundImage: `url(${window.checkmark})`
+                }}
+              ></div>
             </div>
             <div className="petshop-loc">{description}</div>
           </div>
