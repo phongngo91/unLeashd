@@ -1,42 +1,92 @@
-.checkin-container{
+.checkin-container {
   background-color: white;
   width: 500px;
-  height: 260px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
 }
 
-.checkin-text{
+.checkin-text {
   color: white;
 }
 
-.x-button{
+.x-button {
   width: 16px;
   height: 16px;
   background-size: cover;
 }
 
-.x-button:hover{
+.x-button:hover {
   cursor: pointer;
 }
 
-.checkin-submit-btn:hover{
+.checkin-submit-btn {
+  color: #fff;
+  background-color: #ffcc00;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.checkin-submit-btn:hover {
   cursor: pointer;
 }
 
-.checkin-header{
+.checkin-header {
   display: flex;
   justify-content: space-between;
   background-color: black;
   align-items: center;
-  padding: 10px
+  padding: 10px;
 }
 
 .hover-cursor:hover {
   cursor: pointer;
 }
 
-.checkin-submit-container{
+.checkin-submit-container {
   display: flex;
   justify-content: flex-end;
+  padding: 16px;
+}
+
+.checkin-body-img {
+  padding: 16px 16px 0px 16px;
+  display: flex;
+}
+
+.checkin-slider{
+  width: 100%;
+}
+
+.checkin-body {
+  resize: none;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  width: 80%;
+  height: 80px;
+  margin-right: 1.5%;
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: top;
+  padding: 4px;
+  box-sizing: border-box;
+  
+}
+
+.rating-display{
+  text-align: center;
+  color: white;
+  background-color: gray;
+  padding: 2px;
+  margin: 0px 16px;
+  border-radius: 4px;
+}
+
+.preview-checkin-pic{
+  width: 100px;
+  height: 100px;
 }
