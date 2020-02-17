@@ -41,6 +41,7 @@ class Home extends React.Component {
     const { first_name, last_name, username } = this.props.currentUser;
     return (
       <div className="home-container">
+        <div>{process.env.PHONG_RULES}</div>
         <div className="user-home-content">
           <div className="user-left-feed">
             <div className="global-checkins">
