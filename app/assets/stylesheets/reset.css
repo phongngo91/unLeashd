@@ -540,8 +540,9 @@ li {
 }
 
 .truncate {
-  width: 350px;
-  white-space: nowrap;
+  width: 450px;
+  /* white-space: nowrap; */
+  word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
 }
