@@ -27,5 +27,10 @@ class DogBreed < ApplicationRecord
     class_name: :PetShop,
     foreign_key: :pet_shop_id,
     primary_key: :id
+
+  has_many :checkins,
+    class_name: :Checkin,
+    foreign_key: :dog_breed_id,
+    primary_key: :id
   
 end

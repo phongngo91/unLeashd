@@ -27,6 +27,11 @@ class User < ApplicationRecord
       foreign_key: :author_id,
       primary_key: :id,
       dependent: :destroy
+
+    has_many :checkins,
+      class_name: :Checkin,
+      foreign_key: :author_id,
+      primary_key: :id
   
     after_initialize :ensure_session_token
   
