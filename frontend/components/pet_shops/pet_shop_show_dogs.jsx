@@ -38,16 +38,18 @@ class PetShopShow extends React.Component {
     }
 
     if (this.props.petShop) {
-      const { pet_shop_name, image_url, city, state } = this.props.petShop;
+      const { id, pet_shop_name, image_url, city, state } = this.props.petShop;
       return (
         <div className="petshop-content">
           <div className="petshop-show-container">
             <div>
-              <img
-                className="petshop-logo"
-                src={image_url}
-                alt="petshop-logo"
-              />
+              <Link to={`/petshops/${id}`}>
+                <img
+                  className="petshop-logo"
+                  src={image_url}
+                  alt="petshop-logo"
+                />
+              </Link>
             </div>
             <div className="petshop-show-description">
               <div className="petshop-name truncate">{pet_shop_name}</div>
