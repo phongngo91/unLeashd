@@ -45,7 +45,17 @@ class Home extends React.Component {
                   {checkin.author.first_name} {checkin.author.last_name}
                 </Link>
               </span>{" "}
-              pet a {checkin.dog_breed.breed_name} at {checkin.pet_shop}
+              is petting a{" "}
+              <Link to={`dogs/${checkin.dog_breed_id}`} className="dog-name">
+                {checkin.dog_breed.breed_name}
+              </Link>{" "}
+              at{" "}
+              <Link
+                to={`/petshops/${checkin.pet_shop_id}`}
+                className="dog-name"
+              >
+                {checkin.pet_shop}
+              </Link>
             </span>
           </div>
           {checkinBody}

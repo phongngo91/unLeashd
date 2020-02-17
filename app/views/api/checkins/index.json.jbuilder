@@ -9,5 +9,6 @@
       json.extract! checkin.dog_breed, :breed_name
     end
     json.pet_shop checkin.pet_shop.pet_shop_name
+    json.pet_shop_id checkin.pet_shop.id
   end
 end

@@ -37,6 +37,7 @@ li {
   display: inline-block;
   align-content: flex-end;
   text-align: end;
+  margin: 15px 0px;
 }
 
 .login-button,
