@@ -12,7 +12,7 @@ class CreateCheckinForm extends React.Component {
     this.state = {
       author_id: this.props.currentUser.id,
       dog_breed_id: dogId,
-      rating: 0,
+      rating: "0",
       checkin_body: "",
       imageUrl: "",
       photoFile: null
@@ -116,9 +116,9 @@ class CreateCheckinForm extends React.Component {
           />
           <div className="rating-container">
             <div className="rating-display">
-              {this.state.rating === 0 ? "No" : this.state.rating}
+              {this.state.rating === "0" ? "No" : this.state.rating}
               <br />
-              {this.state.rating === 0 ? "Rating" : "PAWS"}
+              {this.state.rating === "0" ? "Rating" : "PAWS"}
             </div>
           </div>
           <div className="checkin-submit-btn" onClick={this.handleSubmit}>

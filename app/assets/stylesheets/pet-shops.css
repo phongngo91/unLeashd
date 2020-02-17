@@ -92,3 +92,19 @@ div, a {
 .dog-index-container{
   margin-top: 60px;
 }
+
+.petshop-checkins{
+  box-sizing: border-box;
+  width: 700px;
+  background-color: white;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.petshop-checkin-list{
+  font-weight: 600;
+  font-size: 1.1em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0;
+}

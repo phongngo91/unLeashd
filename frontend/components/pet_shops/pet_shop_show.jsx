@@ -12,6 +12,58 @@ class PetShopShow extends React.Component {
   }
 
   render() {
+    let petShopCheckins = null;
+    if (this.props.checkins.length > 0) {
+      petShopCheckins = this.props.checkins.reverse().map((checkin, idx) => {
+        let checkinImage = null;
+        let checkinBody = null;
+        if (checkin.image_url) {
+          checkinImage = (
+            <div className="checkin-img-container">
+              <img
+                className="checkin-img"
+                src={checkin.image_url}
+                alt="checkin-image"
+              />
+            </div>
+          );
+        }
+        if (checkin.checkin_body.length > 0) {
+          checkinBody = (
+            <div className="checkin-body-container">
+              <div className="checkin-body-text">{checkin.checkin_body}</div>
+            </div>
+          );
+        }
+
+        return (
+          <div key={idx} className="checkin-card">
+            <div className="checkin-user-info">
+              <span>
+                <span>
+                  <Link to={`users/${checkin.author_id}`} className="dog-name">
+                    {checkin.author.first_name} {checkin.author.last_name}
+                  </Link>
+                </span>{" "}
+                is petting a{" "}
+                <Link to={`dogs/${checkin.dog_breed_id}`} className="dog-name">
+                  {checkin.dog_breed.breed_name}
+                </Link>{" "}
+                at{" "}
+                <Link
+                  to={`/petshops/${checkin.pet_shop_id}`}
+                  className="dog-name"
+                >
+                  {checkin.pet_shop}
+                </Link>
+              </span>
+            </div>
+            {checkinBody}
+            <div>{checkinImage}</div>
+          </div>
+        );
+      });
+    }
 
     if (this.props.petShop) {
       const { id, pet_shop_name, image_url, city, state } = this.props.petShop;
@@ -37,9 +89,11 @@ class PetShopShow extends React.Component {
               </div>
             </div>
           </div>
-          <div className="petshop-dog-show">
-            <div className="dog-list">Checkins</div>
-            
+          <div className="petshop-checkins">
+            <div className="petshop-checkin-list">
+              {pet_shop_name}'s Checkins
+            </div>
+            {petShopCheckins}
           </div>
         </div>
       );
