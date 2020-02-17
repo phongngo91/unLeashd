@@ -51,7 +51,7 @@ class PetShopShow extends React.Component {
                 is petting a{" "}
                 <a href={`/#/dogs/${checkin.dog_breed_id}`} className="dog-name">
                   {checkin.dog_breed.breed_name}
-                </a>
+                </a>{" "}
                 at{" "}
                 <a
                   href={`/#/petshops/${checkin.pet_shop_id}`}
