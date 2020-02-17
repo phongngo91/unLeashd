@@ -1,13 +1,17 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router";
 
 class CreateCheckinForm extends React.Component {
   constructor(props) {
     super(props);
 
+    const dogShowPath = this.props.location.pathname;
+    const dogId = dogShowPath.split("/")[2];
+
     this.state = {
       author_id: this.props.currentUser.id,
-      dog_breed_id: this.props.dog[0].id,
+      dog_breed_id: dogId,
       rating: 0,
       checkin_body: "",
       imageUrl: "",
@@ -58,7 +62,7 @@ class CreateCheckinForm extends React.Component {
     if (this.state.photoFile) {
       formData.append("checkin[photo]", this.state.photoFile);
     }
-    
+
     this.props
       .createCheckin(formData)
       .then(() => this.props.openConfirmCheckinModal());
@@ -126,4 +130,4 @@ class CreateCheckinForm extends React.Component {
   }
 }
 
-export default CreateCheckinForm;
+export default withRouter(CreateCheckinForm);
