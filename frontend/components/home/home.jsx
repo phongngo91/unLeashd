@@ -13,10 +13,27 @@ class Home extends React.Component {
     if (this.props.checkins.length === 0) {
       return null;
     }
-    let checkins = this.props.checkins.map((checkin, idx) => {
+    let checkins = this.props.checkins.reverse().map((checkin, idx) => {
+      var checkinImage = null;
+      if (checkin.image_url) {
+        checkinImage = (<div className="checkin-img-container">
+            <img
+              className="checkin-img"
+              src={checkin.image_url}
+              alt="checkin-image"
+            />
+          </div>);
+      }
       return (
-        <div key={idx}>
-          <div>{checkin.id} {checkin.checkin_body}</div>
+        <div key={idx} className="checkin-card">
+          <div className="checkin-user-info">
+            <span>
+              {checkin.author.first_name} {checkin.author.last_name} pet a{" "}
+              {checkin.dog_breed.breed_name} at {checkin.pet_shop}
+            </span>
+          </div>
+          <div className="checkin-body-text">{checkin.checkin_body}</div>
+          <div>{checkinImage}</div>
         </div>
       );
     });
@@ -26,9 +43,9 @@ class Home extends React.Component {
       <div className="home-container">
         <div className="user-home-content">
           <div className="user-left-feed">
-            <div className="sample-global-checkins">
+            <div className="global-checkins">
               <ul>
-                Global Checkin Ids
+                Recent Activities Feed
                 {checkins}
               </ul>
             </div>

@@ -32,5 +32,6 @@ class DogBreed < ApplicationRecord
     class_name: :Checkin,
     foreign_key: :dog_breed_id,
     primary_key: :id
+
   
 end

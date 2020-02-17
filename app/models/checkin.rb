@@ -24,5 +24,8 @@ class Checkin < ApplicationRecord
     foreign_key: :dog_breed_id,
     primary_key: :id
 
+  has_one :pet_shop,
+    through: :dog_breed
+
   has_one_attached :photo
 end

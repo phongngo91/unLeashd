@@ -1,7 +1,7 @@
 class Api::CheckinsController < ApplicationController
   def index
     @checkins = Checkin.all
-    render json: @checkins
+    render :index
   end
 
   def create
