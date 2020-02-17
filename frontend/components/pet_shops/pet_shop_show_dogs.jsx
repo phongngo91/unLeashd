@@ -12,9 +12,33 @@ class PetShopShow extends React.Component {
   }
 
   render() {
+    let dogsEl = null;
+    if (this.props.authored_dogs) {
+      // Reverse to show the most recent dogs first
+      dogsEl = this.props.authored_dogs.reverse().map((dog, idx) => {
+        return (
+          <div key={idx} className="user-dogs-card">
+            <Link to={`/dogs/${dog.id}`}>
+              <img
+                src={dog.image_url}
+                alt="dog-pic"
+                className="user-dogs-icon"
+              />
+            </Link>
+
+            <div className="dog-card-desc">
+              <Link to={`/dogs/${dog.id}`}>
+                <div className="dog-name">{dog.breed_name}</div>
+              </Link>
+              <div>{dog.description}</div>
+            </div>
+          </div>
+        );
+      });
+    }
 
     if (this.props.petShop) {
-      const { id, pet_shop_name, image_url, city, state } = this.props.petShop;
+      const { pet_shop_name, image_url, city, state } = this.props.petShop;
       return (
         <div className="petshop-content">
           <div className="petshop-show-container">
@@ -30,16 +54,11 @@ class PetShopShow extends React.Component {
               <span className="petshop-loc">
                 {city}, {state}
               </span>
-              <div className="move-right">
-                <Link to={`/petshops/${id}/dogs`} className="dog-name">
-                  {pet_shop_name}'s Dogs
-                </Link>
-              </div>
             </div>
           </div>
           <div className="petshop-dog-show">
-            <div className="dog-list">Checkins</div>
-            
+            <div className="dog-list">Dog List</div>
+            {dogsEl}
           </div>
         </div>
       );

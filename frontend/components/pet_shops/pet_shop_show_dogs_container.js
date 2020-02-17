@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PetShopShow from "./pet_shop_show";
+import PetShopShowDogs from "./pet_shop_show_dogs";
 import { fetchPetShop } from "../../actions/pet_shops_actions";
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
   fetchPetShop: petShopId => dispatch(fetchPetShop(petShopId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PetShopShow);
+export default connect(mapStateToProps, mapDispatchToProps)(PetShopShowDogs);

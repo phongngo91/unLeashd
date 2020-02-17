@@ -28,8 +28,6 @@ li {
   align-content: flex-end;
   justify-content: flex-start;
   margin: auto;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(url_asset("dog_park.png")); */
-  /* background-image: url('dog_park.jpg'); */
   height: 100vh;
 }
 
@@ -542,8 +540,12 @@ li {
 
 .truncate {
   width: 450px;
-  /* white-space: nowrap; */
   word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.move-right{
+  padding-left: 10px;
+  margin-top: 10px;
 }
