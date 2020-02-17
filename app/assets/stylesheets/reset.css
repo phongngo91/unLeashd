@@ -1,4 +1,5 @@
-body, ul {
+body,
+ul {
   margin: 0;
 }
 
@@ -67,7 +68,7 @@ li {
 .login-button:active,
 .signup-button:active,
 .signup-nav-btn:active,
-.login-nav-btn:active{
+.login-nav-btn:active {
   outline: none;
 }
 
@@ -298,7 +299,6 @@ li {
   border-radius: 30px;
 }
 
-
 .dog-paw {
   width: 200px;
   background: transparent;
@@ -468,7 +468,7 @@ li {
   justify-content: space-evenly;
 }
 
-.submit-dog-container{
+.submit-dog-container {
   display: flex;
   flex-direction: column;
   width: 700px;
@@ -478,33 +478,33 @@ li {
   margin-top: 80px;
 }
 
-.small-pic{
+.small-pic {
   width: 250px;
   height: 250px;
   background-color: bisque;
 }
 
-.new-dog-pic{
+.new-dog-pic {
   display: flex;
   flex-direction: column;
 }
 
-.new-dog-info{
-  display:flex;
+.new-dog-info {
+  display: flex;
   flex-direction: column;
   padding: 10px 10px 0 10px;
   width: 100%;
 }
 
-.new-dog-tophalf{
-  display:flex;
+.new-dog-tophalf {
+  display: flex;
 }
 
-.select-pet-shop{
+.select-pet-shop {
   font-size: 1.1em;
 }
 
-.add-dog-btn{
+.add-dog-btn {
   width: 100%;
   padding: 1px 7px 2px;
   border-width: 1px;
@@ -517,25 +517,25 @@ li {
   padding: 10px 0;
 }
 
-.add-dog-btn:hover{
+.add-dog-btn:hover {
   background-color: #f4b800;
   cursor: pointer;
 }
 
-#petshop-list{
+#petshop-list {
   height: 90px;
 }
 
-#dog-description{
+#dog-description {
   height: 100%;
 }
 
-.dog-show-pic{
+.dog-show-pic {
   width: 200px;
   height: 200px;
 }
 
-.inherit-width{
+.inherit-width {
   width: 100%;
 }
 

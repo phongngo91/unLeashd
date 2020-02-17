@@ -16,6 +16,7 @@ class CreateCheckinForm extends React.Component {
 
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   componentWillUnmount() {
@@ -55,8 +56,9 @@ class CreateCheckinForm extends React.Component {
     formData.append("checkin[rating]", this.state.rating);
     formData.append("checkin[checkin_body]", this.state.checkin_body);
     if (this.state.photoFile) {
-      formData.append("dog[photo]", this.state.photoFile);
+      formData.append("checkin[photo]", this.state.photoFile);
     }
+    
     this.props
       .createCheckin(formData)
       .then(() => this.props.openConfirmCheckinModal());
@@ -89,20 +91,17 @@ class CreateCheckinForm extends React.Component {
             cols="30"
             rows="10"
             placeholder="What did you think?"
+            onChange={this.update("checkin_body")}
+            value={this.state.checkin_body}
           ></textarea>
           <div className="img-preview">
-          <input type="file" onChange={this.handlePicture} />
-          <img
-                src={this.state.imageUrl}
-                alt="Submit Checkin Pic"
-                className="preview-checkin-pic"
-              />
+            <input type="file" onChange={this.handlePicture} />
+            <div className="preview-checkin-pic">
+              <img className="preview-checkin-img" src={this.state.imageUrl} alt="Submit Checkin Pic" />
+            </div>
           </div>
         </div>
-        <div
-          className="checkin-submit-container"
-          onChange={this.update("checkin_body")}
-        >
+        <div className="checkin-submit-container">
           <input
             type="range"
             min="0"

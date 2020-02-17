@@ -14,7 +14,11 @@ class Home extends React.Component {
       return null;
     }
     let checkins = this.props.checkins.map((checkin, idx) => {
-      return <div key={idx}>{checkin.id}</div>;
+      return (
+        <div key={idx}>
+          <div>{checkin.id} {checkin.checkin_body}</div>
+        </div>
+      );
     });
 
     const { first_name, last_name, username } = this.props.currentUser;
@@ -23,7 +27,8 @@ class Home extends React.Component {
         <div className="user-home-content">
           <div className="user-left-feed">
             <div className="sample-global-checkins">
-              <ul>Global Checkin Ids
+              <ul>
+                Global Checkin Ids
                 {checkins}
               </ul>
             </div>
