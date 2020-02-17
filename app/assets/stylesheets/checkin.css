@@ -1,5 +1,29 @@
 .checkin-container{
   background-color: white;
-  width: 600px;
-  height: 250px;
+  width: 500px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkin-text{
+  color: white;
+}
+
+.x-button{
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+}
+
+.x-button:hover{
+  cursor: pointer;
+}
+
+.checkin-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  align-items: center;
+  padding: 10px
 }
