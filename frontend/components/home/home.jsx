@@ -16,13 +16,15 @@ class Home extends React.Component {
     let checkins = this.props.checkins.reverse().map((checkin, idx) => {
       var checkinImage = null;
       if (checkin.image_url) {
-        checkinImage = (<div className="checkin-img-container">
+        checkinImage = (
+          <div className="checkin-img-container">
             <img
               className="checkin-img"
               src={checkin.image_url}
               alt="checkin-image"
             />
-          </div>);
+          </div>
+        );
       }
       return (
         <div key={idx} className="checkin-card">
@@ -41,12 +43,11 @@ class Home extends React.Component {
     const { first_name, last_name, username } = this.props.currentUser;
     return (
       <div className="home-container">
-        <div>{process.env.PHONG_RULES}</div>
         <div className="user-home-content">
           <div className="user-left-feed">
             <div className="global-checkins">
               <ul>
-                Recent Activities Feed
+                <h3 className="recent-feed-header">Recent Activities Feed</h3>
                 {checkins}
               </ul>
             </div>
