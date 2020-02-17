@@ -49,7 +49,7 @@ class DogShow extends React.Component {
           <div className="petshop-show-description">
             <div className="dog-links">
               <div className="dog-assotiations">
-                <div className="petshop-name">{breed_name}</div>
+                <div className="petshop-name truncate">{breed_name}</div>
                 <Link to={`/petshops/${dog_pet_shop.id}`}>
                   <span className="move-right">
                     {dog_pet_shop.pet_shop_name}

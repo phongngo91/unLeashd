@@ -50,7 +50,7 @@ class PetShopShow extends React.Component {
               />
             </div>
             <div className="petshop-show-description">
-              <div className="petshop-name">{pet_shop_name}</div>
+              <div className="petshop-name truncate">{pet_shop_name}</div>
               <span className="petshop-loc">
                 {city}, {state}
               </span>
