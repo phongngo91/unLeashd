@@ -1,16 +1,21 @@
 require 'open-uri'
 
 ActiveRecord::Base.transaction do
-    User.destroy_all
+    Checkin.destroy_all
+    DogBreed.destroy_all
     PetShop.destroy_all
-    DogBreed.destroy_all 
-    
-    User.create!([
-        {username: "phong", password: "hunter2", email: "phong@aa.com", first_name: "phong", last_name: "ngo"},
-        {username: "tommy", password: "hunter2", email: "tommy@aa.com", first_name: "tommy", last_name: "doe"},
-        {username: "demo_user", password: "hunter2", email: "demo_user@aa.com", first_name: "userFirstName", last_name: "userLastName"}
-    ])
+    User.destroy_all
 
+    phong = User.create!(username: "phong", password: "hunter2", email: "phong@aa.com", first_name: "phong", last_name: "ngo")
+    tommy = User.create!(username: "tommy", password: "hunter2", email: "tommy@aa.com", first_name: "tommy", last_name: "Smith")
+    demo_user = User.create!(username: "demo_user", password: "hunter2", email: "demo_user@aa.com", first_name: "John", last_name: "Doe")
+    hacker_man = User.create!(username: "hackerman", password: "hunter2", email: "hackerman@aa.com", first_name: "Sarah", last_name: "Silverman")
+    lovelace = User.create!(username: "lovelace", password: "hunter2", email: "lovelace@aa.com", first_name: "Drew", last_name: "Barrymore")
+
+    petco = Petshop.create!(pet_shop_name: "Petco", city: "Queens", state: "NY", image_url: "1")
+    petsmart = Petshop.create!(pet_shop_name: "PetSmart", city: "Manhattan", state: "NY", image_url: "2")
+    whiskers_holistic = Petshop.create!(pet_shop_name: "Whiskers Holistic", city: "Queens", state: "NY", image_url: "3")
+    
     PetShop.create!([
         {pet_shop_name: "Petco", city: "Queens", state: "NY", image_url: "1"},
         {pet_shop_name: "PetSmart", city: "Manhattan", state: "NY", image_url: "2"},

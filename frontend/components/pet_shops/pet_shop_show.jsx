@@ -41,21 +41,24 @@ class PetShopShow extends React.Component {
             <div className="checkin-user-info">
               <span>
                 <span>
-                  <Link to={`users/${checkin.author_id}`} className="dog-name">
+                  <a
+                    href={`/#/users/${checkin.author_id}`}
+                    className="dog-name"
+                  >
                     {checkin.author.first_name} {checkin.author.last_name}
-                  </Link>
+                  </a>
                 </span>{" "}
                 is petting a{" "}
-                <Link to={`dogs/${checkin.dog_breed_id}`} className="dog-name">
+                <a href={`/#/dogs/${checkin.dog_breed_id}`} className="dog-name">
                   {checkin.dog_breed.breed_name}
-                </Link>{" "}
+                </a>
                 at{" "}
-                <Link
-                  to={`/petshops/${checkin.pet_shop_id}`}
+                <a
+                  href={`/#/petshops/${checkin.pet_shop_id}`}
                   className="dog-name"
                 >
                   {checkin.pet_shop}
-                </Link>
+                </a>
               </span>
             </div>
             {checkinBody}
