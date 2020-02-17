@@ -118,6 +118,13 @@
 .checkin-img-container {
 }
 
+.checkin-body-container {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  margin: 12px 0px;
+}
+
 .checkin-img {
   width: 150px;
   height: 150px;

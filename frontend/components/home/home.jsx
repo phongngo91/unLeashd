@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class Home extends React.Component {
       return null;
     }
     let checkins = this.props.checkins.reverse().map((checkin, idx) => {
-      var checkinImage = null;
+      let checkinImage = null;
+      let checkinBody = null;
       if (checkin.image_url) {
         checkinImage = (
           <div className="checkin-img-container">
@@ -26,15 +28,27 @@ class Home extends React.Component {
           </div>
         );
       }
+      if (checkin.checkin_body.length > 0) {
+        checkinBody = (
+          <div className="checkin-body-container">
+            <div className="checkin-body-text">{checkin.checkin_body}</div>
+          </div>
+        );
+      }
+
       return (
         <div key={idx} className="checkin-card">
           <div className="checkin-user-info">
             <span>
-              {checkin.author.first_name} {checkin.author.last_name} pet a{" "}
-              {checkin.dog_breed.breed_name} at {checkin.pet_shop}
+              <span>
+                <Link to={`users/${checkin.author_id}`} className="dog-name">
+                  {checkin.author.first_name} {checkin.author.last_name}
+                </Link>
+              </span>{" "}
+              pet a {checkin.dog_breed.breed_name} at {checkin.pet_shop}
             </span>
           </div>
-          <div className="checkin-body-text">{checkin.checkin_body}</div>
+          {checkinBody}
           <div>{checkinImage}</div>
         </div>
       );
