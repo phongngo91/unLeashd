@@ -22,10 +22,10 @@ class Spash extends React.Component {
     return (
       <nav
         className="splash-container"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-        url(${window.dogParkURL})`
-        }}
+        // style={{
+        //   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        // url(${window.dogParkURL})`
+        // }}
       >
         <ul className="splash-login-container">
           <button onClick={this.handleLoginClick} className="login-button">
@@ -61,7 +61,11 @@ class Spash extends React.Component {
             </div>
           </div>
           <div className="description-image">
-            <img className="inherit-width" src={window.dogsSelfieURL} alt="dogs-taking-selfie" />
+            <img
+              className="inherit-width"
+              src={window.dogsSelfieURL}
+              alt="dogs-taking-selfie"
+            />
           </div>
         </ul>
       </nav>
