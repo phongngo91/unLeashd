@@ -12,7 +12,7 @@
 #
 
 class Checkin < ApplicationRecord
-  validates :author_id, :dog_breed_id, :checkin_body, presence: true
+  validates :author_id, :dog_breed_id, presence: true
 
   belongs_to :author,
     class_name: :User,

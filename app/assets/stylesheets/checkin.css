@@ -20,10 +20,23 @@
   cursor: pointer;
 }
 
+.checkin-submit-btn:hover{
+  cursor: pointer;
+}
+
 .checkin-header{
   display: flex;
   justify-content: space-between;
   background-color: black;
   align-items: center;
   padding: 10px
+}
+
+.hover-cursor:hover {
+  cursor: pointer;
+}
+
+.checkin-submit-container{
+  display: flex;
+  justify-content: flex-end;
 }

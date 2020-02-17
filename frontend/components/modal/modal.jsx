@@ -2,6 +2,7 @@ import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import CreateCheckinContainer from "../checkin/create_checkin_container";
+import CheckinConfirm from "../checkin/checkin_confirm_container";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case "checkin":
       component = <CreateCheckinContainer />;
+      break;
+    case "checkinConfirm":
+      component = <CheckinConfirm />;
       break;
     default:
       return null;
