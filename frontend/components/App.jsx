@@ -9,7 +9,6 @@ import SplashContainer from "./splash/spash_container";
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import PetShopsIndexContainer from './pet_shops/pet_shops_index_container';
 import PetShopShowContainer from './pet_shops/pet_shop_show_container';
-import TestImageContainer from './test_image/test_image_container';
 import CreateDogContainer from './dogs/create_dog_container';
 import DogsIndexContainer from './dogs/dogs_index_container';
 import DogShowContainer from './dogs/dog_show_container';
@@ -29,7 +28,6 @@ const App = () => {
         <Route path="/users/:userId" component={UsersShowContainer} />
         <Route exact path="/petshops" component={PetShopsIndexContainer} />
         <Route path="/petshops/:petShopId" component={PetShopShowContainer} />
-        <Route path="/testimage" component={TestImageContainer} />
         <ProtectedRoute exact path="/dogs/new" component={CreateDogContainer} />
         <Route exact path="/dogs" component={DogsIndexContainer} />
         <Route exact path="/dogs/:dogId" component={DogShowContainer} />
