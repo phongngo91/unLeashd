@@ -47,10 +47,6 @@
   cursor: pointer;
 }
 
-.img-preview {
-  width: 150px;
-  height: 150px;
-}
 
 .checkin-submit-container {
   display: flex;

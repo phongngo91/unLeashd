@@ -13,13 +13,12 @@ class CreateCheckinForm extends React.Component {
       dog_breed_id: dogId,
       rating: "0",
       checkin_body: "",
-      imageUrl: "",
+      imageUrl: window.cameraURL,
       photoFile: null
     };
 
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   componentWillUnmount() {
@@ -68,7 +67,6 @@ class CreateCheckinForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className="checkin-container">
         <div className="checkin-header">
@@ -91,9 +89,18 @@ class CreateCheckinForm extends React.Component {
             value={this.state.checkin_body}
           ></textarea>
           <div className="img-preview">
-            <input type="file" onChange={this.handlePicture} />
-            <div className="preview-checkin-pic">
-              <img className="preview-checkin-img" src={this.state.imageUrl} alt="Submit Checkin Pic" />
+            <div
+              className="inputWrapper"
+              style={{
+                backgroundImage: `url(${this.state.imageUrl})`
+              }}
+            >
+              <input
+                type="file"
+                onChange={this.handlePicture}
+                // className="checkin-pic-input"
+                className="fileInput"
+              />
             </div>
           </div>
         </div>

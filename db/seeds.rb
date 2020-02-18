@@ -17,9 +17,6 @@ ActiveRecord::Base.transaction do
     whiskers_holistic = Petshop.create!(pet_shop_name: "Whiskers Holistic", city: "Queens", state: "NY", image_url: "3")
     
     PetShop.create!([
-        {pet_shop_name: "Petco", city: "Queens", state: "NY", image_url: "1"},
-        {pet_shop_name: "PetSmart", city: "Manhattan", state: "NY", image_url: "2"},
-        {pet_shop_name: "Whiskers Holistic", city: "Queens", state: "NY", image_url: "3"},
         {pet_shop_name: "Fairmount Pet Shoppe", city: "Philadelphia", state: "PA", image_url: "4"},
         {pet_shop_name: "Baltimore Pet Shoppe", city: "Philadelphia", state: "PA", image_url: "5"},
         {pet_shop_name: "World Wide Aquarium & Pets", city: "Philadelphia", state: "PA", image_url: "6"},
