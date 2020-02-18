@@ -2,3 +2,21 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     asset-data-url("dog_park.jpg");
 }
+
+.dogSelfie{
+  background-image: asset-data-url("dogs_selfie.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 450px;
+  height: 450px;
+}
+
+.dogPaw{
+  background-image: asset-data-url("paw.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 200px;
+  height: 200px;
+}

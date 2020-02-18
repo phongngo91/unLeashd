@@ -88,11 +88,13 @@
 }
 
 .recent-feed-header {
-  font-weight: 600;
-  font-size: 1.1em;
+  font-weight: 500;
+  font-size: 1.4em;
   padding-bottom: 8px;
   border-bottom: 1px solid #e5e5e5;
   margin: 0;
+  font-family: ProximaNova, Helvetica, sans-serif;
+  line-height: 1;
 }
 
 .checkin-card {

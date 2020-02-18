@@ -31,7 +31,7 @@ class Spash extends React.Component {
         </ul>
         <ul className="masthead-content">
           <div className="description-content">
-            <img className="dog-paw" src={window.dogPawURL} alt="dog-paw" />
+            <div className="dogPaw"/>
             <div className="unleashd-logo">unLeashd</div>
             <div className="unleashd-logo-sub">Pet Gently</div>
             <div className="short-rule"></div>
@@ -55,11 +55,7 @@ class Spash extends React.Component {
             </div>
           </div>
           <div className="description-image">
-            <img
-              className="inherit-width"
-              src={window.dogsSelfieURL}
-              alt="dogs-taking-selfie"
-            />
+            <div className="dogSelfie"/>
           </div>
         </ul>
       </nav>
