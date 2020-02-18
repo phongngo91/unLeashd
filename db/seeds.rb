@@ -17,6 +17,8 @@ ActiveRecord::Base.transaction do
     lovelace = User.create!(username: "lovelace", password: "hunter2", 
         email: "lovelace@aa.com", first_name: "Drew", last_name: "Barrymore")
 
+    users = [phong, tommy, demo_user, hacker_man, lovelace]
+
     petco = PetShop.create!(pet_shop_name: "Petco", 
         city: "Queens", state: "NY")
     petsmart = PetShop.create!(pet_shop_name: "PetSmart", 
@@ -33,6 +35,8 @@ ActiveRecord::Base.transaction do
         city: "Pittsburgh", state: "PA")
     pet_valu = PetShop.create!(pet_shop_name: "Pet Valu", 
         city: "Pittsburgh", state: "PA")
+
+    stores = [petco, petsmart, whiskers, fairmount, baltimore, world_wide, petland, pet_valu]
 
     petco_file = File.open('app/assets/images/pet_shops/petco.png')
     petco.photo.attach(io: petco_file, filename: 'petco.png')
@@ -58,32 +62,20 @@ ActiveRecord::Base.transaction do
     pet_valu_file = File.open('app/assets/images/pet_shops/pet_valu.png')
     pet_valu.photo.attach(io: pet_valu_file, filename: 'pet_valu.png')
     
+    rand_dogs = []
 
-    # DogBreed.create!({
-    #     breed_name: "Chihuahua",
-    #     description: "The Chihuahua is the smallest breed of dog, and is named after the Mexican state of Chihuahua.",
-    #     fluff_by_vol: 15,
-    #     int_cute_unit: 33,
-    #     pet_shop_id: (PetShop.first.id),
-    #     author_id: (User.first.id)
-    # })
+    50.times do
+        new_dog = DogBreed.create!(
+            breed_name: Faker::Creature::Dog.unique.breed, 
+            description: Faker::TvShows::Simpsons.quote,
+            fluff_by_vol: rand(100),
+            int_cute_unit: rand(100),
+            author_id: users.sample.id,
+            pet_shop_id: stores.sample.id)
+        file = File.open("app/assets/images/dog_breeds/#{rand(20) + 1}.jpg")
+        new_dog.photo.attach(io: file, filename: "#{new_dog.breed_name}")
+        rand_dogs << new_dog
+    end
 
-    # DogBreed.create!({
-    #     breed_name: "Dachshund",
-    #     description: "The dachshund, also known as the wiener dog or sausage dog is a short-legged, long-bodied, hound-type dog breed. They may be smooth-haired, wire-haired, or long-haired.",
-    #     fluff_by_vol: 25,
-    #     int_cute_unit: 55,
-    #     pet_shop_id: (PetShop.first.id),
-    #     author_id: (User.second.id)
-    # })
-
-    # demo_dog1 = DogBreed.first
-    # file1 = open('https://unleashd-dev.s3.amazonaws.com/86275943_190618488848511_8318908248518295552_n.jpg')
-    # demo_dog1.photo.attach(io: file1, filename: 'chihuahua.jpg')
-
-    # demo_dog2 = DogBreed.second
-    # file2 = open('https://unleashd-dev.s3.amazonaws.com/86275943_190618488848511_8318908248518295552_n.jpg')
-    # demo_dog2.photo.attach(io: file2, filename: 'dachshund.jpg')
-    
 end
 

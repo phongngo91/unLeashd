@@ -9,6 +9,8 @@ gem 'bcrypt'
 
 gem 'rename'
 
+gem 'faker'
+
 gem 'aws-sdk-s3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -50,7 +52,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'annotate'
 end
 
