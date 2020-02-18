@@ -51,6 +51,8 @@ div, a {
 .nav-link{
   margin: 0px 15px;
   color: white;
+  font-size: 1.2em;
+  text-transform: capitalize;
 }
 
 .pet-shop-item p {

@@ -49,7 +49,10 @@ class PetShopShow extends React.Component {
                   </a>
                 </span>{" "}
                 is petting a{" "}
-                <a href={`/#/dogs/${checkin.dog_breed_id}`} className="dog-name">
+                <a
+                  href={`/#/dogs/${checkin.dog_breed_id}`}
+                  className="dog-name"
+                >
                   {checkin.dog_breed.breed_name}
                 </a>{" "}
                 at{" "}
@@ -69,29 +72,47 @@ class PetShopShow extends React.Component {
     }
 
     if (this.props.petShop) {
-      const { id, pet_shop_name, image_url, city, state } = this.props.petShop;
+      const {
+        id,
+        pet_shop_name,
+        image_url,
+        city,
+        state,
+        checkins_count,
+        average_checkin_rating,
+        dog_count
+      } = this.props.petShop;
       return (
         <div className="petshop-content">
           <div className="petshop-show-container">
-            <div>
-              <img
-                className="petshop-logo"
-                src={image_url}
-                alt="petshop-logo"
-              />
+            <div className="petshop-show-top">
+              <div>
+                <img
+                  className="petshop-logo"
+                  src={image_url}
+                  alt="petshop-logo"
+                />
+              </div>
+              <div className="petshop-show-description">
+                <div className="petshop-name truncate">{pet_shop_name}</div>
+                <span className="petshop-loc">
+                  {city}, {state}
+                </span>
+              </div>
             </div>
-            <div className="petshop-show-description">
-              <div className="petshop-name truncate">{pet_shop_name}</div>
-              <span className="petshop-loc">
-                {city}, {state}
-              </span>
-              <div className="move-right">
+            <div className="petshop-stats-container">
+              <div className="stat-item">
+                {Math.floor(average_checkin_rating * 100) / 100} Paws
+              </div>
+              <div className="stat-item">{checkins_count} Ratings</div>
+              <div className="stat-item cancel-border">
                 <Link to={`/petshops/${id}/dogs`} className="dog-name">
-                  {pet_shop_name}'s Dogs
+                  {dog_count} Dogs
                 </Link>
               </div>
             </div>
           </div>
+          
           <div className="petshop-checkins">
             <div className="petshop-checkin-list">
               {pet_shop_name}'s Checkins

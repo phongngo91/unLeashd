@@ -1,9 +1,14 @@
 .petshop-show-container {
   display: flex;
+  flex-direction: column;
   margin-top: 70px;
   width: 700px;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.petshop-show-top{
+  display: flex;
 }
 
 .petshop-logo{

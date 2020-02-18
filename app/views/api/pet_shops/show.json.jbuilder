@@ -7,6 +7,10 @@ json.set! @petShop.id do
     json.image_url url_for(dog.photo) if dog.photo.attached?
   end
 
+  json.checkins_count @petShop.checkins.length
+  json.average_checkin_rating @petShop.checkins.average(:rating)
+  json.dog_count @petShop.dog_breeds.length
+
   json.checkins @petShop.checkins do |checkin|
     json.extract! checkin, :id, :author_id, :dog_breed_id, :rating, :checkin_body
     json.image_url url_for(checkin.photo) if checkin.photo.attached?
