@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchCheckins: () => dispatch(fetchCheckins())
+    fetchCheckins: (page) => dispatch(fetchCheckins(page))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

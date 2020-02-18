@@ -47,8 +47,8 @@ export const createCheckin = formData => dispatch =>{
   );
 };
 
-export const fetchCheckins = () => dispatch => {
-  return APIUtil.fetchCheckins().then(
+export const fetchCheckins = (page) => dispatch => {
+  return APIUtil.fetchCheckins(page).then(
     checkins => dispatch(receiveCheckins(checkins)),
     errors => dispatch(receiveCheckinErorrs(errors.responseJSON))
   );

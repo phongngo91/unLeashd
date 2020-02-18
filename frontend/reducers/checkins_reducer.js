@@ -14,7 +14,7 @@ const checkinsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CHECKINS:
-      return action.checkins;
+      return Object.assign({}, state, action.checkins);
     case RECEIVE_PET_SHOP:
       return Object.values(action.petShop)[0].checkins;
     case RECEIVE_DOG:

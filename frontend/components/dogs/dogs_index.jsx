@@ -34,7 +34,7 @@ class DogsIndex extends React.Component {
         <div className="dog-index-one">
           <div className="dog-list list-title">All Dogs</div>
           {dogsEl}
-          <div className="moreDog">
+          <div className="moreDog dog-container">
             <button 
               onClick={this.getDogs}
               className="moreDogBtn remove-blue">See More</button>

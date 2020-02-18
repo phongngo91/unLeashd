@@ -1,7 +1,7 @@
 class Api::CheckinsController < ApplicationController
   def index
     # @checkins = Checkin.with_attached_photo.all
-    @checkins = Checkin.page(1).per(5)
+    @checkins = Checkin.order('checkins.updated_at DESC').page(params[:page]).per(10)
     render :index
   end
 

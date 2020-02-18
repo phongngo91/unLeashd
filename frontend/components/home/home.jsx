@@ -4,14 +4,24 @@ import { Link } from "react-router-dom";
 class Home extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      page: 1
+    };
+
+    this.getCheckins = this.getCheckins.bind(this);
+  }
+
+  getCheckins() {
+    this.props.fetchCheckins(this.state.page);
+    this.setState = { page: (this.state.page += 1) };
   }
 
   componentDidMount() {
-    this.props.fetchCheckins();
+    this.getCheckins();
   }
 
   render() {
-
     let checkins = null;
     if (this.props.checkins.length > 0) {
       checkins = this.props.checkins.reverse().map((checkin, idx) => {
@@ -74,6 +84,14 @@ class Home extends React.Component {
               <ul>
                 <h3 className="recent-feed-header">Recent Activities Feed</h3>
                 {checkins}
+                <div className="moreDog">
+                  <button
+                    onClick={this.getCheckins}
+                    className="moreDogBtn remove-blue"
+                  >
+                    See More
+                  </button>
+                </div>
               </ul>
             </div>
           </div>

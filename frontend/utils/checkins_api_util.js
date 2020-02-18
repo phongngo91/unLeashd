@@ -8,10 +8,11 @@ export const createCheckin = (formData) =>{
   });
 };
 
-export const fetchCheckins = () => {
+export const fetchCheckins = (page) => {
   return $.ajax({
     url: '/api/checkins',
-    method: "GET"
+    method: "GET",
+    data: { page }
   });
 };
 
