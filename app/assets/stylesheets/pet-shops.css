@@ -79,7 +79,7 @@ div, a {
 
 .petshop-show-container {
   width: 500px;
-  min-height: 250px;
+  min-height: 200px;
   display: flex;
   background-color: white;
   border: none;

@@ -6,6 +6,9 @@ import {
 import {
   RECEIVE_PET_SHOP
 } from "../actions/pet_shops_actions";
+import {
+  RECEIVE_DOG
+} from '../actions/dog_actions';
 
 const checkinsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -14,6 +17,8 @@ const checkinsReducer = (state = {}, action) => {
       return action.checkins;
     case RECEIVE_PET_SHOP:
       return Object.values(action.petShop)[0].checkins;
+    case RECEIVE_DOG:
+      return Object.values(action.dog)[0].checkins;
     default:
       return state;
   }

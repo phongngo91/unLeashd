@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     dog: state.entities.dogs[ownProps.match.params.dogId],
     loggedInUser: state.entities.users[state.session.id],
     pet_shops: state.entities.pet_shops,
-    users: state.entities.users
+    users: state.entities.users,
+    checkins: Object.values(state.entities.checkins)
   };
 };
 

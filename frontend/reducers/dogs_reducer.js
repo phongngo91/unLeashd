@@ -12,9 +12,6 @@ const dogsReducer = (state = defaultState, action) => {
     case RECEIVE_DOGS:
       return action.dogs;
     case RECEIVE_SINGLE_USER:
-      // to track all dog breeds
-      // return Object.assign({}, newState, action.singleUser.authored_dog_breeds);
-      // to track just dog breeds of a single user
       return action.singleUser.authored_dog_breeds;
     case RECEIVE_PET_SHOP:
       return Object.values(action.petShop)[0].dog_breeds;
@@ -29,7 +26,9 @@ const dogsReducer = (state = defaultState, action) => {
         int_cute_unit,
         pet_shop_id,
         author_id,
-        image_url
+        image_url,
+        checkins_count,
+        average_checkin_rating
       } = Object.values(action.dog)[0];
       const newDog = {
         [id]: {
@@ -40,7 +39,9 @@ const dogsReducer = (state = defaultState, action) => {
           int_cute_unit,
           pet_shop_id,
           author_id,
-          image_url
+          image_url,
+          checkins_count,
+          average_checkin_rating
         }
       };
       return Object.assign({}, newState, newDog);

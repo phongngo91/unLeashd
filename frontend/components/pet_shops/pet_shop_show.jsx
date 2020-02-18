@@ -112,10 +112,9 @@ class PetShopShow extends React.Component {
               </div>
             </div>
           </div>
-          
           <div className="petshop-checkins">
             <div className="petshop-checkin-list">
-              {pet_shop_name}'s Checkins
+              Recent Activity
             </div>
             {petShopCheckins}
           </div>
