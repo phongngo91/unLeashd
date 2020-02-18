@@ -13,7 +13,12 @@ class DogShow extends React.Component {
   }
 
   openCheckinModal(){
-    this.props.openCheckinModal();
+    if (this.props.currentUser === undefined) {
+      this.props.receiveErrors(["you must log in to continue."]);
+      this.props.history.push('/login');
+    } else {
+      this.props.openCheckinModal();
+    }
   }
 
   render() {
