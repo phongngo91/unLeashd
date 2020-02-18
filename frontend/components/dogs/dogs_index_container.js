@@ -7,7 +7,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchDogs: () => dispatch(fetchDogs())
+  fetchDogs: (page) => dispatch(fetchDogs(page))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogsIndex);

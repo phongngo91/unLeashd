@@ -1,6 +1,7 @@
 class Api::CheckinsController < ApplicationController
   def index
-    @checkins = Checkin.all
+    # @checkins = Checkin.with_attached_photo.all
+    @checkins = Checkin.page(1).per(5)
     render :index
   end
 

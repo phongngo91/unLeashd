@@ -39,8 +39,8 @@ export const createDog = formData => dispatch => {
   );
 };
 
-export const fetchDogs = () => dispatch => {
-  return APIUtil.fetchDogs().then(
+export const fetchDogs = (page) => dispatch => {
+  return APIUtil.fetchDogs(page).then(
     dogs => dispatch(receiveDogs(dogs)),
     errors => dispatch(receiveDogErrors(errors.responseJSON))
   );

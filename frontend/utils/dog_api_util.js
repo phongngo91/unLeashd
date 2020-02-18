@@ -8,10 +8,11 @@ export const createDog = (formData) => {
   });
 };
 
-export const fetchDogs = () => {
+export const fetchDogs = (page) => {
   return $.ajax({
     url: '/api/dog_breeds/',
-    method: "GET"
+    method: "GET",
+    data: { page }
   });
 };
 

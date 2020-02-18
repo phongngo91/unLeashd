@@ -1,3 +1,28 @@
 // Place all the styles related to the api/dog_breeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.moreDog{
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  width: 200px;
+}
+
+.moreDogBtn{
+  width: 100%;
+  padding: 1px 7px 2px;
+  border-width: 1px;
+  border-style: solid;
+  color: white;
+  border-radius: 4px;
+  background-color: #ffcc00;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 10px 0;
+}
+
+.moreDogBtn:hover{
+  background-color: #f4b800;
+  cursor: pointer;
+}

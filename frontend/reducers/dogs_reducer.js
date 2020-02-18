@@ -10,7 +10,7 @@ const dogsReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_DOGS:
-      return action.dogs;
+      return Object.assign({}, newState, action.dogs);
     case RECEIVE_SINGLE_USER:
       return action.singleUser.authored_dog_breeds;
     case RECEIVE_PET_SHOP:
