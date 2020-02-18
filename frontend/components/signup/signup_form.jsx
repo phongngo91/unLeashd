@@ -15,7 +15,7 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.clearErrors();
   }
 
@@ -29,33 +29,29 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    if (this.state.password_check !== this.state.password){
+    if (this.state.password_check !== this.state.password) {
       this.props.receiveErrors(["Passwords do not match"]);
-    } else{
+    } else {
       this.props.processForm(user).then(() => this.props.history.push("/home"));
     }
   }
 
   render() {
     const errorsEl = this.props.errors.session.map((error, idx) => {
-      return <li className="error" key={idx}>{error}</li>;
+      return (
+        <li className="error" key={idx}>
+          {error}
+        </li>
+      );
     });
 
     let errorsContainer = null;
-    if (errorsEl.length > 0){
-      errorsContainer = (
-        <div className="login-error">{errorsEl}</div>
-      )
+    if (errorsEl.length > 0) {
+      errorsContainer = <div className="login-error">{errorsEl}</div>;
     }
 
     return (
-      <div
-        className="signup-content"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-        url(${window.dogsRunning2URL})`
-        }}
-      >
+      <div className="signup-content">
         <div className="signup-container">
           <div className="signup-header">unleashd</div>
           <div className="signup-subheader">pet gently</div>

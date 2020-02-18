@@ -12,7 +12,7 @@
 #
 
 class PetShop < ApplicationRecord
-  validates :pet_shop_name, :city, :state, :image_url, presence: true
+  validates :pet_shop_name, :city, :state, presence: true
 
   has_many :dog_breeds,
     class_name: :DogBreed,
@@ -22,5 +22,7 @@ class PetShop < ApplicationRecord
 
   has_many :checkins,
     through: :dog_breeds
+
+  has_one_attached :photo
 
 end

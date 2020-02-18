@@ -12,23 +12,23 @@ class LoginForm extends React.Component {
     this.loginDemo = this.loginDemo.bind(this);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.clearErrors();
   }
 
-
-  loginDemo(e){
+  loginDemo(e) {
     e.preventDefault();
     const demoUser = {
       username: "demo_user",
       password: "hunter2"
     };
-    this.props.processForm(demoUser).then(() => this.props.history.push("/home"));
+    this.props
+      .processForm(demoUser)
+      .then(() => this.props.history.push("/home"));
   }
 
-  componentDidMount(){
-    // if user was redirected, push into errors
-    if (this.props.history.action === "REPLACE"){
+  componentDidMount() {
+    if (this.props.history.action === "REPLACE") {
       this.props.receiveErrors(["you must log in to continue."]);
     }
   }
@@ -48,30 +48,28 @@ class LoginForm extends React.Component {
 
   render() {
     const errorsEl = this.props.errors.session.map((error, idx) => {
-      return (<li className="error" key={idx}>{error}</li>)
+      return (
+        <li className="error" key={idx}>
+          {error}
+        </li>
+      );
     });
 
     let errorsContainer = null;
-    if (errorsEl.length > 0){
-      errorsContainer = (
-        <div className="login-error">{errorsEl}</div>
-      )
+    if (errorsEl.length > 0) {
+      errorsContainer = <div className="login-error">{errorsEl}</div>;
     }
 
     return (
-      <div
-        className="login-content"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-        url(${window.dogsRunningURL})`
-        }}
-      >
+      <div className="login-content">
         <div className="login-container">
           <div className="login-header">unleashd</div>
           <div className="login-subheader">pet gently</div>
           {errorsContainer}
           <div className="demo-user-container">
-            <button onClick={this.loginDemo} className="demo-user-btn">Login with GUEST</button>
+            <button onClick={this.loginDemo} className="demo-user-btn">
+              Login with GUEST
+            </button>
           </div>
           <div className="or">Or</div>
           <form className="login-form " onSubmit={this.handleSubmit}>
