@@ -62,7 +62,6 @@ ActiveRecord::Base.transaction do
     pet_valu_file = File.open('app/assets/images/pet_shops/pet_valu.png')
     pet_valu.photo.attach(io: pet_valu_file, filename: 'pet_valu.png')
     
-    rand_dogs = []
 
     50.times do
         new_dog = DogBreed.create!(
@@ -74,8 +73,21 @@ ActiveRecord::Base.transaction do
             pet_shop_id: stores.sample.id)
         file = File.open("app/assets/images/dog_breeds/#{rand(20) + 1}.jpg")
         new_dog.photo.attach(io: file, filename: "#{new_dog.breed_name}")
-        rand_dogs << new_dog
     end
 
+    rand_dogs = DogBreed.all
+    users = User.all
+
+    50.times do 
+        rand_dog = rand_dogs.sample
+        new_checkin = Checkin.create!(
+            author_id: users.sample.id,
+            dog_breed_id: rand_dog.id,
+            checkin_body: Faker::Movie.quote,
+            rating: rand(6)
+        )
+        file = File.open("app/assets/images/dog_breeds/#{rand(20) + 1}.jpg")
+        new_checkin.photo.attach(io: file, filename: "#{rand_dog.breed_name}.jpg")
+    end
 end
 
