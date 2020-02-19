@@ -9,6 +9,7 @@ class PetShopShow extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearCheckins();
     this.props.fetchPetShop(this.props.match.params.petShopId);
   }
 
@@ -29,9 +30,15 @@ class PetShopShow extends React.Component {
       let dogCheckins = null;
       if (this.props.petShop.checkin_ids.length > 0 && 
         Object.values(this.props.checkins).length > 0) {
+
+        // debugger
+          
         const belongCheckins = this.props.petShop.checkin_ids.map(
           id => this.props.checkins[id]
         );
+
+        // debugger
+
         if (belongCheckins.length > 0) {
           dogCheckins = belongCheckins.reverse().map((checkin, idx) => (
             <CheckinItemCard

@@ -5,6 +5,7 @@ export const RECEIVE_CHECKIN = "RECEIVE_CHECKIN";
 export const RECEIVE_CHECKIN_ERRORS = "RECEIVE_CHECKIN_ERRORS";
 export const CLEAR_CHECKIN_ERRORS = "CLEAR_CHECKIN_ERRORS";
 export const REMOVE_CHECKIN = "REMOVE_CHECKIN";
+export const CLEAR_CHECKINS = "CLEAR_CHECKINS";
 
 const receiveCheckin = checkin => {
   return {
@@ -37,6 +38,12 @@ export const removeCheckin = (checkinId) => {
   return {
     type: REMOVE_CHECKIN,
     checkinId
+  };
+};
+
+export const clearCheckins = () =>{
+  return {
+    type: CLEAR_CHECKINS
   };
 };
 

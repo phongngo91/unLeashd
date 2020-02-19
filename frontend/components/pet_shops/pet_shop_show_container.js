@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import PetShopShow from "./pet_shop_show";
 import { fetchPetShop } from "../../actions/pet_shops_actions";
+import { clearCheckins } from '../../actions/checkin_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -10,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchPetShop: petShopId => dispatch(fetchPetShop(petShopId))
+  fetchPetShop: petShopId => dispatch(fetchPetShop(petShopId)),
+  clearCheckins: () => dispatch(clearCheckins())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PetShopShow);

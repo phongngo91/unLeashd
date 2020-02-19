@@ -1,7 +1,8 @@
 import {
   RECEIVE_CHECKINS,
   RECEIVE_CHECKIN,
-  REMOVE_CHECKIN
+  REMOVE_CHECKIN,
+  CLEAR_CHECKINS
 } from "../actions/checkin_actions";
 import { RECEIVE_PET_SHOP } from "../actions/pet_shops_actions";
 import { RECEIVE_DOG } from "../actions/dog_actions";
@@ -30,6 +31,8 @@ const checkinsReducer = (state = {}, action) => {
     case REMOVE_CHECKIN:
       delete newState[action.checkinId];
       return newState;
+    case CLEAR_CHECKINS:
+      return {};
     default:
       return state;
   }
