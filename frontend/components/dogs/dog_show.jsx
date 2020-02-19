@@ -47,7 +47,7 @@ class DogShow extends React.Component {
               checkin={checkin}
               key={idx}
               currentUser={loggedInUser}
-              deleteCheckin={deleteCheckin}
+              // deleteCheckin={deleteCheckin}
             />
           ));
       }
