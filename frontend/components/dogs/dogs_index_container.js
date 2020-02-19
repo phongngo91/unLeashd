@@ -3,7 +3,10 @@ import DogsIndex from "./dogs_index";
 import { fetchDogs, clearDogs } from "../../actions/dog_actions";
 
 const mapStateToProps = state => {
-  return { dogs: Object.values(state.entities.dogs) };
+  return { 
+    dogs: Object.values(state.entities.dogs),
+    errors: state.errors.dog
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

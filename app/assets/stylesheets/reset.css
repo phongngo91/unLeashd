@@ -549,3 +549,8 @@ li {
   padding-left: 10px;
   margin-top: 10px;
 }
+
+.center-me{
+  display:flex;
+  justify-content: center;
+}

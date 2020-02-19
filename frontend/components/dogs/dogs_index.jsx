@@ -6,7 +6,8 @@ class DogsIndex extends React.Component {
     super(props);
 
     this.state = {
-      page: 1
+      page: 1,
+      hideButton: ""
     };
 
     this.getDogs = this.getDogs.bind(this);
@@ -23,6 +24,25 @@ class DogsIndex extends React.Component {
   }
 
   render() {
+    let moreButton = null;
+
+    if (this.props.errors.includes("No More Dogs")) {
+      moreButton = (<div className="center-me">
+        <span>No More Dogs</span>
+        </div>)
+    } else {
+      moreButton = (
+        <div className="moreDog dog-container">
+        <button
+          onClick={this.getDogs}
+          className={`moreDogBtn remove-blue ${this.state.hideButton}`}
+        >
+          See More
+        </button>
+      </div>
+      );
+    }
+
     const dogsEl = this.props.dogs.reverse().map((dog, idx) => {
       return (
         <li key={idx}>
@@ -35,11 +55,7 @@ class DogsIndex extends React.Component {
         <div className="dog-index-one">
           <div className="dog-list list-title">All Dogs</div>
           {dogsEl}
-          <div className="moreDog dog-container">
-            <button 
-              onClick={this.getDogs}
-              className="moreDogBtn remove-blue">See More</button>
-          </div>
+          {moreButton}
         </div>
       </div>
     );
