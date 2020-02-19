@@ -55,8 +55,8 @@ class ThePark extends React.Component {
     }
 
     return (
-      <div className="home-container">
-        <div className="user-home-content">
+      <div className="park-container">
+        <div className="park-content">
           <div className="global-checkins-container">
             <div className="global-checkins">
               <ul>

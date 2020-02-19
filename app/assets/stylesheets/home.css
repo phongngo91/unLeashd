@@ -37,14 +37,6 @@
   flex-direction: column;
 }
 
-.global-checkins {
-  padding: 16px;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  margin-top: 0px;
-}
-
 .user-name {
   font-size: 1.1em;
   line-height: 1.125em;
