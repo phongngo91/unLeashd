@@ -13,9 +13,12 @@ class PetShopShow extends React.Component {
 
   render() {
     let dogsEl = null;
-    if (this.props.authored_dogs) {
-      // Reverse to show the most recent dogs first
-      dogsEl = this.props.authored_dogs.reverse().map((dog, idx) => {
+    if (this.props.dogs && this.props.petShop) {
+      const authored_dogs = this.props.petShop.dog_breed_ids.map(
+        id => this.props.dogs[id]
+      );
+
+      dogsEl = authored_dogs.reverse().map((dog, idx) => {
         return (
           <div key={idx} className="user-dogs-card">
             <Link to={`/dogs/${dog.id}`}>

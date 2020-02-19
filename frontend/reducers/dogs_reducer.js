@@ -14,7 +14,11 @@ const dogsReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_USER:
       return action.singleUser.authored_dog_breeds;
     case RECEIVE_PET_SHOP:
-      return Object.values(action.petShop)[0].dog_breeds;
+      let dogs = {};
+      Object.values(action.petShop)[0].dog_breeds.forEach(
+        (dog) => dogs[dog.id] = dog
+      );
+      return Object.assign({}, newState, dogs);
     case RECEIVE_CURRENT_USER:
       return action.currentUser.authored_dog_breeds;
     case RECEIVE_DOG:
