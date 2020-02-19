@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const CheckinItemCard = props => {
   const {
@@ -34,7 +33,15 @@ const CheckinItemCard = props => {
   let deleteBtn = null;
   if (author_id === user_id) {
     deleteBtn = (
-      <button onClick={() => deleteCheckin(id)}>Delete Checkin</button>
+      <button
+        onClick={() => {
+          if (confirm("Delete the checkin?")) {
+            deleteCheckin(id);
+          }
+        }}
+      >
+        Delete Checkin
+      </button>
     );
   }
 
