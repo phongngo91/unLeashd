@@ -30,28 +30,25 @@ class DogShow extends React.Component {
       }
     }
 
-    if (this.props.dog) {
-      let dogCheckins = null;
-
-      const { checkins, loggedInUser, deleteCheckin } = this.props;
-
+    let dogCheckins = null;
+    if (this.props.dog && this.props.dog.checkin_ids.length > 0) {
+      const { checkins, loggedInUser } = this.props;
       const belongCheckins = this.props.dog.checkin_ids.map(id => {
         return checkins[id];
       });
 
       if (belongCheckins.length > 0) {
-        dogCheckins = belongCheckins
-          .reverse()
-          .map((checkin, idx) => (
-            <CheckinItemCard
-              checkin={checkin}
-              key={idx}
-              currentUser={loggedInUser}
-              // deleteCheckin={deleteCheckin}
-            />
-          ));
+        dogCheckins = belongCheckins.reverse().map((checkin, idx) => (
+          <CheckinItemCard
+            checkin={checkin}
+            key={idx}
+            currentUser={loggedInUser}
+            // deleteCheckin={deleteCheckin}
+          />
+        ));
       }
-
+    }
+    if (this.props.dog) {
       const {
         breed_name,
         image_url,

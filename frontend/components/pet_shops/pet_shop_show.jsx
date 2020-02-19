@@ -14,24 +14,6 @@ class PetShopShow extends React.Component {
 
   render() {
 
-    let dogCheckins = null;
-    if (this.props.petShop) {
-    const belongCheckins = this.props.petShop.checkin_ids.map(
-      id => this.props.checkins[id]
-    );
-    if (belongCheckins.length > 0) {
-      dogCheckins = belongCheckins
-        .reverse()
-        .map((checkin, idx) => (
-          <CheckinItemCard
-            checkin={checkin}
-            key={idx}
-            currentUser={this.props.loggedInUser}
-            // deleteCheckin={deleteCheckin}
-          />
-        ));
-    }
-  }
     if (this.props.petShop) {
       const {
         id,
@@ -43,6 +25,26 @@ class PetShopShow extends React.Component {
         average_checkin_rating,
         dog_count
       } = this.props.petShop;
+
+      let dogCheckins = null;
+      if (this.props.petShop.checkin_ids.length > 0 && 
+        Object.values(this.props.checkins).length > 0) {
+        const belongCheckins = this.props.petShop.checkin_ids.map(
+          id => this.props.checkins[id]
+        );
+        if (belongCheckins.length > 0) {
+          dogCheckins = belongCheckins.reverse().map((checkin, idx) => (
+            <CheckinItemCard
+              checkin={checkin}
+              key={idx}
+              currentUser={this.props.loggedInUser}
+              // deleteCheckin={deleteCheckin}
+            />
+          ));
+        }
+      }
+  
+
       return (
         <div className="petshop-content">
           <div className="petshop-show-container">
@@ -74,9 +76,7 @@ class PetShopShow extends React.Component {
             </div>
           </div>
           <div className="petshop-checkins">
-            <div className="petshop-checkin-list">
-              Recent Activity
-            </div>
+            <div className="petshop-checkin-list">Recent Activity</div>
             {dogCheckins}
           </div>
         </div>
