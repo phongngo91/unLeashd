@@ -57,7 +57,7 @@ class ThePark extends React.Component {
     return (
       <div className="home-container">
         <div className="user-home-content">
-          <div className="user-left-feed">
+          <div className="global-checkins-container">
             <div className="global-checkins">
               <ul>
                 <h3 className="recent-feed-header">Recent Global Activity</h3>
