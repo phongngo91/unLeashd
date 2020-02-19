@@ -14,6 +14,7 @@ import DogsIndexContainer from './dogs/dogs_index_container';
 import DogShowContainer from './dogs/dog_show_container';
 import EditDogContainer from './dogs/edit_dog_container';
 import PetShopShowDogContainer from './pet_shops/pet_shop_show_dogs_container';
+import TheParkContainer from './park/the_park_container';
 import Modal from './modal/modal';
 
 const App = () => {
@@ -26,7 +27,7 @@ const App = () => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path="/home" component={HomeContainer} />
-        <Route path="/users/:userId" component={UsersShowContainer} />
+        <Route exact path="/users/:userId" component={UsersShowContainer} />
         <Route exact path="/petshops" component={PetShopsIndexContainer} />
         <Route exact path="/petshops/:petShopId/dogs" component={PetShopShowDogContainer} />
         <Route exact path="/petshops/:petShopId" component={PetShopShowContainer} />
@@ -34,6 +35,7 @@ const App = () => {
         <Route exact path="/dogs" component={DogsIndexContainer} />
         <Route exact path="/dogs/:dogId" component={DogShowContainer} />
         <ProtectedRoute exact path="/dogs/:dogId/edit" component={EditDogContainer}/>
+        <ProtectedRoute path="/thepark" component={TheParkContainer}/>
       </Switch>
     </>
   );

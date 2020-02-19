@@ -30,6 +30,11 @@ class NavBar extends React.Component {
               </div>
             </Link>
             <div>
+              <a className="nav-link" href="/#/thepark">
+                The Park
+              </a>
+            </div>
+            <div>
               <a className="nav-link" href="/#/petshops">
                 Pet Shops
               </a>
