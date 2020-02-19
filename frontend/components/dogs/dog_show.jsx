@@ -34,8 +34,13 @@ class DogShow extends React.Component {
       let dogCheckins = null;
 
       const { checkins, loggedInUser, deleteCheckin } = this.props;
-      if (checkins.length > 0) {
-        dogCheckins = this.props.checkins
+
+      const belongCheckins = this.props.dog.checkin_ids.map(id => {
+        return checkins[id];
+      });
+
+      if (belongCheckins.length > 0) {
+        dogCheckins = belongCheckins
           .reverse()
           .map((checkin, idx) => (
             <CheckinItemCard

@@ -6,6 +6,7 @@ json.set! @dog.id do
 
   json.checkins_count @dog.checkins.length
   json.average_checkin_rating @dog.checkins.average(:rating)
+  json.checkin_ids @dog.checkins.ids
 
   json.checkins @dog.checkins do |checkin|
     json.extract! checkin, :id, :author_id, :dog_breed_id, :rating, :checkin_body, :created_at

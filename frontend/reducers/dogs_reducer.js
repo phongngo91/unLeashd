@@ -32,7 +32,8 @@ const dogsReducer = (state = defaultState, action) => {
         author_id,
         image_url,
         checkins_count,
-        average_checkin_rating
+        average_checkin_rating,
+        checkin_ids
       } = Object.values(action.dog)[0];
       const newDog = {
         [id]: {
@@ -45,7 +46,8 @@ const dogsReducer = (state = defaultState, action) => {
           author_id,
           image_url,
           checkins_count,
-          average_checkin_rating
+          average_checkin_rating,
+          checkin_ids
         }
       };
       return Object.assign({}, newState, newDog);
