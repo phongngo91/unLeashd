@@ -49,22 +49,26 @@ const CheckinItemCard = props => {
   let authorAvatar = null;
   if (author.image_url) {
     authorAvatar = (
-      <img src={author.image_url} alt="author-image" className="users-avatar" />
+      <div className="user-avatar-container">
+        <img src={author.image_url} alt="author-image" className="users-avatar" />
+      </div>
     );
   }
   let dogAvatar = null;
   if (dog_breed.image_url) {
     dogAvatar = (
-      <img
-        src={dog_breed.image_url}
-        alt="author-image"
-        className="dog-avatar"
-      />
+      <div className="dog-avatar-container">
+        <img
+          src={dog_breed.image_url}
+          alt="author-image"
+          className="dog-avatar"
+        />
+      </div>
     );
   }
   return (
     <div className="checkin-container">
-      <div>{authorAvatar}</div>
+      {authorAvatar}
       <div className="checkin-card">
         <div className="checkin-user-info">
           <span>
@@ -87,7 +91,7 @@ const CheckinItemCard = props => {
         <div>{checkinImage}</div>
         {timeShown}
       </div>
-      <div>{dogAvatar}</div>
+      {dogAvatar}
     </div>
   );
 };
