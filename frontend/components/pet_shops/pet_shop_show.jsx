@@ -14,7 +14,6 @@ class PetShopShow extends React.Component {
   }
 
   render() {
-
     if (this.props.petShop) {
       const {
         id,
@@ -28,29 +27,23 @@ class PetShopShow extends React.Component {
       } = this.props.petShop;
 
       let dogCheckins = null;
-      if (this.props.petShop.checkin_ids.length > 0 && 
-        Object.values(this.props.checkins).length > 0) {
-
-        // debugger
-          
-        const belongCheckins = this.props.petShop.checkin_ids.map(
-          id => this.props.checkins[id]
-        );
-
-        // debugger
-
-        if (belongCheckins.length > 0) {
-          dogCheckins = belongCheckins.reverse().map((checkin, idx) => (
-            <CheckinItemCard
-              checkin={checkin}
-              key={idx}
-              currentUser={this.props.loggedInUser}
-              // deleteCheckin={deleteCheckin}
-            />
-          ));
+      let petShopCheckinsArr = [];
+      this.props.petShop.checkin_ids.forEach(id => {
+        if (this.props.checkins[id]) {
+          petShopCheckinsArr.push(this.props.checkins[id]);
         }
+      });
+
+      if (petShopCheckinsArr.length > 0) {
+        dogCheckins = petShopCheckinsArr.reverse().map((checkin, idx) => (
+          <CheckinItemCard
+            checkin={checkin}
+            key={idx}
+            currentUser={this.props.loggedInUser}
+            // deleteCheckin={deleteCheckin}
+          />
+        ));
       }
-  
 
       return (
         <div className="petshop-content">
