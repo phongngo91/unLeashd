@@ -1,4 +1,4 @@
-import { RECEIVE_DOGS, RECEIVE_DOG } from "../actions/dog_actions";
+import { RECEIVE_DOGS, RECEIVE_DOG, CLEAR_DOGS } from "../actions/dog_actions";
 import { RECEIVE_SINGLE_USER } from "../actions/users_actions";
 import { RECEIVE_PET_SHOP } from "../actions/pet_shops_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
@@ -49,6 +49,8 @@ const dogsReducer = (state = defaultState, action) => {
         }
       };
       return Object.assign({}, newState, newDog);
+    case CLEAR_DOGS:
+      return {};
     default:
       return state;
   }

@@ -18,6 +18,7 @@ class DogsIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearDogs();
     this.getDogs();
   }
 
