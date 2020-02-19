@@ -47,7 +47,6 @@
   cursor: pointer;
 }
 
-
 .checkin-submit-container {
   display: flex;
   justify-content: flex-end;
@@ -99,7 +98,8 @@
 
 .checkin-card {
   padding: 16px 0px;
-  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
 }
 
 .preview-checkin-pic {
