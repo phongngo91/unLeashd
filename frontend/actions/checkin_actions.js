@@ -61,7 +61,7 @@ export const fetchCheckin = checkinId => dispatch => {
   );
 };
 
-export const deleteCheckin = checkinId => {
+export const deleteCheckin = checkinId => dispatch => {
   return APIUtil.deleteCheckin(checkinId).then(
     checkin => dispatch(removeCheckin(checkin.id))
   );

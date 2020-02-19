@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ThePark from './the_park';
-import { fetchCheckins } from '../../actions/checkin_actions';
+import { fetchCheckins, deleteCheckin } from '../../actions/checkin_actions';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchCheckins: (page) => dispatch(fetchCheckins(page))
+    fetchCheckins: (page) => dispatch(fetchCheckins(page)),
+    deleteCheckin: (checkinId) => dispatch(deleteCheckin(checkinId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThePark);

@@ -32,16 +32,19 @@ class DogShow extends React.Component {
 
     if (this.props.dog) {
       let dogCheckins = null;
-      
-      const { checkins, loggedInUser} = this.props;
+
+      const { checkins, loggedInUser, deleteCheckin } = this.props;
       if (checkins.length > 0) {
-        dogCheckins = this.props.checkins.reverse().map((checkin, idx) => (
-          <CheckinItemCard
-            checkin={checkin}
-            key={idx}
-            currentUser={loggedInUser}
-          />
-        ));
+        dogCheckins = this.props.checkins
+          .reverse()
+          .map((checkin, idx) => (
+            <CheckinItemCard
+              checkin={checkin}
+              key={idx}
+              currentUser={loggedInUser}
+              deleteCheckin={deleteCheckin}
+            />
+          ));
       }
 
       const {
@@ -78,17 +81,17 @@ class DogShow extends React.Component {
                 <div className="dog-links">
                   <div className="dog-assotiations">
                     <div className="petshop-name truncate">{breed_name}</div>
-                    <Link to={`/petshops/${dog_pet_shop.id}`}>
+                    <a href={`/#/petshops/${dog_pet_shop.id}`}>
                       <span className="move-right">
                         {dog_pet_shop.pet_shop_name}
                       </span>
-                    </Link>
+                    </a>
                     <br />
-                    <Link to={`/users/${dog_author.id}`}>
+                    <a href={`/#/users/${dog_author.id}`}>
                       <span className="move-right">
                         {dog_author.first_name} {dog_author.last_name}
                       </span>
-                    </Link>
+                    </a>
                   </div>
                   <div
                     onClick={this.openCheckinModal}

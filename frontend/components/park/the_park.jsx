@@ -22,7 +22,7 @@ class ThePark extends React.Component {
   }
 
   render() {
-    const { checkins, currentUser, errors } = this.props;
+    const { checkins, currentUser, errors, deleteCheckin } = this.props;
 
     let checkinCards = null;
     if (checkins.length > 0 && currentUser) {
@@ -33,6 +33,7 @@ class ThePark extends React.Component {
             checkin={checkin}
             key={idx}
             currentUser={currentUser}
+            deleteCheckin={deleteCheckin}
           />
         ));
     }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const CheckinItemCard = props => {
   const {
+    id,
     image_url,
     checkin_body,
     dog_breed,
@@ -14,6 +15,7 @@ const CheckinItemCard = props => {
     dog_breed_id,
     created_at
   } = props.checkin;
+  const deleteCheckin = props.deleteCheckin;
 
   const diffInMilli = new Date() - new Date(created_at);
   const diffInMinutes = diffInMilli / 60000;
@@ -29,6 +31,12 @@ const CheckinItemCard = props => {
   }
 
   const user_id = props.currentUser.id;
+  let deleteBtn = null;
+  if (author_id === user_id) {
+    deleteBtn = (
+      <button onClick={() => deleteCheckin(id)}>Delete Checkin</button>
+    );
+  }
 
   let checkinImage = null;
   if (image_url) {
@@ -72,30 +80,31 @@ const CheckinItemCard = props => {
   }
   return (
     <div className="checkin-container">
-      <Link to={`users/${author_id}`}>{authorAvatar}</Link>
+      <a href={`/#/users/${author_id}`}>{authorAvatar}</a>
       <div className="checkin-card">
         <div className="checkin-user-info">
           <span className="checkin-top-text">
             <span>
-              <Link to={`users/${author_id}`} className="dog-name">
+              <a href={`/#/users/${author_id}`} className="dog-name">
                 {author.first_name} {author.last_name}
-              </Link>
+              </a>
             </span>{" "}
             is petting a{" "}
-            <Link to={`dogs/${dog_breed_id}`} className="dog-name">
+            <a href={`/#/dogs/${dog_breed_id}`} className="dog-name">
               {dog_breed.breed_name}
-            </Link>{" "}
+            </a>{" "}
             at{" "}
-            <Link to={`/petshops/${pet_shop_id}`} className="dog-name">
+            <a href={`/#/petshops/${pet_shop_id}`} className="dog-name">
               {pet_shop}
-            </Link>
+            </a>
           </span>
         </div>
         {checkinBody}
         <div className="checkin-image-box">{checkinImage}</div>
         {timeShown}
+        {deleteBtn}
       </div>
-      <Link to={`dogs/${dog_breed_id}`}>{dogAvatar}</Link>
+      <a href={`/#/dogs/${dog_breed_id}`}>{dogAvatar}</a>
     </div>
   );
 };
