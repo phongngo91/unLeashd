@@ -75,6 +75,24 @@ class Home extends React.Component {
       });
     }
 
+    let moreButton = null;
+    if (this.props.errors.includes("No More Checkins")){
+      moreButton = (<div className="center-me">
+      <span>No More Checkins</span>
+      </div>)
+    } else {
+      moreButton = (
+        <div className="moreDog">
+        <button
+          onClick={this.getCheckins}
+          className="moreDogBtn remove-blue"
+        >
+          See More
+        </button>
+      </div>
+      )
+    }
+
     const { first_name, last_name, username } = this.props.currentUser;
     return (
       <div className="home-container">
@@ -84,14 +102,7 @@ class Home extends React.Component {
               <ul>
                 <h3 className="recent-feed-header">Recent Activities Feed</h3>
                 {checkins}
-                <div className="moreDog">
-                  <button
-                    onClick={this.getCheckins}
-                    className="moreDogBtn remove-blue"
-                  >
-                    See More
-                  </button>
-                </div>
+                {moreButton}
               </ul>
             </div>
           </div>

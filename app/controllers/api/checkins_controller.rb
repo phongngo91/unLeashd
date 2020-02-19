@@ -2,7 +2,11 @@ class Api::CheckinsController < ApplicationController
   def index
     # @checkins = Checkin.with_attached_photo.all
     @checkins = Checkin.order('checkins.updated_at DESC').page(params[:page]).per(10)
-    render :index
+    if @checkins.length > 0
+      render :index 
+    else
+      render json: ["No More Checkins"], status: 404
+    end
   end
 
   def create

@@ -4,7 +4,8 @@ import { fetchCheckins } from '../../actions/checkin_actions';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
-    checkins: Object.values(state.entities.checkins)
+    checkins: Object.values(state.entities.checkins),
+    errors: state.errors.checkin
 });
 
 const mapDispatchToProps = dispatch => ({
