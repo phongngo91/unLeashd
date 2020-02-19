@@ -17,8 +17,6 @@ ActiveRecord::Base.transaction do
     lovelace = User.create!(username: "lovelace", password: "hunter2", 
         email: "lovelace@aa.com", first_name: "Drew", last_name: "Barrymore")
 
-    users = [phong, tommy, demo_user, hacker_man, lovelace]
-
     petco = PetShop.create!(pet_shop_name: "Petco", 
         city: "Queens", state: "NY")
     petsmart = PetShop.create!(pet_shop_name: "PetSmart", 

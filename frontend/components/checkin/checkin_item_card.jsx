@@ -50,7 +50,11 @@ const CheckinItemCard = props => {
   if (author.image_url) {
     authorAvatar = (
       <div className="user-avatar-container">
-        <img src={author.image_url} alt="author-image" className="users-avatar" />
+        <img
+          src={author.image_url}
+          alt="author-image"
+          className="users-avatar"
+        />
       </div>
     );
   }
@@ -68,10 +72,10 @@ const CheckinItemCard = props => {
   }
   return (
     <div className="checkin-container">
-      {authorAvatar}
+      <Link to={`users/${author_id}`}>{authorAvatar}</Link>
       <div className="checkin-card">
         <div className="checkin-user-info">
-          <span>
+          <span className="checkin-top-text">
             <span>
               <Link to={`users/${author_id}`} className="dog-name">
                 {author.first_name} {author.last_name}
@@ -88,10 +92,10 @@ const CheckinItemCard = props => {
           </span>
         </div>
         {checkinBody}
-        <div>{checkinImage}</div>
+        <div className="checkin-image-box">{checkinImage}</div>
         {timeShown}
       </div>
-      {dogAvatar}
+      <Link to={`dogs/${dog_breed_id}`}>{dogAvatar}</Link>
     </div>
   );
 };

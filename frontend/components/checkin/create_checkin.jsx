@@ -68,7 +68,7 @@ class CreateCheckinForm extends React.Component {
 
   render() {
     return (
-      <div className="checkin-container">
+      <div className="create-checkin-container">
         <div className="checkin-header">
           <div className="checkin-text">Check-in</div>
           <div
@@ -98,7 +98,6 @@ class CreateCheckinForm extends React.Component {
               <input
                 type="file"
                 onChange={this.handlePicture}
-                // className="checkin-pic-input"
                 className="fileInput"
               />
             </div>

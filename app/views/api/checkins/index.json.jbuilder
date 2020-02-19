@@ -6,7 +6,11 @@
     json.image_url url_for(checkin.photo) if checkin.photo.attached?
     json.author do
       json.extract! checkin.author, :first_name, :last_name
-      json.image_url url_for(checkin.author.photo) if checkin.author.photo.attached?
+      if checkin.author.photo.attached?
+        json.image_url url_for(checkin.author.photo)
+      else
+        json.image_url asset_path('default_avatar.png')
+      end
     end
     json.dog_breed do 
       json.extract! checkin.dog_breed, :breed_name

@@ -15,11 +15,20 @@
 }
 
 .checkin-container {
+  background-color: white;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
   border-bottom: 1px solid #e5e5e5;
+}
+
+.checkin-card {
+  padding: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .minutes-ago {
@@ -33,4 +42,8 @@
 
 .dog-avatar-container{
   margin: 0;
+}
+
+.checkin-user-info{
+  margin-bottom: 16px;
 }
