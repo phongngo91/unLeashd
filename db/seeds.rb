@@ -34,8 +34,6 @@ ActiveRecord::Base.transaction do
     pet_valu = PetShop.create!(pet_shop_name: "Pet Valu", 
         city: "Pittsburgh", state: "PA")
 
-    stores = [petco, petsmart, whiskers, fairmount, baltimore, world_wide, petland, pet_valu]
-
     petco_file = File.open('app/assets/images/pet_shops/petco.png')
     petco.photo.attach(io: petco_file, filename: 'petco.png')
 
@@ -60,6 +58,9 @@ ActiveRecord::Base.transaction do
     pet_valu_file = File.open('app/assets/images/pet_shops/pet_valu.png')
     pet_valu.photo.attach(io: pet_valu_file, filename: 'pet_valu.png')
     
+    rand_dogs = DogBreed.all
+    users = User.all
+    stores = PetShop.all
 
     50.times do
         new_dog = DogBreed.create!(
@@ -72,9 +73,6 @@ ActiveRecord::Base.transaction do
         file = File.open("app/assets/images/dog_breeds/#{rand(20) + 1}.jpg")
         new_dog.photo.attach(io: file, filename: "#{new_dog.breed_name}")
     end
-
-    rand_dogs = DogBreed.all
-    users = User.all
 
     50.times do 
         rand_dog = rand_dogs.sample
