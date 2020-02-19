@@ -6,7 +6,7 @@ const DogIndexItem = props => {
   return (
     <div className="dog-container">
       <Link to={`/dogs/${id}`}>
-        <img className="dog-avatar" src={image_url} alt="dog-pic" />
+        <img className="dog-avatar-full" src={image_url} alt="dog-pic" />
       </Link>
       <div className="dog-info-box">
         <Link to={`/dogs/${id}`}>
