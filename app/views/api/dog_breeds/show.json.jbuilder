@@ -4,7 +4,7 @@ json.set! @dog.id do
   json.author @dog.author
   json.pet_shop @dog.pet_shop
 
-  json.checkins_count @dog.checkins.length
+  json.checkins_count @dog.checkins.where("rating > 0").length
   json.average_checkin_rating @dog.checkins.where("rating > 0").average(:rating)
   json.checkin_ids @dog.checkins.ids
 

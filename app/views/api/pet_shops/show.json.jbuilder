@@ -8,7 +8,7 @@ json.set! @petShop.id do
   end
 
   json.dog_breed_ids @petShop.dog_breeds.ids
-  json.checkins_count @petShop.checkins.length
+  json.checkins_count @petShop.checkins.where("rating > 0").length
   json.average_checkin_rating @petShop.checkins.where("rating > 0").average(:rating)
   json.dog_count @petShop.dog_breeds.length
   json.checkin_ids @petShop.checkins.ids
