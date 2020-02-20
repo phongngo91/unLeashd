@@ -6,11 +6,25 @@ import {
 } from "../actions/checkin_actions";
 import { RECEIVE_PET_SHOP } from "../actions/pet_shops_actions";
 import { RECEIVE_DOG } from "../actions/dog_actions";
+import { RECEIVE_SINGLE_USER } from "../actions/users_actions";
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const checkinsReducer = (state = {}, action) => {
   Object.freeze(state);
   const newState = Object.assign({}, state);
   switch (action.type) {
+    case RECEIVE_CURRENT_USER:
+      let currentUserCheckins = {};
+      action.currentUser.checkins.forEach(
+        checkin => (currentUserCheckins[checkin.id] = checkin)
+      );
+      return Object.assign({}, newState, currentUserCheckins);
+    case RECEIVE_SINGLE_USER:
+      let singleUserCheckins = {};
+      action.singleUser.checkins.forEach(
+        checkin => (singleUserCheckins[checkin.id] = checkin)
+      );
+      return Object.assign({}, newState, singleUserCheckins);
     case RECEIVE_CHECKINS:
       return Object.assign({}, newState, action.checkins);
     case RECEIVE_PET_SHOP:

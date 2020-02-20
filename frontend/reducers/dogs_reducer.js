@@ -12,7 +12,11 @@ const dogsReducer = (state = defaultState, action) => {
     case RECEIVE_DOGS:
       return Object.assign({}, newState, action.dogs);
     case RECEIVE_SINGLE_USER:
-      return action.singleUser.authored_dog_breeds;
+      let singleUserDogs = {};
+      action.singleUser.authored_dog_breeds.forEach(
+        (dog) => singleUserDogs[dog.id] = dog
+      );
+      return Object.assign({}, newState, singleUserDogs);
     case RECEIVE_PET_SHOP:
       let dogs = {};
       Object.values(action.petShop)[0].dog_breeds.forEach(
@@ -20,7 +24,11 @@ const dogsReducer = (state = defaultState, action) => {
       );
       return Object.assign({}, newState, dogs);
     case RECEIVE_CURRENT_USER:
-      return action.currentUser.authored_dog_breeds;
+      let currentUserDogs = {};
+      action.currentUser.authored_dog_breeds.forEach(
+        dog => currentUserDogs[dog.id] = dog
+      );
+      return Object.assign({}, newState, currentUserDogs);
     case RECEIVE_DOG:
       const {
         id,

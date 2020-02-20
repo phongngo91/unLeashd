@@ -13,31 +13,28 @@ const usersReducer = (state = defaultState, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            const CurrentdogIds = action.currentUser.authored_dog_breeds.map((dog) => {
-                return dog.id;
-            });
-
             const newCurrentUser = {
                 [action.currentUser.id]: {
                     id: action.currentUser.id,
                     username: action.currentUser.username,
                     first_name: action.currentUser.first_name,
                     last_name: action.currentUser.last_name,
-                    authored_dogs: CurrentdogIds
-                    // image_url: action.CurrentUser.image_url
+                    image_url: action.currentUser.image_url,
+                    authored_dogs: action.currentUser.authored_dogs,
+                    checkin_ids: action.currentUser.checkin_ids
                 }
             };
             return Object.assign({}, state, newCurrentUser);
         case RECEIVE_SINGLE_USER: 
-        const dogIds = action.singleUser.authored_dog_breeds.map((dog) => {
-            return dog.id;
-        });
         const newSingleUser = {
             [action.singleUser.id]: {
                 id: action.singleUser.id,
                 username: action.singleUser.username,
-                authored_dogs: dogIds
-                // image_url: action.singleUser.image_url
+                first_name: action.singleUser.first_name,
+                last_name: action.singleUser.last_name,
+                image_url: action.singleUser.image_url,
+                authored_dogs: action.singleUser.authored_dogs,
+                checkin_ids: action.singleUser.checkin_ids
             }
         };
         return Object.assign({}, state, newSingleUser);
