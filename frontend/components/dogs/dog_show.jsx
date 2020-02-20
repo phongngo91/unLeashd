@@ -43,7 +43,7 @@ class DogShow extends React.Component {
       })
 
       if (belongCheckins.length > 0) {
-        dogCheckins = belongCheckins.reverse().map((checkin, idx) => (
+        dogCheckins = belongCheckins.map((checkin, idx) => (
           <CheckinItemCard
             checkin={checkin}
             key={idx}
