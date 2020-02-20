@@ -61,7 +61,7 @@ class UsersShow extends React.Component {
         <div className="park-content">
           <div className="global-checkins-container">
             <div className="global-checkins">
-              <ul>
+              <ul className="make-width-760">
                 <h3 className="recent-feed-header">
                   {usersName} Recent Activity
                 </h3>
