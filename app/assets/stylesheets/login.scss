@@ -1,14 +1,14 @@
-.login-content{
+.login-content {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-  asset-data-url("dogs_running.jpg")
+    asset-data-url("dogs_running.jpg");
 }
 
-.signup-content{
+.signup-content {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-  asset-data-url("dogs_running2.jpg")
+    asset-data-url("dogs_running2.jpg");
 }
 
-.aPaw{
+.aPaw {
   background-image: asset-data-url("paw.png");
   background-color: orange;
   width: 20px;
@@ -18,7 +18,7 @@
   margin: 2px;
 }
 
-.noPaw{
+.noPaw {
   background-color: orange;
   width: 20px;
   height: 20px;
@@ -26,7 +26,30 @@
   margin: 2px;
 }
 
-.rating-container{
+.rating-container {
   display: flex;
   margin-top: 10px;
+}
+
+.confirmation-container {
+  width: 250px;
+  background-color: white;
+}
+
+.confirm-container {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.checkin-text-text{
+  padding: 10px;
+}
+
+.cfm-btn {
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  padding: 5px;
 }

@@ -19,6 +19,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearCheckins();
     this.getCheckins();
   }
 
@@ -27,6 +28,7 @@ class Home extends React.Component {
     const { checkins, currentUser, errors, deleteCheckin } = this.props;
 
     let checkinCards = null;
+
     if (Object.values(checkins).length > 0) {
       checkinCards = Object.values(checkins)
         .reverse()
