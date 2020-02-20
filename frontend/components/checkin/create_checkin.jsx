@@ -63,7 +63,10 @@ class CreateCheckinForm extends React.Component {
 
     this.props
       .createCheckin(formData)
-      .then(() => this.props.openConfirmCheckinModal());
+      .then(() => {
+        this.props.openConfirmCheckinModal();
+        this.props.fetchDog(this.state.dog_breed_id);
+      });
   }
 
   render() {

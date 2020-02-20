@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import CreateCheckinForm from "./create_checkin";
+import { fetchDog } from "../../actions/dog_actions";
+
 import {
   createCheckin,
   clearCheckinErrors
@@ -19,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     closeModal: () => dispatch(closeModal()),
     createCheckin: formData => dispatch(createCheckin(formData)),
     clearCheckinErrors: () => dispatch(clearCheckinErrors()),
-    openConfirmCheckinModal: () => dispatch(openModal('checkinConfirm'))
+    openConfirmCheckinModal: () => dispatch(openModal('checkinConfirm')),
+    fetchDog: (dogId) => dispatch(fetchDog(dogId))
   };
 };
 
