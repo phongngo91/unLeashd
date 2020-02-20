@@ -31,7 +31,7 @@ class DogShow extends React.Component {
     }
 
     let dogCheckins = null;
-    if (this.props.dog && this.props.dog.checkin_ids.length > 0) {
+    if (this.props.dog && this.props.dog.checkin_ids) {
       const { checkins, loggedInUser } = this.props;
 
       let belongCheckins = [];
