@@ -14,7 +14,7 @@ class PetShopShow extends React.Component {
   }
 
   render() {
-    if (this.props.petShop) {
+    if (this.props.petShop && this.props.petShop.checkin_ids) {
       const {
         id,
         pet_shop_name,
