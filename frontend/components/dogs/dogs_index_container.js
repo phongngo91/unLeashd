@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import DogsIndex from "./dogs_index";
-import { fetchDogs, clearDogs } from "../../actions/dog_actions";
+import { fetchDogs, clearDogs, clearDogErrors } from "../../actions/dog_actions";
 
 const mapStateToProps = state => {
   return { 
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchDogs: (page) => dispatch(fetchDogs(page)),
-  clearDogs: () => dispatch(clearDogs())
+  clearDogs: () => dispatch(clearDogs()),
+  clearDogErrors: () => dispatch(clearDogErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogsIndex);

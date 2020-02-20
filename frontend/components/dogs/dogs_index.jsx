@@ -23,6 +23,10 @@ class DogsIndex extends React.Component {
     this.getDogs();
   }
 
+  componentWillUnmount(){
+    this.props.clearDogErrors();
+  }
+
   render() {
     let moreButton = null;
 
