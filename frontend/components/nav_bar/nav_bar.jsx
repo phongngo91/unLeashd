@@ -48,7 +48,7 @@ class NavBar extends React.Component {
           <ul
             className="user-controls"
             style={{
-              backgroundImage: `url(${window.defaultAva})`
+              backgroundImage: `url(${loggedInUser.image_url})`
             }}
           >
             <div className="arrow-up"></div>
