@@ -4,13 +4,20 @@ class EditDogForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.dog;
+    if (this.props.dog){
+      this.state = this.props.dog;
+    } else {
+      this.state = {
+        pet_shop_id: 1
+      };
+    }
     if (this.props.dog) {
       this.state.imageUrl = this.props.dog.image_url;
     }
 
     this.handlePicture = this.handlePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   componentDidMount() {
@@ -32,7 +39,7 @@ class EditDogForm extends React.Component {
       );
     }
 
-    this.props.fetchPetShops().then();
+    this.props.fetchPetShops();
   }
 
   componentWillUnmount() {
@@ -119,7 +126,7 @@ class EditDogForm extends React.Component {
 
     let petShopIds = null;
 
-    if (this.props.petShops.length > 0) {
+    if (this.props.petShops.length > 0 && this.props.dog.pet_shop_id) {
       petShopIds = this.props.petShops.map((petShop, idx) => {
         return (
           <option value={petShop.id} key={idx}>
@@ -128,16 +135,18 @@ class EditDogForm extends React.Component {
         );
       });
 
-      const wrappedPetShops = (
-        <select
-          id="petshop-list"
-          className="select-pet-shop"
-          value={this.state.pet_shop_id}
-          onChange={this.updatePetShopId()}
-        >
-          {petShopIds}
-        </select>
-      );
+        const wrappedPetShops = (
+          <select
+            id="petshop-list"
+            className="select-pet-shop"
+            value={this.state.pet_shop_id}
+            onChange={this.updatePetShopId()}
+          >
+            {petShopIds}
+          </select>
+        );
+
+
 
       return (
         <div className="submit-dog-container">
