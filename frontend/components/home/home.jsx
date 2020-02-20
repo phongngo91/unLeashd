@@ -27,8 +27,8 @@ class Home extends React.Component {
     const { checkins, currentUser, errors, deleteCheckin } = this.props;
 
     let checkinCards = null;
-    if (checkins.length > 0) {
-      checkinCards = checkins
+    if (Object.values(checkins).length > 0) {
+      checkinCards = Object.values(checkins)
         .reverse()
         .map((checkin, idx) => (
           <CheckinItemCard

@@ -54,10 +54,22 @@ const CheckinItemCard = props => {
     );
   }
   let checkinBody = null;
-  if (checkin_body.length > 0) {
+  if (checkin_body.length > 0 || rating > 0) {
+    let ratingBubble = [];
+    if (rating > 0) {
+      for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+          ratingBubble.push(<div className="aPaw" />);
+        } else {
+          ratingBubble.push(<div className="noPaw" />);
+        }
+      }
+    }
+
     checkinBody = (
       <div className="checkin-body-container">
         <div className="checkin-body-text">{checkin_body}</div>
+        <div className="rating-container">{ratingBubble}</div>
       </div>
     );
   }
