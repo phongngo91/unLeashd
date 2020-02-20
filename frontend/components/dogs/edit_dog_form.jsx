@@ -87,9 +87,11 @@ class EditDogForm extends React.Component {
     }
     this.props
       .action(formData)
-      .then(() =>
-        this.props.history.push(`/petshops/${this.state.pet_shop_id}`)
-      );
+      .then((payload) => {
+        // debugger
+        // return this.props.history.push(`/petshops/${this.state.pet_shop_id}`);
+        return this.props.history.push(`/dogs/${Object.values(payload.dog)[0].id}`);
+      });
   }
 
   render() {
