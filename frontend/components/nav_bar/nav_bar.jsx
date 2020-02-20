@@ -19,7 +19,12 @@ class NavBar extends React.Component {
 
   render() {
     const loggedInUser = this.props.loggedInUser;
+    let profImg = window.defaultAva;
     if (loggedInUser) {
+      if (loggedInUser.image_url){
+        profImg = loggedInUser.image_url;
+      }
+
       return (
         <nav className="nav-bar-container sticky">
           <div className="nav-left-content">
@@ -48,7 +53,7 @@ class NavBar extends React.Component {
           <ul
             className="user-controls"
             style={{
-              backgroundImage: `url(${loggedInUser.image_url})`
+              backgroundImage: `url(${profImg})`
             }}
           >
             <div className="arrow-up"></div>
