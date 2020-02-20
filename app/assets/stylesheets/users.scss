@@ -47,3 +47,39 @@
 .checkin-user-info{
   margin-bottom: 16px;
 }
+
+.banner-container{
+  width: 770px;
+  height: 220px;
+  background-color: darkslategrey;
+}
+
+.profile-container{
+  padding: 15px;
+  display: flex;
+  margin-top: 15px;
+  align-content: flex-end;
+}
+
+.user-prof-ava{
+  width: 100px;
+  height: 100px;
+}
+
+.img-container-prof{
+  display: flex;
+  margin-top: 60px;
+}
+
+.white-text{
+  color: white;
+}
+
+.push-down{
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.make-big{
+  font-size: 35px;
+}

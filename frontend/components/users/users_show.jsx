@@ -13,15 +13,34 @@ class UsersShow extends React.Component {
   render() {
     const { checkins, showedUser } = this.props;
     let usersName = null;
+    let profileCard = null;
     let myCheckins = [];
 
-    if (showedUser) {
+    if (showedUser && showedUser.checkin_ids) {
       showedUser.checkin_ids.forEach(id => {
         if (checkins[id]) {
           myCheckins.push(checkins[id]);
         }
       });
       usersName = <span>{showedUser.first_name}'s</span>;
+
+      profileCard = (
+        <div className="profile-container">
+          <div className="img-container-prof">
+            <img
+              src={showedUser.image_url}
+              alt="profile-pic"
+              className="user-prof-ava"
+            />
+            <div className="push-down">
+              <div className="white-text make-big">
+                {showedUser.first_name} {showedUser.last_name}
+              </div>
+              <div className="white-text">{showedUser.username}</div>
+            </div>
+          </div>
+        </div>
+      );
     }
 
     let checkinCards = null;
@@ -38,7 +57,7 @@ class UsersShow extends React.Component {
 
     return (
       <div className="park-container">
-        <h1>USER BANNER</h1>
+        <div className="banner-container">{profileCard}</div>
         <div className="park-content">
           <div className="global-checkins-container">
             <div className="global-checkins">
