@@ -64,7 +64,7 @@ class Home extends React.Component {
       <div className="home-container">
         <div className="user-home-content">
           <div className="user-left-feed">
-            <div className="global-checkins">
+            <div className="global-checkins move-up">
               <ul>
                 <h3 className="recent-feed-header">Recent Activities Feed</h3>
                 {checkinCards}
