@@ -15,11 +15,11 @@ else
   json.image_url asset_path('default_avatar.png')
 end
 
-json.authored_dogs user.authored_dogs.ids
+json.authored_dogs user.authored_dogs.ids.sort.reverse
 
 json.checkins_count user.checkins.where("rating > 0").length
 json.average_checkin_rating user.checkins.where("rating > 0").average(:rating)
-json.checkin_ids user.checkins.ids
+json.checkin_ids user.checkins.ids.sort.reverse
 
 json.checkins user.checkins do |checkin|
   json.extract! checkin, :id, :author_id, :dog_breed_id, :rating, :checkin_body, :created_at

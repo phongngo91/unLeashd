@@ -7,11 +7,11 @@ json.set! @petShop.id do
     json.image_url url_for(dog.photo) if dog.photo.attached?
   end
 
-  json.dog_breed_ids @petShop.dog_breeds.ids
+  json.dog_breed_ids @petShop.dog_breeds.ids.sort.reverse
   json.checkins_count @petShop.checkins.where("rating > 0").length
   json.average_checkin_rating @petShop.checkins.where("rating > 0").average(:rating)
   json.dog_count @petShop.dog_breeds.length
-  json.checkin_ids @petShop.checkins.ids
+  json.checkin_ids @petShop.checkins.ids.sort.reverse
 
   json.checkins @petShop.checkins do |checkin|
     json.extract! checkin, :id, :author_id, :dog_breed_id, :rating, :checkin_body, :created_at
