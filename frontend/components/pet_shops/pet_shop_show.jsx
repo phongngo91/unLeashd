@@ -35,7 +35,7 @@ class PetShopShow extends React.Component {
       });
 
       if (petShopCheckinsArr.length > 0) {
-        dogCheckins = petShopCheckinsArr.reverse().map((checkin, idx) => (
+        dogCheckins = petShopCheckinsArr.map((checkin, idx) => (
           <CheckinItemCard
             checkin={checkin}
             key={idx}
