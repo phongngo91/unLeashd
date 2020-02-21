@@ -96,8 +96,8 @@ class NavBar extends React.Component {
                 <div className="unleashd-desc">pet gently</div>
               </div>
             </Link>
-            <div className="nav-link">
-              <a href="/#/petshops">Pet Shops</a>
+            <div>
+              <a href="/#/petshops" className="nav-link">Pet Shops</a>
             </div>
             <div>
               <a className="nav-link" href="/#/dogs">
