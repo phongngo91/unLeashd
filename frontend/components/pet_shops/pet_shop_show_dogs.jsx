@@ -23,7 +23,7 @@ class PetShopShow extends React.Component {
         }
       });
 
-      dogsEl = authoredDogArr.reverse().map((dog, idx) => {
+      dogsEl = authoredDogArr.map((dog, idx) => {
         return (
           <div key={idx} className="user-dogs-card">
             <Link to={`/dogs/${dog.id}`}>
