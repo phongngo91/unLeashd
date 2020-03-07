@@ -31,7 +31,7 @@ class Spash extends React.Component {
         </ul>
         <ul className="masthead-content">
           <div className="description-content">
-            <div className="dogPaw"/>
+            <div className="dogPaw" />
             <div className="unleashd-logo">unLeashd</div>
             <div className="unleashd-logo-sub">Pet Gently</div>
             <div className="short-rule"></div>
@@ -40,12 +40,17 @@ class Spash extends React.Component {
             </h4>
             <div className="home-icons">
               <span>
-                <a title="GitHub" href="https://github.com/phongngo91">
+                <a
+                  target="_blank"
+                  title="GitHub"
+                  href="https://github.com/phongngo91"
+                >
                   <FontAwesomeIcon icon={faGithub} size="5x" color="white" />
                 </a>
               </span>
               <span>
                 <a
+                  target="_blank"
                   title="LinkedIn"
                   href="https://www.linkedin.com/in/phongngo91/"
                 >
@@ -55,7 +60,7 @@ class Spash extends React.Component {
             </div>
           </div>
           <div className="description-image">
-            <div className="dogSelfie"/>
+            <div className="dogSelfie" />
           </div>
         </ul>
       </nav>
