@@ -7,6 +7,11 @@ class Api::FriendshipsController < ApplicationController
 
   def create
     @friendship = Friendship.new(friendship_params)
+    if @friendship.save
+      render json: @friendship.friend
+    else
+      render json: ["Friendship could not be saved"], status: 422
+    end
   end
 
   def delete
