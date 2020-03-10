@@ -4,10 +4,19 @@ import CheckinItemCard from "../checkin/checkin_item_card";
 class UsersShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.addFriendEvent = this.addFriendEvent.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
+  }
+
+  addFriendEvent() {
+    this.props.createFriendship({
+      user_id: this.props.currentUser.id,
+      friend_id: this.props.showedUser.id
+    });
   }
 
   render() {
@@ -20,7 +29,7 @@ class UsersShow extends React.Component {
       if (showedUser.friend_ids.includes(currentUser.id)) {
         addFriendBtn = <div className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
       } else {
-        addFriendBtn = <div className="add-friend-btn moreDogBtn remove-blue">ADD FRIEND</div>;
+        addFriendBtn = <div onClick={this.addFriendEvent} className="add-friend-btn moreDogBtn remove-blue">ADD FRIEND</div>;
       }
     }
 

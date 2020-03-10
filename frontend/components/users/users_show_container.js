@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import UsersShow from '../users/users_show';
 import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/users_actions';
+import { createFriendship } from "../../actions/friendship_actions";
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    fetchUser: (userId) => dispatch(fetchUser(userId))
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+    createFriendship: (friendship) => dispatch(createFriendship(friendship))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersShow);

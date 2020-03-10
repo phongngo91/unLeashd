@@ -44,7 +44,7 @@ export const createDog = formData => dispatch => {
     dog => dispatch(receiveDog(dog)),
     errors => dispatch(receiveDogErrors(errors.responseJSON))
   );
-};
+}; 
 
 export const fetchDogs = (page) => dispatch => {
   return APIUtil.fetchDogs(page).then(
