@@ -11,7 +11,6 @@
 #  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
-#  friend_id       :integer
 #
 
 class User < ApplicationRecord
@@ -33,6 +32,8 @@ class User < ApplicationRecord
       class_name: :Checkin,
       foreign_key: :author_id,
       primary_key: :id
+
+    
   
     after_initialize :ensure_session_token
   
