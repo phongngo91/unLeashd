@@ -11,6 +11,7 @@
 #  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
+#  friend_id       :integer
 #
 
 class User < ApplicationRecord
