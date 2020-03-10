@@ -11,10 +11,18 @@ class UsersShow extends React.Component {
   }
 
   render() {
-    const { checkins, showedUser } = this.props;
+    const { checkins, showedUser, currentUser } = this.props;
     let usersName = null;
     let profileCard = null;
     let myCheckins = [];
+    let addFriendBtn = null;
+    if (showedUser){
+      if (showedUser.friend_ids.includes(currentUser.id)) {
+        addFriendBtn = <div className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
+      } else {
+        addFriendBtn = <div className="add-friend-btn moreDogBtn remove-blue">ADD FRIEND</div>;
+      }
+    }
 
     if (showedUser && showedUser.checkin_ids) {
       showedUser.checkin_ids.forEach(id => {
@@ -39,6 +47,7 @@ class UsersShow extends React.Component {
               <div className="white-text">{showedUser.username}</div>
             </div>
           </div>
+          {addFriendBtn}
         </div>
       );
     }

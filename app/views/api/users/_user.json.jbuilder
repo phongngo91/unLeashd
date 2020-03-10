@@ -9,6 +9,8 @@ json.authored_dog_breeds user.authored_dogs do |authored_dog|
 
 end
 
+json.friend_ids user.friend_ids
+
 if user.photo.attached?
   json.image_url url_for(user.photo)
 else

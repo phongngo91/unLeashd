@@ -34,7 +34,8 @@ const usersReducer = (state = defaultState, action) => {
                 last_name: action.singleUser.last_name,
                 image_url: action.singleUser.image_url,
                 authored_dogs: action.singleUser.authored_dogs,
-                checkin_ids: action.singleUser.checkin_ids
+                checkin_ids: action.singleUser.checkin_ids,
+                friend_ids: action.singleUser.friend_ids
             }
         };
         return Object.assign({}, state, newSingleUser);

@@ -58,7 +58,14 @@
   padding: 15px;
   display: flex;
   margin-top: 15px;
+  justify-content: space-between;
   align-content: flex-end;
+}
+
+.add-friend-btn{
+  align-self: flex-end;
+  padding: 4px;
+  width: fit-content;
 }
 
 .user-prof-ava{
