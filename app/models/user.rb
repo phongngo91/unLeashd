@@ -33,7 +33,9 @@ class User < ApplicationRecord
       foreign_key: :author_id,
       primary_key: :id
 
-    
+    has_many :friendships
+    has_many :friends, 
+      through: :friendships
   
     after_initialize :ensure_session_token
   
