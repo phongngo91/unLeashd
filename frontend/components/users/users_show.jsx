@@ -16,7 +16,9 @@ class UsersShow extends React.Component {
     this.props.createFriendship({
       user_id: this.props.currentUser.id,
       friend_id: this.props.showedUser.id
-    });
+    }).then(
+      () => this.props.fetchUser(this.props.match.params.userId)
+    );
   }
 
   render() {
@@ -26,7 +28,7 @@ class UsersShow extends React.Component {
     let myCheckins = [];
     let addFriendBtn = null;
     if (showedUser){
-      if (showedUser.friend_ids.includes(currentUser.id)) {
+      if (currentUser.friend_ids.includes(showedUser.id)) {
         addFriendBtn = <div className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
       } else {
         addFriendBtn = <div onClick={this.addFriendEvent} className="add-friend-btn moreDogBtn remove-blue">ADD FRIEND</div>;
