@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     createFriendship: (friendship) => dispatch(createFriendship(friendship)),
-    // destroyFriendship: (friendship) => dispatch(destroyFriendship(friendship))
+    destroyFriendship: (friendship) => dispatch(destroyFriendship(friendship))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersShow);

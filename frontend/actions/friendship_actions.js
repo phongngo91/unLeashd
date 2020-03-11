@@ -6,8 +6,8 @@ export const createFriendship = friendship => () => {
   );
 };
 
-// export const destroyFriendship = friendship => () => {
-//   return APIUtil.destroyFriendship(friendship).then(
-//     () => "Success at destroying friendship"
-//   );
-// };
+export const destroyFriendship = friendship => () => {
+  return APIUtil.destroyFriendship(friendship).then(
+    () => "Success at destroying friendship"
+  );
+};

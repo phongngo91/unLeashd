@@ -15,13 +15,13 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def delete
-    # @friendship = Friendship.find_by(user_id: params[:user_id], friend_id: params[:friend_id])
-    # if @friendship
-    #   @friendship.destroy
-    #   render json: ["successfully destroyed friendship"]
-    # else
-    #   render json: ["cannot find friendship to destroy"]
-    # end
+    @friendship = Friendship.find_by(user_id: params[:user_id], friend_id: params[:friend_id])
+    if @friendship
+      @friendship.destroy
+      render json: ["successfully destroyed friendship"]
+    else
+      render json: ["cannot find friendship to destroy"]
+    end
   end
 
   private 
