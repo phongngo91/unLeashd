@@ -37,7 +37,7 @@ class UsersShow extends React.Component {
     let profileCard = null;
     let myCheckins = [];
     let addFriendBtn = null;
-    if (showedUser){
+    if (showedUser && currentUser.friend_ids){
       if (currentUser.friend_ids.includes(showedUser.id)) {
         addFriendBtn = <div onClick={this.destroyFriendEvent} className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
       } else {
