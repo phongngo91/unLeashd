@@ -6,11 +6,21 @@ class UsersShow extends React.Component {
     super(props);
 
     this.addFriendEvent = this.addFriendEvent.bind(this);
+    // this.destroyFriendEvent = this.destroyFriendEvent.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
   }
+
+  // destroyFriendEvent() {
+  //   this.props.destroyFriendship({
+  //     user_id: this.props.currentUser.id,
+  //     friend_id: this.props.showedUser.id
+  //   }).then(
+  //     () => this.props.fetchUser(this.props.match.params.userId)
+  //   );
+  // }
 
   addFriendEvent() {
     this.props.createFriendship({
@@ -29,7 +39,8 @@ class UsersShow extends React.Component {
     let addFriendBtn = null;
     if (showedUser){
       if (currentUser.friend_ids.includes(showedUser.id)) {
-        addFriendBtn = <div className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
+        // addFriendBtn = <div onClick={this.destroyFriendEvent} className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
+        addFriendBtn = (<div className="add-friend-btn moreDogBtn remove-blue rmv-cursor">Already Friends</div>)
       } else {
         addFriendBtn = <div onClick={this.addFriendEvent} className="add-friend-btn moreDogBtn remove-blue">ADD FRIEND</div>;
       }
