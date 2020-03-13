@@ -16,6 +16,7 @@ import EditDogContainer from './dogs/edit_dog_container';
 import PetShopShowDogContainer from './pet_shops/pet_shop_show_dogs_container';
 import TheParkContainer from './park/the_park_container';
 import Modal from './modal/modal';
+import ResultContainer from "../components/result/results_container";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route exact path="/dogs/:dogId" component={DogShowContainer} />
         <ProtectedRoute exact path="/dogs/:dogId/edit" component={EditDogContainer}/>
         <ProtectedRoute path="/thepark" component={TheParkContainer}/>
+        <Route exact path="/results" component={ResultContainer}/>
       </Switch>
     </>
   );
