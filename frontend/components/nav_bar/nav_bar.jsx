@@ -28,6 +28,10 @@ class NavBar extends React.Component {
     this.props.searchUsers({
       first_name,
       last_name
+    }).then(()=>{
+      this.setState({
+        searchString: ""
+      });
     });
   }
 
@@ -45,6 +49,7 @@ class NavBar extends React.Component {
         <input
           onChange={this.updateSearch()}
           type="text"
+          value={this.state.searchString}
           className="search-user remove-blue"
           placeholder="Search User"
         ></input>

@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
 
   def index
-    debugger
     @users = User.where([
       'lower(first_name) LIKE ? AND lower(last_name) LIKE ?', 
         "%#{params[:first_name].downcase}%", 
