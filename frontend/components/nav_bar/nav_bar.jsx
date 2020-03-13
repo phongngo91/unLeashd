@@ -13,6 +13,7 @@ class NavBar extends React.Component {
     };
 
     this.searchUsers = this.searchUsers.bind(this);
+    this.keyPressed = this.keyPressed.bind(this);
   }
 
   updateSearch(){
@@ -44,6 +45,12 @@ class NavBar extends React.Component {
     this.props.history.push("/signup");
   }
 
+  keyPressed(event) {
+    if (event.key === "Enter"){
+      this.searchUsers();
+    }
+  }
+
   render() {
     let searchInput = null;
     searchInput = (
@@ -51,6 +58,7 @@ class NavBar extends React.Component {
         <input
           onChange={this.updateSearch()}
           type="text"
+          onKeyPress={this.keyPressed}
           value={this.state.searchString}
           className="search-user remove-blue"
           placeholder="Search User"
