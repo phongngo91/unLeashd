@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.where(['lower(first_name) LIKE ?', "%#{params[:query].downcase}%"])
-    render json: @users
+    render :index
   end
 
   def create
