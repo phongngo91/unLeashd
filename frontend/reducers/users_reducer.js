@@ -5,13 +5,19 @@ import {
 import { RECEIVE_DOG } from "../actions/dog_actions";
 
 
-import { RECEIVE_SINGLE_USER } from "../actions/users_actions";
+import { RECEIVE_SINGLE_USER, RECEIVE_SEARCHED_USERS } from "../actions/users_actions";
 
 const defaultState = {};
 
 const usersReducer = (state = defaultState, action) => {
     Object.freeze(state);
     switch (action.type) {
+        case RECEIVE_SEARCHED_USERS: 
+        let searchedUsers = {};
+        action.searchedUsers.forEach(user => {
+            searchedUsers[user.id] = user;
+        });
+        return Object.assign({}, state, searchedUsers);
         case RECEIVE_CURRENT_USER:
             const newCurrentUser = {
                 [action.currentUser.id]: {
