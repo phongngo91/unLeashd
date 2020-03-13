@@ -59,9 +59,9 @@ const CheckinItemCard = props => {
     if (rating > 0) {
       for (let i = 1; i <= 5; i++) {
         if (i <= rating) {
-          ratingBubble.push(<div className="aPaw" />);
+          ratingBubble.push(<div key={i} className="aPaw" />);
         } else {
-          ratingBubble.push(<div className="noPaw" />);
+          ratingBubble.push(<div key={i} className="noPaw" />);
         }
       }
     }

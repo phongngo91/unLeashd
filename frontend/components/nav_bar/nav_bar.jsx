@@ -46,20 +46,20 @@ class NavBar extends React.Component {
 
   render() {
     let searchInput = null;
-    // searchInput = (
-    //   <div className="search-user-container">
-    //     <input
-    //       onChange={this.updateSearch()}
-    //       type="text"
-    //       value={this.state.searchString}
-    //       className="search-user remove-blue"
-    //       placeholder="Search User"
-    //     ></input>
-    //     <button 
-    //       className="search-user-btn remove-blue"
-    //       onClick={this.searchUsers}>Search</button>
-    //   </div>
-    // );
+    searchInput = (
+      <div className="search-user-container">
+        <input
+          onChange={this.updateSearch()}
+          type="text"
+          value={this.state.searchString}
+          className="search-user remove-blue"
+          placeholder="Search User"
+        ></input>
+        <button 
+          className="search-user-btn remove-blue"
+          onClick={this.searchUsers}>Search</button>
+      </div>
+    );
 
     const loggedInUser = this.props.loggedInUser;
     let profImg = window.defaultAva;
