@@ -25,3 +25,23 @@
   box-sizing: border-box;
   padding: 0px 10px 10px 10px;
 }
+
+.search-user-container{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.search-user{
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.search-user-btn{
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.search-user-btn:hover{
+  outline: none;
+}

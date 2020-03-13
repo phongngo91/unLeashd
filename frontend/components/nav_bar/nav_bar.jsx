@@ -7,6 +7,28 @@ class NavBar extends React.Component {
 
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleSignupClick = this.handleSignupClick.bind(this);
+
+    this.state = {
+      searchString: ""
+    };
+
+    this.searchUsers = this.searchUsers.bind(this);
+  }
+
+  updateSearch(){
+    return e => this.setState({
+      searchString: e.target.value
+    });
+  }
+
+  searchUsers(){
+    let name = this.state.searchString.split(" ");
+    const first_name = name[0];
+    const last_name = name[1] === undefined ? "" : name[1];
+    this.props.searchUsers({
+      first_name,
+      last_name
+    });
   }
 
   handleLoginClick() {
@@ -18,10 +40,24 @@ class NavBar extends React.Component {
   }
 
   render() {
+    let searchInput = (
+      <div className="search-user-container">
+        <input
+          onChange={this.updateSearch()}
+          type="text"
+          className="search-user remove-blue"
+          placeholder="Search User"
+        ></input>
+        <button 
+          className="search-user-btn remove-blue"
+          onClick={this.searchUsers}>Search</button>
+      </div>
+    );
+
     const loggedInUser = this.props.loggedInUser;
     let profImg = window.defaultAva;
     if (loggedInUser) {
-      if (loggedInUser.image_url){
+      if (loggedInUser.image_url) {
         profImg = loggedInUser.image_url;
       }
 
@@ -50,6 +86,7 @@ class NavBar extends React.Component {
               </a>
             </div>
           </div>
+          {searchInput}
           <ul
             className="user-controls"
             style={{
@@ -97,7 +134,9 @@ class NavBar extends React.Component {
               </div>
             </Link>
             <div>
-              <a href="/#/petshops" className="nav-link">Pet Shops</a>
+              <a href="/#/petshops" className="nav-link">
+                Pet Shops
+              </a>
             </div>
             <div>
               <a className="nav-link" href="/#/dogs">
@@ -105,6 +144,7 @@ class NavBar extends React.Component {
               </a>
             </div>
           </div>
+          {searchInput}
           <ul className="nav-bar-controls">
             <button
               onClick={this.handleLoginClick}

@@ -46,7 +46,7 @@ class CreateDogForm extends React.Component {
       return this.setState({
         pet_shop_id: e.currentTarget.selectedOptions[0].value
       });
-    };
+    }; 
   }
 
   handlePicture(e) {
