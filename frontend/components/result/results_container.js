@@ -3,14 +3,9 @@ import Result from "./results";
 
 const mapStateToProps = state =>{
   return {
-
+    users: state.entities.searchedUsers
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
 
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Result);
+export default connect(mapStateToProps, null)(Result);

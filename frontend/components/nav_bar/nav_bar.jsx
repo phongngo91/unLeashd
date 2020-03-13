@@ -34,7 +34,7 @@ class NavBar extends React.Component {
         searchString: ""
       });
     });
-    this.props.history.push("/result");
+    this.props.history.push("/results");
   }
 
   handleLoginClick() {
