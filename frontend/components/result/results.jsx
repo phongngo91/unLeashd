@@ -1,4 +1,5 @@
 import React from "react";
+import ResultCard from "./result_card";
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -11,9 +12,8 @@ class SearchResult extends React.Component {
     if (users.length === 0) {
       result = <div className="result-page">No Users Found</div>;
     } else {
-      debugger
       const resultElements = users.map(user => {
-        return <div>{user.username}</div>;
+        return <ResultCard user={user} />;
       });
       result = <div className="result-page">{resultElements}</div>;
     }
