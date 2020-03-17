@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faAngellist } from "@fortawesome/free-brands-svg-icons";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 
 class Spash extends React.Component {
   constructor(props) {
@@ -64,6 +66,15 @@ class Spash extends React.Component {
                   href="https://angel.co/phong-ngo"
                 >
                   <FontAwesomeIcon icon={faAngellist} size="5x" color="white" />
+                </a>
+              </span>
+              <span>
+                <a
+                  target="_blank"
+                  title="Portfolio"
+                  href="https://phongngo.net/"
+                >
+                  <FontAwesomeIcon icon={faUser} size="5x" color="white" />
                 </a>
               </span>
             </div>
