@@ -101,13 +101,23 @@
 
 .result-container{
   display: flex;
+  border: 4px white solid;
+  margin: 4px;
+  border-radius: 8px;
+  width: 500px;
 }
 
 .result-wrapper{
   display: flex;
+  padding: 4px;
 }
 
 .img-prof{
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-info-wrapper {
+  display: flex;
+  flex-direction: column;
 }
