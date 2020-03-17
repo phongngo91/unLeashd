@@ -12,8 +12,8 @@ class SearchResult extends React.Component {
     if (users.length === 0) {
       result = <div className="result-page">No Users Found</div>;
     } else {
-      const resultElements = users.map(user => {
-        return <ResultCard user={user} />;
+      const resultElements = users.map((user, idx) => {
+        return <ResultCard key={idx} user={user} />;
       });
       result = <div className="result-page">{resultElements}</div>;
     }
