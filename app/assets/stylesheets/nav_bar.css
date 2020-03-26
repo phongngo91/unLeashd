@@ -132,6 +132,19 @@ ul {
   z-index: 9;
 }
 
+.no-results-page{
+  margin-top: 65px;
+  padding-left: 5px;
+}
+
+.no-results-text{
+  font-size: 30px;
+}
+
+.no-result-explain{
+  font-size: 20px;
+}
+
 .result-page{
   margin-top: 65px;
 }
