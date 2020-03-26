@@ -40,7 +40,7 @@ class UsersShow extends React.Component {
     if (showedUser && currentUser.friend_ids){
       if (currentUser.friend_ids.includes(showedUser.id)) {
         addFriendBtn = <div onClick={this.destroyFriendEvent} className="add-friend-btn moreDogBtn remove-blue">REMOVE FRIEND</div>;
-      } else {
+      } else if (currentUser.id !== showedUser.id){
         addFriendBtn = <div onClick={this.addFriendEvent} className="add-friend-btn moreDogBtn remove-blue">ADD FRIEND</div>;
       }
     }
