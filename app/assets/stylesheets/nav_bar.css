@@ -133,6 +133,7 @@ ul {
 }
 
 .no-results-page{
+  min-height: 800px;
   margin-top: 65px;
   padding-left: 5px;
 }
@@ -146,5 +147,6 @@ ul {
 }
 
 .result-page{
+  min-height: 800px;
   margin-top: 65px;
 }
