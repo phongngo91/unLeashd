@@ -11,12 +11,12 @@
   box-sizing: border-box;
   justify-content: center;
   width: 1000px;
-  height: 600px;
 }
 
 .user-left-feed {
   box-sizing: border-box;
   width: 700px;
+  height: fit-content;
   padding: 20px;
 }
 
@@ -43,4 +43,15 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.footer-links{
+  color: #c60;
+  font-size: 25px;
 }
