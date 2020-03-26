@@ -47,12 +47,14 @@
 
 .footer-container{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   padding-bottom: 20px;
   padding-top: 20px;
 }
 
 .footer-links{
+  padding-left: 25px;
+  padding-right: 25px;
   color: #c60;
   font-size: 20px;
 }
