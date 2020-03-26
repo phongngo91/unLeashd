@@ -49,9 +49,10 @@
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .footer-links{
   color: #c60;
-  font-size: 25px;
+  font-size: 20px;
 }
