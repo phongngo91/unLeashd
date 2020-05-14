@@ -18,6 +18,7 @@ import TheParkContainer from "./park/the_park_container";
 import Modal from "./modal/modal";
 import ResultContainer from "../components/result/results_container";
 import Footer from "../components/footer/footer";
+import InfoContainer from "../components/info/info_container";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <ProtectedRoute path="/home" component={HomeContainer} />
         <Route exact path="/users/:userId" component={UsersShowContainer} />
         <Route exact path="/petshops" component={PetShopsIndexContainer} />
+        <Route exact path="/info" component={InfoContainer}/>
         <Route
           exact
           path="/petshops/:petShopId/dogs"
