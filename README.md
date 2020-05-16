@@ -31,3 +31,12 @@ User authentification: User can sign up as a member and login. User profile: Log
 ## Checkin Modal
 
 <img width="894" alt="checkin_dog" src="https://user-images.githubusercontent.com/43156715/75044263-5452f200-548f-11ea-83b6-9a0f43e5456f.png">
+
+## Cool features
+
+* Reduced screen flickering and React.js Component rendering time by utilizing Redux Store Normalized Global State in different presentational components, and not refetching redundant information.
+* Created RESTful routes in Rails Controllers and queries for PostgreSQL database with JQuery Ajax calls to fetch user data and display the user’s friendships, profile picture, dog checkins, and the pets index.
+* Queried dynamically for subsets of data from database on index GETs to reduce load times and reduce database workload.
+* Accounted for global state changes from natural flow of user navigation and also unexpected hard page refreshes by periodically manually testing and correcting global state to be a consistent shape throughout component switches.
+* Filtered backend responses using JBuilder gem to increase efficiency within frontend reducers by returning relevant information in the json response in the correct shape for less required parsing within the reducer.
+* Saved images using Rails Active Storage and Amazon Web Services (AWS) S3 to keep application assets folder manageable, data secure through Amazon’s security restrictions, and persist data from being cleared from cache on server resets.
