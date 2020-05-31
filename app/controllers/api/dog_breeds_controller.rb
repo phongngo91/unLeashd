@@ -1,7 +1,6 @@
 class Api::DogBreedsController < ApplicationController
 
   def index
-    # @dogs = DogBreed.with_attached_photo.all
     @dogs = DogBreed.order('dog_breeds.updated_at DESC').page(params[:page]).per(10)
     if @dogs.length > 0
       render :index
