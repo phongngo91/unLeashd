@@ -14,7 +14,6 @@ const CheckinItemCard = props => {
     dog_breed_id,
     created_at
   } = props.checkin;
-  // const deleteCheckin = props.deleteCheckin;
 
   const diffInMilli = new Date() - new Date(created_at);
   const diffInMinutes = diffInMilli / 60000;
@@ -28,22 +27,6 @@ const CheckinItemCard = props => {
       <div className="minutes-ago">{new Date(created_at).toDateString()}</div>
     );
   }
-
-  // const user_id = props.currentUser.id;
-  // let deleteBtn = null;
-  // if (author_id === user_id) {
-  //   deleteBtn = (
-  //     <button
-  //       onClick={() => {
-  //         if (confirm("Delete the checkin?")) {
-  //           deleteCheckin(id);
-  //         }
-  //       }}
-  //     >
-  //       Delete Checkin
-  //     </button>
-  //   );
-  // }
 
   let checkinImage = null;
   if (image_url) {
@@ -121,7 +104,6 @@ const CheckinItemCard = props => {
         {checkinBody}
         <div className="checkin-image-box">{checkinImage}</div>
         {timeShown}
-        {/* {deleteBtn} */}
       </div>
       <a href={`/#/dogs/${dog_breed_id}`}>{dogAvatar}</a>
     </div>
